@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Grid, CardMedia, CircularProgress, Toolbar } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "@/components/navBar/navBar";
-import NavbarDrawer from "@/components/navBar/navBarDrawer";
+import NavBar from "@/components/navBar/NavBar"
 import AlertGlobal from "@/components/alert/alert";
 import ModalGlobal from "@/components/modal/modal";
+import Layout from "@/components/Layout/Layout"
 
 const Home = React.lazy(() => import("@/screens/home"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
@@ -49,12 +49,14 @@ export default function Navigator() {
       {/* <Toolbar sx={{m:"10px"}} /> */}
 
       {/*Navbar secondary */}
-      <NavbarDrawer>
+      {/* layout */}
+      <Layout>
+        <NavBar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </NavbarDrawer>
+      </Layout>
 
       {/*other tools */}
       <AlertGlobal />

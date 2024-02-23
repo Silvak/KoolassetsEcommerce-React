@@ -27,14 +27,14 @@ export function createPalette(mode) {
             paper: "#3B3B3B",
           },
           text: {
-            primary: "#3B3B3B",
+            primary: "#615D5D",
             secondary: "#F5F5F5",
             third: "#6366F1",
           },
           icon: {
             primary: "#3B3B3B",
             secondary: "#F5F5F5",
-            third: "#6366F1",
+            third: "#1B1AFF",
           },
         }
       : {

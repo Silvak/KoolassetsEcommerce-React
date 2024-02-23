@@ -26,7 +26,7 @@ export function createComponents(config) {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: "20px",
+          borderRadius: "4px",
           textTransform: "none",
         },
         sizeSmall: {
