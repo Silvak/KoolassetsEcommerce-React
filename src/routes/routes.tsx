@@ -4,12 +4,16 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "@/components/navBar/NavBar"
 import AlertGlobal from "@/components/alert/alert";
 import ModalGlobal from "@/components/modal/modal";
+import SignIn from "@/screens/signIn";
+import SignUp from "@/screens/signUp";
+import { storeUser } from "@/stores/user/storeUser";
 import Layout from "@/components/Layout/Layout"
 
 const Home = React.lazy(() => import("@/screens/home"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
 
 export default function Navigator() {
+  const { Authenticated } = storeUser();
   let Logo = "";
 
   return (
@@ -49,15 +53,21 @@ export default function Navigator() {
       {/* <Toolbar sx={{m:"10px"}} /> */}
 
       {/*Navbar secondary */}
-      {/* layout */}
+      {Authenticated ? (
       <Layout>
         <NavBar/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Layout>
+      ) : (
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </Layout>
-
+      )}
       {/*other tools */}
       <AlertGlobal />
       <ModalGlobal />
