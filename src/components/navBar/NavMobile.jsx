@@ -17,12 +17,12 @@ const NavMobile = () => {
         flexWrap: "wrap",
         alignItems: "center",
         width: "100%",
-        "& > *": {
-          width: "50%",
-        },
+        gap: "10px",
       }}
     >
-      <Logo />
+      <Box sx={{ flexGrow: 1 }}>
+        <Logo />
+      </Box>
       <Button
         variant="outlined"
         onClick={() => setOpen(!open)}
@@ -37,13 +37,15 @@ const NavMobile = () => {
       >
         <BsTextRight size="18" />
       </Button>
-      <SearchBar />
+      <SearchBar sx={{ width: "100%", marginTop: "15px" }} />
       {/* menu */}
       <Drawer
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
-        sx={{ "& .MuiDrawer-paper": { backgroundColor: "background.default" } }}
+        sx={{
+          "& .MuiDrawer-paper": { backgroundColor: "background.default" },
+        }}
       >
         <NavMobileMenu />
       </Drawer>

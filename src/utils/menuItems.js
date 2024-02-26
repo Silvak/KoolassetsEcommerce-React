@@ -1,22 +1,34 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const menuItems = [
   {
-    id: 1,
-    name: "Categoías",
-    link: "/",
+    id: uuidv4(),
+    name: "Categorías",
+    link: "/categories",
   },
   {
-    id: 2,
+    id: uuidv4(),
     name: "Acerca de nosotros",
     link: "/about",
   },
   {
-    id: 3,
+    id: uuidv4(),
     name: "Contáctanos",
     link: "/contact",
   },
   {
-    id: 4,
+    id: uuidv4(),
     name: "Soporte",
-    link: "/soporte",
+    link: "/support",
+  },
+  {
+    id: uuidv4(),
+    name: "Iniciar sesión",
+    link: "/sign-in",
+  },
+  {
+    id: uuidv4(),
+    name: "Registrarse",
+    link: "/sign-up",
   },
 ];
