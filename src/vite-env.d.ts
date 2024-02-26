@@ -11,6 +11,13 @@ declare module "@/components/buttons/buttonPrimary";
 declare module "@/components/inputs/inputSearchNavbar";
 declare module "@/components/alert/alert";
 declare module "@/components/modal/modal";
+declare module "@/components/Layout/Layout"
+declare module "@/components/Hero/Hero";
+declare module "@/components/Hero/HeroText";
+declare module "@/components/Hero/HeroImg";
+declare module "@/components/Hero/HeroItem";
+declare module "@/components/CategorySlider/CategorySlider";
+declare module "@/components/CategorySlider/CategorySliderItem";
 
 declare module "@/components/buttons/Facebook/FacebookButton";
 declare module "@/components/buttons/Google/GoogleButton";
