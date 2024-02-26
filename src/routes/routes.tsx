@@ -4,8 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "@/components/navBar/NavBar"
 import AlertGlobal from "@/components/alert/alert";
 import ModalGlobal from "@/components/modal/modal";
-import SignIn from "@/screens/signIn";
-import SignUp from "@/screens/signUp";
+import SignIn from "@/screens/SignIn";
+import SignUp from "@/screens/SignUp";
 import { storeUser } from "@/stores/user/storeUser";
 import Layout from "@/components/Layout/Layout"
 
@@ -63,6 +63,8 @@ export default function Navigator() {
           </Routes>
         </Layout>
       ) : (
+        <Layout>
+        <NavBar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category-list" element={<CategoryList />} />
@@ -70,6 +72,7 @@ export default function Navigator() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        </Layout>
       )}
       {/*other tools */}
       <AlertGlobal />

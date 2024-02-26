@@ -26,7 +26,7 @@ const SearchBar = ({ sx }) => {
         <BsSearch size="20" />
       </IconButton>
       <input
-        type="text"
+        type="search"
         style={{
           outline: "none",
           border: "none",

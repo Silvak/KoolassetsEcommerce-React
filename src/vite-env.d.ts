@@ -31,8 +31,8 @@ declare module "@/routes/routes";
 declare module "@/screens/home";
 declare module "@/screens/notFoundPage";
 declare module "@/screens/categoryList"
-declare module "@/screens/signIn";
-declare module "@/screens/signUp";
+declare module "@/screens/SignIn";
+declare module "@/screens/SignUp";
 
 declare module "@/stores/user/storeUser";
 
