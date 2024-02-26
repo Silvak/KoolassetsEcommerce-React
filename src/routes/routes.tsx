@@ -4,9 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "@/components/navBar/NavBar"
 import AlertGlobal from "@/components/alert/alert";
 import ModalGlobal from "@/components/modal/modal";
-import Layout from "@/components/Layout/Layout"
+import Layout from "@/components/Layout/Layout";
 
 const Home = React.lazy(() => import("@/screens/home"));
+const CategoryList = React.lazy(() => import("@/screens/categoryList"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
 
 export default function Navigator() {
@@ -54,6 +55,7 @@ export default function Navigator() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/category-list" element={<CategoryList />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
