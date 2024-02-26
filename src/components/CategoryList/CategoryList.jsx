@@ -40,7 +40,7 @@ const CategoryList = ({ category, totalResults, products }) => {
       >
         Mostrando {productsToShow.length} de {totalResults} resultados: {category}
       </Typography>
-      <div style={{ display: "flex", maxWidth: "50vw" }}>
+      <div style={{ display: "flex" }}>
         {isMobile ? (
           <div>
             <IconButton onClick={toggleDrawer}>
@@ -51,7 +51,7 @@ const CategoryList = ({ category, totalResults, products }) => {
         ) : (
           isDesktop && <DesktopSidebar />
         )}
-        <div style={{ marginLeft: isMobile ? "8px" : "8vw", padding: "0px" }}>
+        <div style={{ marginLeft: "6vw", padding: "0px", marginTop:12 }}>
           <Typography
             variant="h6"
             style={{ fontSize: "12px", color: "gray", marginBlock: "20px" }}
@@ -59,9 +59,9 @@ const CategoryList = ({ category, totalResults, products }) => {
             Inicio / Categorías / Telefonía /{" "}
             <span style={{ color: "#000" }}>Gama media</span>
           </Typography>
-          <Grid container spacing={1} width={"80vw"} height={"auto"}>
+          <Grid container spacing={0} width={"100%"} height={"auto"}>
             {productsToShow.map((product) => (
-              <Grid item xs={12} sm={6} md={3} key={product.id}>
+              <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{mb:"32px"}}>
                 <ProductCard product={product} />
               </Grid>
             ))}
