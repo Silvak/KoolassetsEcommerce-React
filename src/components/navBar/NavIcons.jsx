@@ -9,19 +9,18 @@ const ICONS = [
   { id: 3, icon: <BsHeart /> },
 ];
 
-const NavIcons = () => {
+const NavIcons = ({ sx }) => {
   return (
     <Box
-      display="flex"
-      justifyContent="space-around"
-      width="100%"
       sx={{
-        marginTop: "20px",
+        display: "flex",
+        alignItems: "center",
         "& .css-18cpr4l-MuiButtonBase-root-MuiIconButton-root": {
           outline: "1px solid #1B1AFF",
           borderRadius: "4px",
           fontSize: "18px",
         },
+        ...sx,
       }}
     >
       {ICONS.map((icon) => (

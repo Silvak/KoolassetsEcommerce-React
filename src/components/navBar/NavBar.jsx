@@ -5,18 +5,18 @@ import NavMobile from "@/components/navBar/NavMobile";
 import NavDesktop from "@/components/navBar/NavDesktop";
 
 const NavBar = () => {
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("lg"));
 
   return (
     <AppBar
       sx={{
         background: "none",
         boxShadow: "none",
-        height: "130px",
+        padding: "20px 0",
         color: "gray",
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-start",
       }}
       position="static"
     >
