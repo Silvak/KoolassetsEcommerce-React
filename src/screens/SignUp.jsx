@@ -1,9 +1,6 @@
 import {
-  Box,
   Grid,
-  Link,
   ThemeProvider,
-  Typography,
   createTheme,
   useMediaQuery,
 } from "@mui/material";
@@ -13,15 +10,16 @@ import SignUpForm from "../components/forms/SignUpForm";
 function SignUp() {
   const theme = createTheme();
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const breakPoint = useMediaQuery((theme) => theme.breakpoints.down("xl"));
   return (
     <ThemeProvider theme={theme}>
-      <Grid
+      {!isMobile ? (<Grid
         wrap="wrap-reverse"
         sx={{
           backgroundColor: "#FFEACB",
           width: "100%",
           height: "100vh",
-          padding: 0,
+          padding: 10,
           margin: 0,
           display: "flex",
           justifyContent: "space-around",
@@ -29,7 +27,7 @@ function SignUp() {
           overflowY: "scroll"
         }}
       >
-        {!isMobile && (
+        {!breakPoint && (
           <Grid item xs={12} sm={6} md={4} >
             <img
               src={carImg}
@@ -41,7 +39,12 @@ function SignUp() {
         <Grid item xs={12} sm={6} md={4}>
           <SignUpForm />
         </Grid>
+      </Grid>) : (
+        <Grid item xs={12} sm={6} md={4}>
+        <SignUpForm />
       </Grid>
+      )}
+      
     </ThemeProvider>
   );
 }
