@@ -1,4 +1,4 @@
-import { Button, Drawer, Box } from "@mui/material";
+import { Button, Drawer, Box, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 
 import Logo from "@/components/Logo/Logo";
@@ -9,35 +9,44 @@ import { BsTextRight } from "react-icons/bs";
 
 const NavMobile = () => {
   const [open, setOpen] = useState(false);
+  const matches = useMediaQuery("(max-width: 350px)");
 
   return (
     <Box
       sx={{
         display: "flex",
-        flexWrap: "wrap",
         alignItems: "center",
+        justifyContent: "space-between",
         width: "100%",
-        gap: "10px",
+        gap: "20px",
       }}
     >
-      <Box sx={{ flexGrow: 1 }}>
-        <Logo />
-      </Box>
+      <Logo />
+
+      {!matches && (
+        <SearchBar
+          sx={{
+            width: "100%",
+            maxWidth: "450px",
+            marginInline: "auto",
+          }}
+        />
+      )}
+
       <Button
         variant="outlined"
         onClick={() => setOpen(!open)}
         sx={{
           color: "text.primary",
           borderColor: "text.primary",
-          width: "max-content",
-          marginLeft: "auto",
+          minWidth: "50px",
           padding: "5px",
           ":hover": { color: "#1B1AFF" },
         }}
       >
         <BsTextRight size="18" />
       </Button>
-      <SearchBar sx={{ width: "100%", marginTop: "15px" }} />
+
       {/* menu */}
       <Drawer
         anchor="right"
