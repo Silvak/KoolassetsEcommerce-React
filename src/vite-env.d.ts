@@ -1,8 +1,11 @@
-declare module "@/components/navBar/navItems";
-declare module "@/components/navBar/sidebar";
-declare module "@/components/navBar/sidebarUser";
-declare module "@/components/navBar/sidebar";
-declare module "@/components/navBar/navBarDrawer";
+declare module "@/components/navBar/NavBar"
+declare module "@/components/navBar/NavMobile"
+declare module "@/components/navBar/NavMobile"
+declare module "@/components/navBar/NavMobileMenu"
+declare module "@/components/navBar/NavIcons"
+declare module "@/components/SearchBar/SearchBar"
+declare module "@/components/Logo/Logo"
+declare module "@/components/Layout/Layout"
 declare module "@/components/buttons/buttonPrimary";
 declare module "@/components/inputs/inputSearchNavbar";
 declare module "@/components/alert/alert";
@@ -32,5 +35,8 @@ declare module "@/screens/signUp";
 declare module "@/stores/user/storeUser";
 
 declare module "@/theme/theme";
+
+declare module "@/utils/menuItems";
+
 
 /// <reference types="vite/client"/>
