@@ -4,8 +4,8 @@ import SidebarContent from './SidebarContent';
 
 const Sidebar = ({ open, onClose }) => {
   return (
-    <Drawer anchor="left" open={open} onClose={onClose} >
-      <div style={{ width: '300px', backgroundColor: '#f0f0f0', height: 'max-content', padding: '16px' }}>
+    <Drawer anchor="left" open={open} onClose={onClose}>
+      <div style={{ width: '300px', backgroundColor: '#f5f5f5', height: 'max-content', padding: '16px', overflowX:"hidden" }}>
         <SidebarContent />
       </div>
     </Drawer>
