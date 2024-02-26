@@ -10,6 +10,7 @@ import { storeUser } from "@/stores/user/storeUser";
 import Layout from "@/components/Layout/Layout"
 
 const Home = React.lazy(() => import("@/screens/home"));
+const CategoryList = React.lazy(() => import("@/screens/categoryList"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
 
 export default function Navigator() {
@@ -63,6 +64,8 @@ export default function Navigator() {
         </Layout>
       ) : (
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category-list" element={<CategoryList />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFoundPage />} />
