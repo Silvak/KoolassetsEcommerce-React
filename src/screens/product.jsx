@@ -1,27 +1,13 @@
-import { useState } from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+//import Typography from "@mui/material/Typography";
+//import Grid from "@mui/material/Grid";
+//import Stack from "@mui/material/Stack";
+//import Button from "@mui/material/Button";
 import { useParams } from "react-router-dom";
 import { productsData, totalProducts, category } from "@/mock/productData";
 import ProductDetail from "../components/sections/productDetail";
 import ProductInfo from "../components/sections/productInfo";
-
-function ProductDescription() {
-  return (
-    <Box>
-      <Typography
-        variant="body1"
-        color="initial"
-        style={{ fontSize: "32px", fontWeight: 600 }}
-      >
-        Descripción de producto
-      </Typography>
-    </Box>
-  );
-}
+import ProductDescription from "../components/sections/producDescription";
 
 function Product() {
   let { productId } = useParams();
@@ -52,7 +38,17 @@ function Product() {
         <ProductInfo product={productsData[productId]} />
       </Box>
 
-      {/* */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          background: "white",
+          pt: "40px",
+          pb: "80px",
+        }}
+      >
+        <ProductDescription />
+      </Box>
     </div>
   );
 }

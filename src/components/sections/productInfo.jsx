@@ -94,8 +94,8 @@ function ProductInfo(props) {
       </Grid>
 
       {/* ---- SPECS ---- */}
-      <Grid item xs={1} pl={6}>
-        <Stack>
+      <Grid item xs={1}>
+        <Stack sx={{ pl: { xs: 0, lg: 6 } }}>
           {SPECS.map((element, index) => (
             <Stack
               key={index}

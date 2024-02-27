@@ -24,6 +24,7 @@ declare module "@/components/forms/SignInForm";
 declare module "@/components/forms/SignUpForm";
 declare module "@/components/sections/productDetail";
 declare module "@/components/sections/productInfo";
+declare module "@/components/sections/productDescription";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
