@@ -72,8 +72,8 @@ const SidebarContent = () => {
       <Typography variant="body2" style={titleStyle}>
         Categorías
       </Typography>
-      {categories.map((category) => (
-        <div key={category.name} style={{ width: "max-content" }}>
+      {categories.map((category, key) => (
+        <div key={key} style={{ width: "max-content" }}>
           <ListItemButton onClick={() => handleCategoryClick(category.name)}>
             <ListItemText
               primaryTypographyProps={{
@@ -88,9 +88,9 @@ const SidebarContent = () => {
           </ListItemButton>
           {expandedCategory === category.name && (
             <List component="div" disablePadding>
-              {category.subcategories.map((subcategory) => (
+              {category.subcategories.map((subcategory, key) => (
                 <ListItemButton
-                  key={subcategory}
+                  key={key}
                   onClick={() => handleSubcategoryClick(subcategory)}
                 >
                   <ListItemText
@@ -116,8 +116,8 @@ const SidebarContent = () => {
       <Typography variant="body2" style={filterTitle} sx={{ marginTop: 4 }}>
         Filtrar por
       </Typography>
-      {filters.map((filter) => (
-        <div key={filter.name} style={{ width: "max-content" }}>
+      {filters.map((filter, key) => (
+        <div key={key} style={{ width: "max-content" }}>
           <ListItemButton onClick={() => handleCategoryClick(filter.name)}>
             <ListItemText
               primaryTypographyProps={{ style: subtitleStyle }}
@@ -126,9 +126,9 @@ const SidebarContent = () => {
           </ListItemButton>
           {
             <List component="div" disablePadding>
-              {filter.subcategories.map((subcategory) => (
+              {filter.subcategories.map((subcategory, key) => (
                 <ListItemButton
-                  key={subcategory}
+                  key={key}
                   onClick={() => handleSubcategoryClick(subcategory)}
                 >
                   <ListItemText
@@ -154,8 +154,9 @@ const SidebarContent = () => {
         <Typography variant="body2" style={{...subtitleStyle, marginLeft: 0, marginBottom: 4}}>
           Calificación
         </Typography>
-        {[4, 3, 2, 1].map((stars) => (
+        {[4, 3, 2, 1].map((stars, key) => (
           <div
+            key={key}
             style={{
               display: "flex",
               alignItems: "center",
@@ -207,9 +208,9 @@ const SidebarContent = () => {
         }}
       >
         <Typography variant="body2" style={{...subtitleStyle, marginLeft: 0, marginBottom:"0.4rem"}}>Rango de precios</Typography>
-        {priceRange.map((range) => (
+        {priceRange.map((range, key) => (
           <ListItemButton
-            key={range}
+            key={key}
             onClick={() => console.log("Rango de precio seleccionado:", range)}
           >
             <ListItemText
@@ -254,9 +255,9 @@ const SidebarContent = () => {
         >
           Marcas
         </Typography>
-        {checkboxFilters.marcas.map((marca) => (
+        {checkboxFilters.marcas.map((marca, key) => (
           <div
-            key={marca}
+            key={key}
             style={{
               display: "flex",
               alignItems: "center",
@@ -296,8 +297,8 @@ const SidebarContent = () => {
 
       {/* Otros filtros */}
       <div style={{ marginTop: "8px" }}>
-        {othersFilters.map((filter) => (
-          <div key={filter.name} style={{ width: "max-content" }}>
+        {othersFilters.map((filter, key) => (
+          <div key={key} style={{ width: "max-content" }}>
             <ListItemButton onClick={() => handleCategoryClick(filter.name)}>
               <ListItemText
                 primaryTypographyProps={{ style: subtitleStyle }}
@@ -306,10 +307,10 @@ const SidebarContent = () => {
             </ListItemButton>
             {
               <List component="div" disablePadding >
-                {filter.subcategories.map((subcategory) => (
+                {filter.subcategories.map((subcategory, key) => (
                   <ListItemButton
                     size="small"
-                    key={subcategory}
+                    key={key}
                     onClick={() => handleSubcategoryClick(subcategory)}
                   >
                     <ListItemText

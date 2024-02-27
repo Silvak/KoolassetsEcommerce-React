@@ -11,7 +11,10 @@ import Layout from "@/components/Layout/Layout"
 
 const Home = React.lazy(() => import("@/screens/home"));
 const CategoryList = React.lazy(() => import("@/screens/categoryList"));
+const Favorites = React.lazy(() => import("@/screens/favorites"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
+
+
 
 export default function Navigator() {
   const { Authenticated } = storeUser();
@@ -68,6 +71,7 @@ export default function Navigator() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category-list" element={<CategoryList />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="*" element={<NotFoundPage />} />

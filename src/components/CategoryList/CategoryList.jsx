@@ -5,8 +5,15 @@ import Pagination from "./PaginationCategory";
 import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "./Sidebar";
 import DesktopSidebar from "./DesktopSidebar";
+import { storeFavorites } from '../../stores/favorites/storeFavorites';
 
 const CategoryList = ({ category, totalResults, products }) => {
+
+  const { toggleFavorite, isFavorite } = storeFavorites(state => ({
+    toggleFavorite: state.toggleFavorite,
+    isFavorite: state.isFavorite,
+  }));
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -62,7 +69,7 @@ const CategoryList = ({ category, totalResults, products }) => {
           <Grid container spacing={0} width={"100%"} height={"auto"}>
             {productsToShow.map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{mb:"32px"}}>
-                <ProductCard product={product} />
+                <ProductCard product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite}/>
               </Grid>
             ))}
           </Grid>
