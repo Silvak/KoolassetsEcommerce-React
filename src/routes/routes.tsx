@@ -1,20 +1,20 @@
 import * as React from "react";
 import { Grid, CardMedia, CircularProgress, Toolbar } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "@/components/navBar/NavBar"
+import NavBar from "@/components/navBar/NavBar";
 import AlertGlobal from "@/components/alert/alert";
 import ModalGlobal from "@/components/modal/modal";
 import SignIn from "@/screens/SignIn";
 import SignUp from "@/screens/SignUp";
 import { storeUser } from "@/stores/user/storeUser";
-import Layout from "@/components/Layout/Layout"
+import Layout from "@/components/Layout/Layout";
+import Footer from "@/components/footer/footer";
 
 const Home = React.lazy(() => import("@/screens/home"));
 const CategoryList = React.lazy(() => import("@/screens/categoryList"));
 const Favorites = React.lazy(() => import("@/screens/favorites"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
-
-
+const Product = React.lazy(() => import("@/screens/product"));
 
 export default function Navigator() {
   const { Authenticated } = storeUser();
@@ -58,8 +58,8 @@ export default function Navigator() {
 
       {/*Navbar secondary */}
       {Authenticated ? (
-      <Layout>
-        <NavBar/>
+        <Layout>
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFoundPage />} />
@@ -67,15 +67,17 @@ export default function Navigator() {
         </Layout>
       ) : (
         <Layout>
-        <NavBar/>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category-list" element={<CategoryList />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:productId" element={<Product />} />
+            <Route path="/category-list" element={<CategoryList />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+          <Footer />
         </Layout>
       )}
       {/*other tools */}
