@@ -2,11 +2,12 @@ import { IconButton, Box } from "@mui/material";
 
 //icons
 import { BsCart, BsPerson, BsHeart } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 const ICONS = [
-  { id: 1, icon: <BsPerson /> },
-  { id: 2, icon: <BsCart /> },
-  { id: 3, icon: <BsHeart /> },
+  { id: 1, icon: <BsPerson />, to: "/profile" },
+  { id: 2, icon: <BsCart />, to: "/cart" },
+  { id: 3, icon: <BsHeart />, to: "/favorites" },
 ];
 
 const NavIcons = ({ sx }) => {
@@ -30,7 +31,12 @@ const NavIcons = ({ sx }) => {
             color: "#1B1AFF",
           }}
         >
-          {icon.icon}
+          <NavLink
+            to={icon.to}
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            {icon.icon}
+          </NavLink>
         </IconButton>
       ))}
     </Box>

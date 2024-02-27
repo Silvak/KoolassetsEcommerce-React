@@ -20,6 +20,7 @@ export const subtitleStyle = {
     backgroundColor: "",
     fontSize: "12px",
     marginLeft: "-14px",
+    marginBottom:"-0.5rem",
 }
 
 export const subtitleRange = {
@@ -32,7 +33,8 @@ export const childrenStyle = {
     color: "gray",
     fontWeight: "normal",
     fontSize: "10px",
-    marginLeft: "20px"
+    margin:"0px",
+    marginLeft: "20px",
 }
 
 export const inputStyle = {
@@ -53,5 +55,6 @@ export const childrenFilter = {
     maxWidth: '120px',
     overflow: 'hidden',  
     textOverflow: 'ellipsis',
-
+    marginBottom: "-0.3rem",
+    marginTop: "-0.3rem",
 }

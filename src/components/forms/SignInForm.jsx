@@ -26,15 +26,12 @@ function SignInForm() {
           maxHeight: "100vh",
           overflowY: "auto",
           margin: "auto",
-          backgroundColor: isMobile ? "#FFEACB" : "#F9F9F9",
+          backgroundColor: "#F9F9F9",
           width: !isMobile ? "579px" : "100%",
+          height: isMobile && "90vh"
         }}
       >
-        {isMobile && (
-          <Grid>
-            <img src={carImg} alt="logo" style={{ width: "100%" }} />
-          </Grid>
-        )}
+        
         {/* Form Header */}
         <Box sx={{ marginBottom: "20px" }}>
           <Typography variant="h4">Inicia sesión en Tienda!</Typography>

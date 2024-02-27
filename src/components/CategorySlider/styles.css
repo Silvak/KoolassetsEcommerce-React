@@ -1,0 +1,25 @@
+.title{
+    font-size: clamp(22px,3vw,25px);
+    font-weight: 600;
+}
+
+.swiper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-prev-button, .custom-next-button{
+    font-size: 30px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    color: #1B1AFF
+}
+
+.custom-next-button{
+    margin-left: 8px;
+}
+

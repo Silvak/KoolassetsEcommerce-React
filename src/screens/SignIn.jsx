@@ -1,7 +1,5 @@
 import {
-  Box,
   Grid,
-  Link,
   ThemeProvider,
   createTheme,
   useMediaQuery,
@@ -12,6 +10,7 @@ import SignInForm from "../components/forms/SignInForm";
 function SignIn() {
   const theme = createTheme();
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const breakPoint = useMediaQuery((theme) => theme.breakpoints.down("xl"));
   return (
     <ThemeProvider theme={theme}>
       {!isMobile ? (
@@ -29,7 +28,7 @@ function SignIn() {
             overflowY: "scroll"
           }}
         >
-          {!isMobile && (
+          {!breakPoint && (
             <Grid item xs={12} sm={6} md={4}>
               <img
                 src={carImg}

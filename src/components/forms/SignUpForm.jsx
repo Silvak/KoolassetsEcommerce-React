@@ -23,18 +23,15 @@ function SignUpForm() {
         sx={{
           borderRadius: "24px",
           padding: "50px",
-          backgroundColor: isMobile ? "#FFEACB" : "#F9F9F9",
-          width: !isMobile ? "579px" : "100%",
           maxHeight: "100vh",
+          backgroundColor: "#F9F9F9",
+          width: !isMobile ? "579px" : "100%",
+          height: isMobile && "90vh",
           overflowY: "auto",
           margin: "auto",
         }}
       >
-        {isMobile && (
-          <Grid overflow={"hidden"}>
-            <img src={carImg} alt="logo" style={{ width: "100%" }} />
-          </Grid>
-        )}
+        
         {/* Form Header */}
         <Box sx={{ marginBottom: "20px" }}>
           <Typography variant="h4">Regístrate en Tienda!</Typography>
