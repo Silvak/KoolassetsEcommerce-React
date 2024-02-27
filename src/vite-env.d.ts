@@ -16,6 +16,8 @@ declare module "@/components/buttons/Facebook/FacebookButton";
 declare module "@/components/buttons/Google/GoogleButton";
 declare module "@/components/buttons/Google/socialButtons";
 
+declare module "@/components/footer/footer";
+
 declare module "@/components/forms/SignInForm";
 declare module "@/components/forms/SignUpForm";
 
@@ -39,6 +41,7 @@ declare module "@/stores/user/storeUser";
 declare module "@/theme/theme";
 
 declare module "@/utils/menuItems";
+declare module "@/utils/footerItems";
 
 
 /// <reference types="vite/client"/>
