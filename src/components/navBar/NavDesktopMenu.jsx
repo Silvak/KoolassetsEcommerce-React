@@ -1,7 +1,6 @@
-import { menuItems } from "@/utils/menuItems";
 import { Box, ListItemButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
-
+import { menuItems } from "../../utils/menuItems";
 import { v4 as uuidv4 } from "uuid";
 //components
 import NavIcons from "@/components/navBar/NavIcons";

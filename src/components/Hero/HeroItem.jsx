@@ -9,13 +9,13 @@ const HeroItem = ({ url }) => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(#32346A,#454775)",
+        background: "linear-gradient(to right,#32346A,#454775)",
         borderRadius: "24px",
-        padding: "30px",
+        padding: isDesktop ? "10px 0 10px 60px" : "30px",
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         flexDirection: isDesktop ? "row" : "column",
-        gap: "30px",
+        gap: isDesktop ? "0" : "30px",
       }}
     >
       <HeroText />

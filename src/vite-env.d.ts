@@ -50,7 +50,9 @@ declare module "@/stores/user/storeUser";
 
 declare module "@/theme/theme";
 
+
 declare module "@/utils/menuItems";
 declare module "@/utils/footerItems";
+
 
 /// <reference types="vite/client"/>

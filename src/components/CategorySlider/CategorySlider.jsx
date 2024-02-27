@@ -1,46 +1,54 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-// Import Swiper styles
+// Import  styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.css";
 
 import CategorySliderItem from "@/components/CategorySlider/CategorySliderItem";
-
-const CATEGORIES = [
-  "Computación",
-  "Telefonía",
-  "Prendas",
-  "Herramientas",
-  "Herramientas",
-  "Herramientas",
-  "Herramientas",
-  "Herramientas",
-  "Herramientas",
-];
+import { categoriesVisited } from "../../mock/categoriesVisited";
+//icons
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const CategorySlider = () => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   return (
-    <Box>
+    <Box sx={{ my: 10 }}>
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          flexWrap: "wrap",
+          gap: isMobile ? "10px" : "0",
+          mb: 4,
         }}
       >
-        <h2 className="title">Caterías más visitadas</h2>
-        <Box>
-          <button onClick={() => {}} className="custom-prev-button">
-            &lt;
+        <h2 className="category-slider_title">Categorías más visitadas</h2>
+        {/* btns */}
+        <Box
+          sx={{
+            display: "flex",
+          }}
+        >
+          <button
+            onClick={() => {}}
+            className="category-slider_custom-prev-button"
+          >
+            <BsArrowLeft />
           </button>
-          <button onClick={() => {}} className="custom-next-button">
-            &gt;
+          <button
+            onClick={() => {}}
+            className="category-slider_custom-next-button"
+          >
+            <BsArrowRight />
           </button>
         </Box>
       </Box>
+      {/* swiper */}
       <Swiper
         slidesPerView={3}
         spaceBetween={10}
@@ -57,14 +65,14 @@ const CategorySlider = () => {
         }}
         modules={[Navigation]}
         navigation={{
-          prevEl: ".custom-prev-button",
-          nextEl: ".custom-next-button",
+          prevEl: ".category-slider_custom-prev-button",
+          nextEl: ".category-slider_custom-next-button",
         }}
-        className="swiper"
+        className="category-slider_swiper"
       >
-        {CATEGORIES.map((categoria, index) => (
+        {categoriesVisited.map((cat, index) => (
           <SwiperSlide key={index}>
-            <CategorySliderItem categoria={categoria} />
+            <CategorySliderItem {...cat} />
           </SwiperSlide>
         ))}
       </Swiper>
