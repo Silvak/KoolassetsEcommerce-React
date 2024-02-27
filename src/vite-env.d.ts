@@ -22,6 +22,8 @@ declare module "@/components/buttons/Google/GoogleButton";
 declare module "@/components/buttons/Google/socialButtons";
 declare module "@/components/forms/SignInForm";
 declare module "@/components/forms/SignUpForm";
+declare module "@/components/sections/productDetail";
+declare module "@/components/sections/productInfo";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
