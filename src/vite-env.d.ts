@@ -17,6 +17,7 @@ declare module "@/components/buttons/Google/GoogleButton";
 declare module "@/components/buttons/Google/socialButtons";
 
 declare module "@/components/footer/footer";
+declare module "@/components/footer/footerMobile";
 
 declare module "@/components/forms/SignInForm";
 declare module "@/components/forms/SignUpForm";
