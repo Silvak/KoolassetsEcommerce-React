@@ -28,7 +28,7 @@ const CategoryList = ({ category, totalResults, products }) => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
     window.scroll(0, 0);
-  }; 
+  };
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -45,7 +45,8 @@ const CategoryList = ({ category, totalResults, products }) => {
           marginLeft: 16,
         }}
       >
-        Mostrando {productsToShow.length} de {totalResults} resultados: {category}
+        Mostrando {productsToShow.length} de {totalResults} resultados:{" "}
+        {category}
       </Typography>
       <div style={{ display: "flex" }}>
         {isMobile ? (
