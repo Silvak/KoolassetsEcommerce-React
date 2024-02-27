@@ -24,6 +24,7 @@ const home = () => {
         </p>
       </Box>
       <CategorySlider />
+      <Hero withSlider={false} />
     </Box>
   );
 };

@@ -1,7 +1,5 @@
 import { Box, Button } from "@mui/material";
 
-import "./styles.css";
-
 const HeroText = () => {
   return (
     <Box
@@ -14,16 +12,16 @@ const HeroText = () => {
         gap: "20px",
       }}
     >
-      <span className="year">{new Date().getFullYear()}</span>
-      <h3 className="title">Colección de invierno</h3>
-      <p className="paragraph">
+      <span className="hero-text_year">{new Date().getFullYear()}</span>
+      <h3 className="hero-text_title">Colección de invierno</h3>
+      <p className="hero-text_paragraph">
         ¡No te pierdas las ofertas en computación de 2024! Rebajas increíbles en
         laptops, desktops y más.
       </p>
-      <button className="btn" onClick={() => alert("Explorar")}>
+      <button className="hero-text_btn" onClick={() => alert("Explorar")}>
         Explorar ahora
       </button>
-      <span className="offer">(La oferta acaba en 23:59:00)</span>
+      <span className="hero-text_offer">(La oferta acaba en 23:59:00)</span>
     </Box>
   );
 };

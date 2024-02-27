@@ -46,7 +46,6 @@ declare module "@/stores/user/storeUser";
 
 declare module "@/theme/theme";
 
-declare module "@/utils/menuItems";
 
 
 /// <reference types="vite/client"/>

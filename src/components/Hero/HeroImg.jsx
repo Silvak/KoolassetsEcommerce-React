@@ -1,10 +1,8 @@
-import "./styles.css";
-
 const HeroImg = ({ url }) => {
   return (
-    <div className="picture">
+    <figure className="hero-img_picture">
       <img src={url} alt="product image" />
-    </div>
+    </figure>
   );
 };
 export default HeroImg;
