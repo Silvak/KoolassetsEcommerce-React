@@ -8,6 +8,7 @@ import SignIn from "@/screens/SignIn";
 import SignUp from "@/screens/SignUp";
 import { storeUser } from "@/stores/user/storeUser";
 import Layout from "@/components/Layout/Layout";
+import Footer from "@/components/footer/footer";
 
 const Home = React.lazy(() => import("@/screens/home"));
 const CategoryList = React.lazy(() => import("@/screens/categoryList"));
@@ -76,6 +77,7 @@ export default function Navigator() {
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          <Footer />
         </Layout>
       )}
       {/*other tools */}
