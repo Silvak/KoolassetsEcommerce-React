@@ -11,8 +11,12 @@ import {
 } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, closeIcon, isFavorite, handleToggleFavorite }) => {
+    const labelChip = product?.category.toUpperCase();
+    const isInFavorites = isFavorite(product);
     return (
         <div>
             <Card
@@ -25,28 +29,44 @@ const ProductCard = ({ product }) => {
                     borderRadius: "4px",
                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                     mb: "8px",
-                    width:"250px",
+                    width: "250px",
                     height: "auto"
-                    
+
                 }}
                 style={{ padding: "0px" }}
             >
-                <CardContent style={{ padding: "0px", paddingInline: "4px" }}>
+                <CardContent style={{ padding: "0px", paddingTop:"12px", paddingInline: "4px" }}>
                     <Grid container spacing={1} alignItems="center" style={{ paddingBlock: "0px" }}>
                         <Grid item xs={12} sx={{ ml: 0 }} style={{ margin: "0vh" }}>
-                            <Chip
-                                label={product.category}
-                                sx={{
-                                    height: "min-content",
-                                    color: "#1B1AFF",
-                                    backgroundColor: 'rgba(27, 26, 255, 0.3)',
-                                    borderRadius: "120px",
-                                    ml: 1,
-                                    padding: 0.6,
-                                }}
-                            />
+                            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+
+                                <Chip
+                                    label={labelChip}
+                                    sx={{
+                                        height: "min-content",
+                                        color: "#1B1AFF",
+                                        backgroundColor: 'rgba(27, 26, 255, 0.3)',
+                                        borderRadius: "120px",
+                                        fontWeight: 600,
+                                        ml: 1,
+                                        paddingX: 0.6,
+                                        paddingY: 0.2,
+                                    }}
+                                />
+                                {closeIcon && (
+                                    <IconButton
+                                        aria-label="close"
+                                        onClick={() => handleToggleFavorite(product)}
+                                        style={{padding:0}}
+                                        title="Eliminar de favoritos"
+                                    >
+                                        <CloseIcon style={{ color: "#1B1AFF", width: "30px", height: "30px", }}
+                                        />
+                                    </IconButton>
+                                )}
+                            </div>
                         </Grid>
-                        <Grid item xs={12} sx={{textAlign:"center"}}>
+                        <Grid item xs={12} sx={{ textAlign: "center" }}>
                             <img
                                 src={product.image}
                                 alt={product.name}
@@ -55,7 +75,7 @@ const ProductCard = ({ product }) => {
                                     height: "220px",
                                     objectFit: "cover",
                                     paddingInline: "0px",
-                                    paddingRight:"0px",
+                                    paddingRight: "0px",
                                     paddingBottom: "20px",
                                 }}
                             />
@@ -66,7 +86,7 @@ const ProductCard = ({ product }) => {
 
             </Card>
 
-            <Grid container spacing={0} alignItems="center" justifyContent="space-between" style={{height:"auto", padding:"0px", width:"250px"}}>
+            <Grid container spacing={0} alignItems="center" justifyContent="space-between" style={{ height: "auto", padding: "0px", width: "250px" }}>
                 <div style={{ display: "flex", justifyContent: "flex-start", gap: 4 }}>
                     <Rating
                         name="read-only"
@@ -80,8 +100,14 @@ const ProductCard = ({ product }) => {
                     </Typography>
                 </div>
 
-                <IconButton aria-label="add to favorites">
-                    <FavoriteBorderIcon style={{ color: "#615D5D", fontSize: "1.2rem" }} />
+                <IconButton title= {isInFavorites ? "Eliminar de favoritos" : "Agregar a favoritos"} disableRipple aria-label="add to favorites" onClick={() => handleToggleFavorite(product)}
+                >
+            
+                    {isInFavorites ?
+                        <FavoriteOutlinedIcon style={{ color: "red", fontSize: "1.2rem" }} />
+                        :
+                        <FavoriteBorderIcon style={{ color: "#615D5D", fontSize: "1.2rem" }} />
+                    }
                 </IconButton>
 
             </Grid>
@@ -105,14 +131,18 @@ const ProductCard = ({ product }) => {
                 >
                     ${product.price.toFixed(2)}
                 </Typography>
-                <CardActions style={{ padding: "0px", marginInline: "0px", width:"250px" }}>
-                    <Button variant="outlined" color="primary" fullWidth>
+                <CardActions style={{ padding: "0px", marginInline: "0px", width: "250px" }}>
+                    <Button variant="outlined" color="primary" fullWidth style={{ border:"1px solid #1B1AFF", fontWeight:700, color:"#1B1AFF", borderRadius:"6px"}}>
                         Añadir al carrito
                     </Button>
                 </CardActions>
             </Grid>
         </div>
     );
+};
+
+ProductCard.defaultProps = {
+    closeIcon: false
 };
 
 export default ProductCard;

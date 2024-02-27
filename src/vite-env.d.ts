@@ -38,6 +38,7 @@ declare module "@/routes/routes";
 declare module "@/screens/home";
 declare module "@/screens/notFoundPage";
 declare module "@/screens/categoryList"
+declare module "@/screens/favorites"
 declare module "@/screens/SignIn";
 declare module "@/screens/SignUp";
 

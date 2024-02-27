@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const ICONS = [
   { id: 1, icon: <BsPerson />, to: "/profile" },
   { id: 2, icon: <BsCart />, to: "/cart" },
-  { id: 3, icon: <BsHeart />, to: "/fav" },
+  { id: 3, icon: <BsHeart />, to: "/favorites" },
 ];
 
 const NavIcons = ({ sx }) => {
