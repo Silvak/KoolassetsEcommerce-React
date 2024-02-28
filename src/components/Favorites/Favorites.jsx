@@ -113,19 +113,6 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
             </div>
 
 
-            {!totalResults &&
-                (<div style={{ textAlign: "center" }}>
-                    <Typography 
-                    variant="h3"
-                    style={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                    }}>¡No existen productos agregados a sus favoritos!</Typography>
-                </div>)
-
-            }
 
         </div>
     );
