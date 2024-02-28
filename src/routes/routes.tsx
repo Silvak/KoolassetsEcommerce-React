@@ -16,6 +16,7 @@ const Favorites = React.lazy(() => import("@/screens/favorites"));
 const ProfileUser = React.lazy(() => import("@/screens/profileUser"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
 const Product = React.lazy(() => import("@/screens/product"));
+const Cart = React.lazy(()=> import("@/screens/CartPage"));
 
 export default function Navigator() {
   const { Authenticated } = storeUser();
@@ -75,6 +76,7 @@ export default function Navigator() {
             <Route path="/product/:productId" element={<Product />} />
             <Route path="/categories" element={<CategoryList />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<ProfileUser />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
