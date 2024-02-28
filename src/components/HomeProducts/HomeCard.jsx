@@ -4,7 +4,6 @@ import {
   CardContent,
   CardActions,
   Button,
-  Chip,
   Typography,
   IconButton,
   Grid,
@@ -14,103 +13,44 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ProductCard = ({
-  product,
-  closeIcon,
-  isFavorite,
-  handleToggleFavorite,
-}) => {
-  const labelChip = product?.category.toUpperCase();
+function HomeCard({ product, closeIcon, isFavorite, handleToggleFavorite }) {
   const isInFavorites = isFavorite(product);
   return (
     <div>
-      <Card
+      <Grid
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "center",
-          bgcolor: "#F5F5F5",
-          borderRadius: "4px",
-          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           mb: "8px",
-          width: "250px",
-          height: "auto",
+          maxWidth: "320px"
         }}
         style={{ padding: "0px" }}
       >
         <CardContent
-          style={{ padding: "0px", paddingTop: "12px", paddingInline: "4px" }}
+          style={{ padding: "0px", paddingTop: "0px", paddingInline: "4px" }}
         >
-          <Grid
-            container
-            spacing={1}
-            alignItems="center"
-            style={{ paddingBlock: "0px" }}
-          >
-            <Grid item xs={12} sx={{ ml: 0 }} style={{ margin: "0vh" }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Chip
-                  label={labelChip}
-                  sx={{
-                    height: "min-content",
-                    color: "#1B1AFF",
-                    backgroundColor: "rgba(27, 26, 255, 0.3)",
-                    borderRadius: "120px",
-                    fontWeight: 600,
-                    ml: 1,
-                    paddingX: 0.6,
-                    paddingY: 0.2,
-                  }}
-                />
-                {closeIcon && (
-                  <IconButton
-                    aria-label="close"
-                    onClick={() => handleToggleFavorite(product)}
-                    style={{ padding: 0 }}
-                    title="Eliminar de favoritos"
-                  >
-                    <CloseIcon
-                      style={{
-                        color: "#1B1AFF",
-                        width: "30px",
-                        height: "30px",
-                      }}
-                    />
-                  </IconButton>
-                )}
-              </div>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: "center" }}>
+          <Grid item xs={12} sx={{borderRadius: "10px"}}>
               <img
                 src={product.image}
                 alt={product.name}
                 style={{
-                  width: "auto",
-                  height: "220px",
+                  width: "320px",
+                  height: "304px",
                   objectFit: "cover",
-                  paddingInline: "0px",
-                  paddingRight: "0px",
-                  paddingBottom: "20px",
+                  borderRadius: "10px"
+                  // paddingInline: "0px",
+                  // paddingRight: "0px",
+                  // paddingBottom: "20px",
                 }}
               />
             </Grid>
-          </Grid>
         </CardContent>
-      </Card>
+      </Grid>
 
       <Grid
         container
         spacing={0}
         alignItems="center"
         justifyContent="space-between"
-        style={{ height: "auto", padding: "0px", width: "250px" }}
+        style={{ height: "auto", padding: "0px", width: "320px" }}
       >
         <div style={{ display: "flex", justifyContent: "flex-start", gap: 4 }}>
           <Rating
@@ -148,14 +88,11 @@ const ProductCard = ({
         </IconButton>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body2" color={"#0AC733"} fontWeight={"normal"}>
-          Disponible
-        </Typography>
         <Typography
           variant="body2"
           color={"#615D5D"}
           fontWeight={"normal"}
-          style={{ marginBlock: 10, whiteSpace: "nowrap" }}
+          style={{  maxWidth: "320px" }}
         >
           {product.name}
         </Typography>
@@ -164,6 +101,7 @@ const ProductCard = ({
           style={{
             fontSize: "24px",
             fontWeight: 400,
+            marginTop: "18px",
             lineHeight: "34px",
             textAlign: "left",
             color: "#000000",
@@ -173,7 +111,7 @@ const ProductCard = ({
           ${product.price.toFixed(2)}
         </Typography>
         <CardActions
-          style={{ padding: "0px", marginInline: "0px", width: "250px" }}
+          style={{ padding: "0px", marginInline: "0px", width: "320px" }}
         >
           <Button
             variant="outlined"
@@ -192,10 +130,6 @@ const ProductCard = ({
       </Grid>
     </div>
   );
-};
+}
 
-ProductCard.defaultProps = {
-  closeIcon: false,
-};
-
-export default ProductCard;
+export default HomeCard;

@@ -1,6 +1,5 @@
 :root {
     --primary-color: #1B1AFF; /* Color primario */
-    --accent-color: hsl(240, 100%, 55%); /* Color de acento */
     --button-width: 20px; /* Ancho del botón */
 }
 
@@ -29,21 +28,21 @@
     width: 30px
 }
 
-.year{
-    color: var(--accent-color);
+.hero-text_year{
+    color: #1B1AFF ;
     font-size: 25px;
     font-weight: 300;
 }
 
-.title{
+.hero-text_title{
+    font-size: clamp(28px,3vw,40px);
     margin: 0;
     line-height: 1;
     font-weight: 600;
-    font-size: clamp(30px, 5vw, 50px);
     text-balance: balance;
 }
 
-.paragraph{
+.hero-text_paragraph{
     font-size: clamp(16px, 2vw, 20px);
     font-weight: 300;
     text-balance: pretty;
@@ -51,13 +50,13 @@
 
 }
 
-.btn{
+.hero-text_btn{
     background-color: var(--primary-color);
     color: #fff;
     border-radius: 6px;
     font-weight: 600;
     padding: 10px ;
-    width: 130px;
+    width: 150px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -66,22 +65,26 @@
    
 }
 
-.btn:hover{
+.hero-text_btn:hover{
     transform: scale(0.95);
     transition: transform ease 300ms
 }
 
-.offer{
+.hero-text_offer{
     font-size: 14px;
     font-weight: 300;
 }
 
-.picture{
-    height: 500px
+.hero-img_picture{
+    height: auto;
+    max-height: 450px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-.picture > img{
-    width: 100%;
+.hero-img_picture > img{
+    margin-left: auto;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }

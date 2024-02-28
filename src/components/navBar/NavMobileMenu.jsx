@@ -1,10 +1,8 @@
 import { ListItemButton, MenuList } from "@mui/material";
-
-import { menuItems } from "@/utils/menuItems";
 import { NavLink } from "react-router-dom";
-
 import NavIcons from "@/components/navBar/NavIcons";
 import { useBoundStore } from "@/stores/index";
+import { menuItems } from "../../utils/menuItems";
 
 const NavMobileMenu = () => {
   const { Authenticated } = useBoundStore((state) => state);
