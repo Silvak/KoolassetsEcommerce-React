@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 
 import Hero from "@/components/Hero/Hero";
 import CategorySlider from "@/components/CategorySlider/CategorySlider";
+import HomeProducts from "../components/HomeProducts/HomeProducts";
 
 const home = () => {
   return (
@@ -24,6 +25,7 @@ const home = () => {
         </p>
       </Box>
       <CategorySlider />
+      <HomeProducts />
       <Hero withSlider={false} />
     </Box>
   );

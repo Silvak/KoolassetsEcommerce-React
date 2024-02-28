@@ -39,7 +39,7 @@ const NavDesktopMenu = () => {
             disableTouchRipple
           >
             <NavLink
-              to={item.to}
+              to={item.link}
               style={{
                 color: "inherit",
                 textDecoration: "none",

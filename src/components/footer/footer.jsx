@@ -15,6 +15,7 @@ function Footer() {
         padding: "36px 150px",
         gap: "36px",
         maxHeight: !mdQuery ? "362px" : "",
+        marginTop: "50px"
       }}
     >
 
@@ -23,7 +24,7 @@ function Footer() {
         component="footerItems"
         sx={
           {
-            justifyContent: "center"
+            justifyContent: "center",
             // gap: "24px",
           }
         }

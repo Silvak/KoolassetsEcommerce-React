@@ -29,6 +29,11 @@ declare module "@/components/sections/productDetail";
 declare module "@/components/sections/productInfo";
 declare module "@/components/sections/productDescription";
 
+
+declare module "@/components/HomeProducts/HomeCard";
+declare module "@/components/HomeProducts/HomeList";
+declare module "@/components/HomeProducts/HomeProducts";
+
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
 declare module "@/stores/container/container";
@@ -50,6 +55,7 @@ declare module "@/stores/user/storeUser";
 
 declare module "@/theme/theme";
 
+declare module "@/mock/homeProductsData";
 
 declare module "@/utils/menuItems";
 declare module "@/utils/footerItems";

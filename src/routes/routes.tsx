@@ -64,6 +64,7 @@ export default function Navigator() {
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          <Footer />
         </Layout>
       ) : (
         <Layout>
