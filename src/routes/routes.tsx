@@ -75,6 +75,7 @@ export default function Navigator() {
             <Route path="/product/:productId" element={<Product />} />
             <Route path="/category-list" element={<CategoryList />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/profile" element={<ProfileUser />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFoundPage />} />

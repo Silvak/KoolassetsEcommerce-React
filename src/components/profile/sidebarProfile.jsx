@@ -10,14 +10,14 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 const SidebarProfile = ({ user }) => {
     const isMobile = useMediaQuery("(max-width:600px)");
-    const [open, setOpen] = useState(!isMobile); 
+    const [open, setOpen] = useState(!isMobile);
 
     const handleToggleSidebar = () => {
         setOpen(!open);
     };
 
     return (
-        
+
         <Box style={{ position: 'relative' }}>
             {isMobile && (
                 <IconButton
@@ -35,45 +35,45 @@ const SidebarProfile = ({ user }) => {
                 left: isMobile ? (open ? 0 : '-100%') : 160,
                 backgroundColor: 'red',
                 height: '100vh',
-                width: 250,
+                width: '25vw', // Cambio aquí a vw para el ancho mínimo adaptable
                 zIndex: 1000,
                 transition: 'left 0.3s ease-in-out',
-                paddingLeft: 1,
-                paddingBlock: 2 
+                paddingLeft: '1vw', // Cambio aquí a vw para el padding adaptable
+                paddingBlock: '2vh' // Cambio aquí a vh para el padding adaptable
             }}>
 
                 <List sx={{ color: "#000" }}>
                     {/* Datos de usuario */}
-                    <Typography variant="h6" style={{ fontSize: "24px", marginBottom: 20 }}>Hola, {user.name.split(" ")[0]}</Typography>
-                    <Typography variant="h6" style={{ fontSize: "18px", marginBottom: 10 }}>Administrar mi cuenta</Typography>
-                    <Box sx={{ ml: 4, mb: 8, mt:2 }}>
-                        <div style={{ display: "flex", alignItems: "center", marginBottom: 24, color:"gray" }}>
-                            <AccountCircleIcon sx={{ marginRight: 1 }} />
-                            <Typography variant="h6" style={{ fontSize: "14px", color: "gray",  }}>Mi perfil</Typography>
+                    <Typography variant="h6" style={{ fontSize: "3vw", marginBottom: '2vh', minWidth: '15vw' }}>Hola, {user.name.split(" ")[0]}</Typography>
+                    <Typography variant="h6" style={{ fontSize: "2vw", marginBottom: '1vh', minWidth: '15vw' }}>Administrar mi cuenta</Typography>
+                    <Box sx={{ ml: '4vw', mb: '8vh', mt: '2vh' }}>
+                        <div style={listItemStyles}>
+                            <AccountCircleIcon sx={iconStyles} />
+                            <Typography variant="h6" style={customTypography}>Mi perfil</Typography>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", marginBottom: 24, color:"gray" }}>
-                            <PaymentIcon sx={{ marginRight: 1 }} />
-                            <Typography variant="h4" style={{ fontSize: "14px", color: "gray",  }}>Método de pago</Typography>
+                        <div style={listItemStyles}>
+                            <PaymentIcon sx={iconStyles} />
+                            <Typography variant="h6" style={customTypography}>Método de pago</Typography>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", marginBottom: 24, color:"gray" }}>
-                            <LogoutIcon sx={{ marginRight: 1 }} />
-                            <Typography variant="h4" style={{ fontSize: "14px", color: "gray" }}>Cerrar sesión</Typography>
+                        <div style={listItemStyles}>
+                            <LogoutIcon sx={iconStyles} />
+                            <Typography variant="h6" style={customTypography}>Cerrar sesión</Typography>
                         </div>
                     </Box>
 
-                    <Typography variant="h6" style={{ fontSize: "18px", marginBottom: 10 }}>Mis órdenes</Typography>
-                    <Box sx={{ ml: 4, mt:2 }}>
-                        <div style={{ display: "flex", alignItems: "center", marginBottom: 24, color:"gray" }}>
-                            <ShoppingCartIcon sx={{ marginRight: 1 }} />
-                            <Typography variant="h6" style={{ fontSize: "14px", color: "gray",  }}>Estado actual</Typography>
+                    <Typography variant="h6" style={{ fontSize: "2vw", marginBottom: '1vh', minWidth: '15vw' }}>Mis órdenes</Typography>
+                    <Box sx={{ ml: '4vw', mt: '2vh' }}>
+                        <div style={listItemStyles}>
+                            <ShoppingCartIcon sx={iconStyles} />
+                            <Typography variant="h6" style={customTypography}>Estado actual</Typography>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", marginBottom: 24, color:"gray" }}>
-                            <RestoreIcon sx={{ marginRight: 1 }} />
-                            <Typography variant="h4" style={{ fontSize: "14px", color: "gray",  }}>Devoluciones</Typography>
+                        <div style={listItemStyles}>
+                            <RestoreIcon sx={iconStyles} />
+                            <Typography variant="h6" style={customTypography}>Devoluciones</Typography>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", marginBottom: 24, color:"gray" }}>
-                            <CancelIcon sx={{ marginRight: 1 }} />
-                            <Typography variant="h4" style={{ fontSize: "14px", color: "gray" }}>Cancelaciones</Typography>
+                        <div style={listItemStyles}>
+                            <CancelIcon sx={iconStyles} />
+                            <Typography variant="h6" style={customTypography}>Cancelaciones</Typography>
                         </div>
                     </Box>
                 </List>
@@ -96,6 +96,24 @@ const SidebarProfile = ({ user }) => {
             )}
         </Box>
     );
+};
+
+
+const listItemStyles = {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: '2vh', // Cambio aquí a vh para el margen inferior adaptable
+    color: "gray"
+};
+
+const customTypography = {
+    fontSize: "1.4vw", // Cambio aquí a vw para el tamaño de fuente adaptable
+    color: "gray",
+    minWidth: '15vw' // Cambio aquí a vw para el ancho mínimo adaptable
+};
+
+const iconStyles = {
+    marginRight: '1vw' // Cambio aquí a vw para el margen derecho adaptable
 };
 
 export default SidebarProfile;

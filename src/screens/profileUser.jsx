@@ -6,7 +6,7 @@ function profileUser() {
 
   return (
     <div>
-        <ProfileUser user={userData} />
+        {/* <ProfileUser user={userData} /> */}
     </div>
   );
 }
