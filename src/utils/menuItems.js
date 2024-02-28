@@ -4,31 +4,31 @@ export const menuItems = [
   {
     id: uuidv4(),
     name: "Categorías",
-    link: "/categories",
+    to: "/categories",
   },
   {
     id: uuidv4(),
     name: "Acerca de nosotros",
-    link: "/about",
+    to: "/about",
   },
   {
     id: uuidv4(),
     name: "Contáctanos",
-    link: "/contact",
+    to: "/contact",
   },
   {
     id: uuidv4(),
     name: "Soporte",
-    link: "/support",
+    to: "/support",
   },
   {
     id: uuidv4(),
     name: "Iniciar sesión",
-    link: "/sign-in",
+    to: "/sign-in",
   },
   {
     id: uuidv4(),
     name: "Registrarse",
-    link: "/sign-up",
+    to: "/sign-up",
   },
 ];

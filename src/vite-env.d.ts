@@ -22,6 +22,15 @@ declare module "@/components/buttons/Google/GoogleButton";
 declare module "@/components/buttons/Google/socialButtons";
 declare module "@/components/footer/footer";
 declare module "@/components/footer/footerMobile";
+declare module "@/components/Breadcrumb/Breadcrumb";
+
+declare module "@/components/Cart/Cart";
+declare module "@/components/Cart/CartProducts";
+declare module "@/components/Cart/CartProductsItem";
+declare module "@/components/Cart/CartDetails";
+declare module "@/components/Cart/CartProductsDeleted";
+declare module "@/components/Cart/CartProductsDeletedItem";
+
 
 declare module "@/components/forms/SignInForm";
 declare module "@/components/forms/SignUpForm";
@@ -40,6 +49,7 @@ declare module "@/stores/container/container";
 declare module "@/stores/Actions/Theme/storeTheme";
 declare module "@/stores/useGetNativeBalance/useGetNativeBalance";
 declare module "@/stores/useGetWalletTokenBalances/useGetWalletTokenBalances";
+declare module "@/stores/cart/storeCart";
 
 declare module "@/routes/routes";
 
@@ -50,6 +60,7 @@ declare module "@/screens/categoryList";
 declare module "@/screens/favorites";
 declare module "@/screens/SignIn";
 declare module "@/screens/SignUp";
+declare module "@/screens/CartPage";
 
 declare module "@/stores/user/storeUser";
 
