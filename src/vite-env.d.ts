@@ -29,7 +29,6 @@ declare module "@/components/sections/productDetail";
 declare module "@/components/sections/productInfo";
 declare module "@/components/sections/productDescription";
 
-
 declare module "@/components/HomeProducts/HomeCard";
 declare module "@/components/HomeProducts/HomeList";
 declare module "@/components/HomeProducts/HomeProducts";
@@ -51,6 +50,7 @@ declare module "@/screens/favorites";
 declare module "@/screens/profileUser";
 declare module "@/screens/SignIn";
 declare module "@/screens/SignUp";
+declare module "@/screens/payment";
 
 declare module "@/stores/user/storeUser";
 
@@ -60,6 +60,5 @@ declare module "@/mock/homeProductsData";
 
 declare module "@/utils/menuItems";
 declare module "@/utils/footerItems";
-
 
 /// <reference types="vite/client"/>
