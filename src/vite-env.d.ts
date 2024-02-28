@@ -48,6 +48,7 @@ declare module "@/screens/notFoundPage";
 declare module "@/screens/product";
 declare module "@/screens/categoryList";
 declare module "@/screens/favorites";
+declare module "@/screens/profileUser";
 declare module "@/screens/SignIn";
 declare module "@/screens/SignUp";
 
