@@ -13,7 +13,7 @@ const CategoryList = ({ category, totalResults, products }) => {
     toggleFavorite: state.toggleFavorite,
     isFavorite: state.isFavorite,
   }));
-  
+
   const [currentPage, setCurrentPage] = useState(1);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -26,10 +26,10 @@ const CategoryList = ({ category, totalResults, products }) => {
   const productsToShow = products.slice(startIndex, endIndex);
 
 
-  useEffect(() => {
-    window.scroll(0, 0);    
-  }, [])
-  
+  // useEffect(() => {
+  //   window.scroll(0, 0);    
+  // }, [])
+
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -65,7 +65,7 @@ const CategoryList = ({ category, totalResults, products }) => {
         ) : (
           isDesktop && <DesktopSidebar />
         )}
-        <div style={{ marginLeft: "6vw", padding: "0px", marginTop:12 }}>
+        <div style={{ marginLeft: "6vw", marginTop: 12, display:"flex", flexDirection:"column", width:"100%" }}>
           <Typography
             variant="h6"
             style={{ fontSize: "12px", color: "gray", marginBlock: "20px" }}
@@ -75,17 +75,17 @@ const CategoryList = ({ category, totalResults, products }) => {
           </Typography>
           <Grid container spacing={0} width={"100%"} height={"auto"}>
             {productsToShow.map((product) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{mb:"32px"}}>
-                <ProductCard product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite}/>
+              <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{ mb: "32px" }}>
+                <ProductCard product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite} />
               </Grid>
             ))}
           </Grid>
           <div
             style={{
-              position: "absolute",
-              left: "50%",
-              transform: "translateX(-50%)",
-              marginBottom: 16,
+              position: "relative",
+              justifyContent: "center",
+              paddingBottom: 12,
+              marginRight: 30
             }}
           >
             <Pagination
