@@ -22,7 +22,7 @@ function OrderBodyUser({ user }) {
             alignItems: "center",
           }}
         >
-          <p style={{ color: "#000", fontSize: isMobile ? 20 : 32, marginTop: isMobile ? 35 : "", marginLeft: isMobile ? 15 : "" }}>Estado actual del envío</p>
+          <p style={{ color: "#000", fontSize: isMobile ? 20 : 32, marginTop: 30, marginLeft: isMobile ? 15 : "" }}>Estado actual del envío</p>
         </div>
         <InvoiceBox />
         {/* <OrderDetail user={user} /> */}

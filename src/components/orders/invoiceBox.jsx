@@ -27,19 +27,19 @@ const InvoiceBox = () => {
         <Box sx={{ borderRadius: "4px", marginTop: 10, width: "100%" }}>
             <Grid container spacing={3} style={{ marginLeft: isMobile ? 8 : 0 }}>
                 {/* Columna 1: Número de factura */}
-                <Grid item xs={12} sm={isMobile ? 4 : 2} sx={{borderRight: isMobile ? 0 : 1, borderColor: "#D9D9D9", paddingRight: isMobile ? 0 : 30}}>
+                <Grid item xs={12} sm={isMobile ? 4 : 2} sx={{borderRight: isMobile ? 0 : 1, borderColor: "#D9D9D9", paddingRight: isMobile ? 0 : 25}}>
                     <Typography style={styleTitle} variant="h6">Número de factura</Typography>
                     <Typography style={styleValue} variant="h6">{invoiceData.invoiceNumber}</Typography>
                 </Grid>
 
                 {/* Columna 2: Realizado */}
-                <Grid item xs={12} sm={isMobile ? 4 : 3} sx={{borderRight: isMobile ? 0 : 1, borderColor: "#D9D9D9", ml: isMobile ? 0 : 8}}>
+                <Grid item xs={12} sm={isMobile ? 4 : 2} sx={{ ml: isMobile ? 0 : 4, mr: isMobile ? 0 : 6}}>
                     <Typography style={styleTitle} variant="h6">Realizado</Typography>
                     <Typography style={styleValue} variant="h6">{invoiceData.invoiceDate}</Typography>
                 </Grid>
 
                 {/* Columna 3: Total */}
-                <Grid item xs={12} sm={4} sx={{ml: isMobile ? 0 : 3}}>
+                <Grid item xs={12} sm={4} sx={{ml: isMobile ? 0 : 6, borderLeft: isMobile ? 0 : 1, borderColor: "#D9D9D9",}}>
                     <Typography style={styleTitle} variant="h6">Total</Typography>
                     <Typography style={styleValue} variant="h6">{invoiceData.total}</Typography>
                 </Grid>
