@@ -24,7 +24,7 @@ const InvoiceBox = () => {
     const isMobile = useMediaQuery("(max-width:600px)");
 
     return (
-        <Box sx={{ borderRadius: "4px", marginTop: 10, width: "100%" }}>
+        <Box sx={{ borderRadius: "4px", marginTop: isMobile ? 2 : 6 , width: "100%" }}>
             <Grid container spacing={3} style={{ marginLeft: isMobile ? 8 : 0 }}>
                 {/* Columna 1: Número de factura */}
                 <Grid item xs={12} sm={isMobile ? 4 : 2} sx={{borderRight: isMobile ? 0 : 1, borderColor: "#D9D9D9", paddingRight: isMobile ? 0 : 25}}>
@@ -46,12 +46,12 @@ const InvoiceBox = () => {
             </Grid>
             <OrderDetail />
             <Grid container spacing={2} sx={{
-                ml: isMobile ? 6 : 0,
+                paddingX:1,
                 mt: isMobile ? 12 : 8, mb: 5, maxWidth: isMobile ? "100vw" : "85%",
                 position:"relative"
             }}>
                 {data?.map((item, index) => (
-                    <Grid item xs={12} key={index} >
+                    <Grid item xs={12} key={index}>
                         <Paper sx={{ padding: "12px", backgroundColor: "#ececec", borderRadius: 2, overflow: "hidden" }}>
                             <div style={{ display: "flex", flexDirection: isMobile ? "column": "row", alignItems: "center", justifyContent:"left", gap:"2rem" }}>
                                 <Typography style={{ fontSize: 14, marginBottom: 8 }} variant="h6">{item.text}</Typography>
