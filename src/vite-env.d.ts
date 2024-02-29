@@ -22,13 +22,13 @@ declare module "@/components/buttons/Google/GoogleButton";
 declare module "@/components/buttons/Google/socialButtons";
 declare module "@/components/footer/footer";
 declare module "@/components/footer/footerMobile";
-
 declare module "@/components/forms/SignInForm";
 declare module "@/components/forms/SignUpForm";
 declare module "@/components/sections/productDetail";
 declare module "@/components/sections/productInfo";
 declare module "@/components/sections/productDescription";
-
+declare module "@/components/sections/paymentDetails";
+declare module "@/components/sections/shoppingCartList";
 declare module "@/components/HomeProducts/HomeCard";
 declare module "@/components/HomeProducts/HomeList";
 declare module "@/components/HomeProducts/HomeProducts";
@@ -57,6 +57,8 @@ declare module "@/stores/user/storeUser";
 declare module "@/theme/theme";
 
 declare module "@/mock/homeProductsData";
+
+declare module "@/hooks/useForm";
 
 declare module "@/utils/menuItems";
 declare module "@/utils/footerItems";
