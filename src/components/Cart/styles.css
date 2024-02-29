@@ -2,7 +2,6 @@
     height: 120px;
     max-height: 120px;
     object-fit: cover;
-    margin-inline:  auto;
 }
 
 
@@ -49,7 +48,7 @@
     font-size: 14px;
     text-align: center;
     text-balance: pretty;
-    max-width: 300px;
+    max-width: 200px;
 }
 
 .cart-products-item_quantity{

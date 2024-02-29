@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Breadcrumb = () => {
   return (
-    <Box style={{ fontSize: "12px" }}>
+    <Box style={{ fontSize: "12px", padding: "20px 0" }}>
       <Link to="/" style={{ color: "gray", textDecoration: "none" }}>
         Inicio
-      </Link>{" "}
+      </Link>
       / <span style={{ color: "#000" }}>Carrito</span>
     </Box>
   );

@@ -2,7 +2,26 @@ import { Box, Button } from "@mui/material";
 
 import CartProductsDeleted from "@/components/Cart/CartProductsDeleted";
 
+import { storeCart } from "../../stores/cart/storeCart";
+import { useEffect } from "react";
+
 const CartDetails = () => {
+  const {
+    cartlist,
+    totalPrice,
+    subtotal,
+    shipping,
+    discount,
+    taxes,
+    calculateTotalPrice,
+    calculateSubTotalPrice,
+  } = storeCart((state) => state);
+
+  useEffect(() => {
+    calculateSubTotalPrice();
+    calculateTotalPrice();
+  }, [cartlist]);
+
   return (
     <div>
       <h3 className="cart_title">Detalles de compra</h3>
@@ -28,23 +47,23 @@ const CartDetails = () => {
       >
         <div>
           <p>Subtotal</p>
-          <span>$50.000</span>
+          <span>${subtotal}</span>
         </div>
         <div>
           <p>Envio</p>
-          <span>$200</span>
+          <span>${shipping}</span>
         </div>
         <div>
           <p>Impuestos</p>
-          <span>$20</span>
+          <span>{taxes}%</span>
         </div>
         <div>
           <p>Descuentos</p>
-          <span>$99.99</span>
+          <span>{discount}%</span>
         </div>
         <div>
           <p>Total</p>
-          <span>$100.000</span>
+          <span>${totalPrice}</span>
         </div>
       </Box>
       <Button

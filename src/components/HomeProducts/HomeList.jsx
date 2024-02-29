@@ -1,23 +1,28 @@
 import { Grid, ThemeProvider, createTheme } from "@mui/material";
 import HomeCard from "./HomeCard";
 import { storeFavorites } from "../../stores/favorites/storeFavorites";
+import { storeCart } from "../../stores/cart/storeCart";
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 720,
+      md: 1100,
+      lg: 1380,
+      xl: 1700,
+    },
+  },
+});
+
 function HomeList({ products }) {
   const { toggleFavorite, isFavorite } = storeFavorites((state) => ({
     toggleFavorite: state.toggleFavorite,
     isFavorite: state.isFavorite,
   }));
 
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 720,
-        md: 1100,
-        lg: 1380,
-        xl: 1700,
-      },
-    },
-  });
+  //cart
+  const { isInCart, toggleCartlist } = storeCart((state) => state);
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,15 +41,15 @@ function HomeList({ products }) {
               gap: "35px",
               display: "flex",
               justifyContent: "center",
-              [theme.breakpoints.down('lg')]: {
-
-              },
+              [theme.breakpoints.down("lg")]: {},
             }}
           >
             <HomeCard
               product={product}
               isFavorite={isFavorite}
               handleToggleFavorite={toggleFavorite}
+              isInCart={isInCart}
+              handleToggleCart={toggleCartlist}
             />
           </Grid>
         ))}

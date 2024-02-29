@@ -1,6 +1,7 @@
 import HomeList from "./HomeList";
-import { homeProducts } from "../../mock/homeProductsData";
 import { Button, Typography } from "@mui/material";
+
+import { productsData } from "../../mock/productData";
 
 function HomeProducts() {
   return (
@@ -12,13 +13,16 @@ function HomeProducts() {
         height: "100%",
       }}
     >
-      <div style={{ width: "100%", display: "flex", justifyContent: "start",}}>
-        <Typography variant="h2" sx={{ padding: 4, marginTop: "90px", marginBottom: "40px" }}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "start" }}>
+        <Typography
+          variant="h2"
+          sx={{ padding: 4, marginTop: "90px", marginBottom: "40px" }}
+        >
           Productos más vendidos
         </Typography>
       </div>
 
-      <HomeList products={homeProducts} />
+      <HomeList products={productsData} />
       <div
         style={{
           display: "flex",
@@ -26,7 +30,17 @@ function HomeProducts() {
           marginTop: "40px",
         }}
       >
-        <Button onClick={()=> {alert("Explorar")}} sx={{ backgroundColor: "#1B1AFF", borderRadius: "6px", marginBottom: "70px", color: "#FFFFFF",  }}>
+        <Button
+          onClick={() => {
+            alert("Explorar");
+          }}
+          sx={{
+            backgroundColor: "#1B1AFF",
+            borderRadius: "6px",
+            marginBottom: "70px",
+            color: "#FFFFFF",
+          }}
+        >
           Explorar ahora
         </Button>
       </div>

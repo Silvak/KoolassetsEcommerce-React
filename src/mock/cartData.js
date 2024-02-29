@@ -1,4 +1,5 @@
 import productImg from "@/assets/Img/webp/phoneImage.webp";
+import product2Img from "@/assets/Img/jpg/pc.jpg";
 
 export const cartListData = [
   {
@@ -11,10 +12,18 @@ export const cartListData = [
   },
   {
     id: 2,
-    name: "Product2",
-    desc: "Moto G84 5G 256 GB negro espacial 8 GB RAM",
+    name: "Product 2",
+    desc: "PC gamer 32GB ram, RTX 3080, i7 12th gen, 1TB SSD, Case Cooler Master, Disipador tipo torre Are... ",
     price: 20,
-    image: productImg,
+    image: product2Img,
     quantity: 1,
+  },
+  {
+    id: 3,
+    name: "Product 3",
+    desc: "PC gamer 32GB ram, RTX 3080, i7 12th gen, 1TB SSD, Case Cooler Master, Disipador tipo torre Are... ",
+    price: 60,
+    image: product2Img,
+    quantity: 2,
   },
 ];
