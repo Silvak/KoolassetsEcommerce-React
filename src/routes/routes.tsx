@@ -14,6 +14,7 @@ const Home = React.lazy(() => import("@/screens/home"));
 const CategoryList = React.lazy(() => import("@/screens/categoryList"));
 const Favorites = React.lazy(() => import("@/screens/favorites"));
 const ProfileUser = React.lazy(() => import("@/screens/profileUser"));
+const OrdersUser = React.lazy(() => import("@/screens/ordersUser"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
 const Product = React.lazy(() => import("@/screens/product"));
 
@@ -76,6 +77,7 @@ export default function Navigator() {
             <Route path="/categories" element={<CategoryList />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/profile" element={<ProfileUser />} />
+            <Route path="/orders" element={<OrdersUser />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFoundPage />} />
