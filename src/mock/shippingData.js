@@ -1,8 +1,8 @@
 export const shipmentProgress = [
-  { location: "Almacén", status: "completed" },
-  { location: "En camino", status: "completed" },
-  { location: "Centro de distribución", status: "in_progress" },
-  { location: "Entregado", status: "pending" },
+  { location: "Compra verificada", status: "completed" },
+  { location: "A espera de envío", status: "completed" },
+  { location: "En camino", status: "in_progress" },
+  { location: "Entregada", status: "pending" },
 ];
 
 export const data = [

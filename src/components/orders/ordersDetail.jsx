@@ -9,14 +9,12 @@ function OrderDetail({ user }) {
     const stepHeight = isMobile ? 20 : 40;
 
     return (
-        <Grid item xs={8} md={3} sx={{ position: 'relative', minWidth: "25%", maxWidth:"80%", paddingBlock: 6, textAlign: "left", ml: isMobile ? 0 : 2 }}>
+        <Grid item xs={8} md={3} sx={{ position: 'relative', minWidth: "25%", maxWidth:"75%", paddingBlock: 6, textAlign: "left", ml: isMobile ? 0 : 8 }}>
             {isMobile ? (
-                <div style={{ position: "relative", textAlign: "start", marginTop:20 }}>
+                <div style={{ position: "relative", textAlign: "start", marginTop:20, marginBottom: 60 }}>
 
                     {shipmentProgress.map((step, index) => (
                         <React.Fragment key={index}>
-
-
                             {/* Pelotita */}
                             <div style={{
                                 width: step.status === "completed" ? 16 : 10,
@@ -25,23 +23,20 @@ function OrderDetail({ user }) {
                                 backgroundColor: step.status === "completed" ? "#1b1aff" : step.status === "in_progress" ? "blue" : "#dfdfdf",
                                 border: step.status === "in_progress" ? "1px solid #dfdfdf" : "",
                                 position: "absolute",
-                                top: index * (stepHeight + 20),
+                                top: index * (stepHeight +30),
                                 left: step.status === "completed" ? 110 : 113,
                                 transform: "translateY(-50%)",
                                 zIndex: 1
                             }} />
                             {/* Texto de la ubicación */}
-                            <Typography variant="body2" sx={{ position: "absolute", top: index * (stepHeight + 20), left: 140, transform: "translateY(-50%)" }}>{step.location}</Typography>
+                            <Typography variant="body2" style={{fontSize:12, fontWeight: 600}} sx={{ position: "absolute", top: index * (stepHeight +30), left: 140, transform: "translateY(-50%)" }}>{step.location}</Typography>
                             {/* Divider */}
                             {index < totalSteps - 1 && (
-                                <Divider orientation="vertical" sx={{ backgroundColor: "black", color: "#000", position: "absolute", top: (index * (stepHeight + 20)), left: 117, height: stepHeight + 20, zIndex: 0 }} />
+                                <Divider orientation="vertical" sx={{ backgroundColor: "black", color: "#000", position: "absolute", top: (index * (stepHeight +30)), left: 117, height: stepHeight +30, zIndex: 0 }} />
                             )}
                         </React.Fragment>
                     ))}
                 </div>
-
-
-
             ) : (
                 // Línea de tiempo horizontal para escritorio
                 <div style={{ position: "relative", marginTop: 20, marginLeft: 20 }}>
@@ -59,7 +54,7 @@ function OrderDetail({ user }) {
                                 zIndex: 1
                             }} />
                             {/* Texto de la ubicación */}
-                            <Typography variant="body2" sx={{ position: "absolute", left: `${(index / (shipmentProgress.length - 1)) * 100}%`, top: 25, transform: "translateX(-50%)" }}>{step.location}</Typography>
+                            <Typography variant="body2" style={{fontSize:12, fontWeight: 600}} sx={{ position: "absolute", left: `${(index / (shipmentProgress.length - 1)) * 100}%`, top: 25, transform: "translateX(-50%)" }}>{step.location}</Typography>
                             {/* Línea entre puntos (excepto en el último) */}
                             {index < shipmentProgress.length - 1 && (
                                 <div style={{
