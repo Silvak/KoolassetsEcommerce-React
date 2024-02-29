@@ -14,23 +14,30 @@ import Rating from "@mui/material/Rating";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import { storeFavorites } from "../../stores/favorites/storeFavorites";
-const SliderProduct = ({
-  product,
-}) => {
+import { BsCartPlus, BsCartDash } from "react-icons/bs";
+import { storeCart } from "../../stores/cart/storeCart";
+
+const SliderProduct = ({ product }) => {
   const labelChip = product?.category.toUpperCase();
   const { toggleFavorite, isFavorite } = storeFavorites((state) => ({
-      toggleFavorite: state.toggleFavorite,
-      isFavorite: state.isFavorite,
-    }));
-    const isInFavorites = isFavorite(product);
+    toggleFavorite: state.toggleFavorite,
+    isFavorite: state.isFavorite,
+  }));
+
+  //cart
+  const { isInCart, toggleCartlist } = storeCart((state) => state);
+
+  const isInFavorites = isFavorite(product);
+  const isProductInCart = isInCart(product);
+
   return (
     <div>
       <Card
         sx={{
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   justifyContent: "space-between",
-        //   alignItems: "center",
+          //   display: "flex",
+          //   flexDirection: "column",
+          //   justifyContent: "space-between",
+          //   alignItems: "center",
           bgcolor: "#F5F5F5",
           borderRadius: "4px",
           boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
@@ -70,7 +77,6 @@ const SliderProduct = ({
                     paddingY: 0.2,
                   }}
                 />
-                
               </div>
             </Grid>
             <Grid item xs={12} sx={{ textAlign: "center" }}>
@@ -114,24 +120,39 @@ const SliderProduct = ({
           </Typography>
         </div>
 
-        <IconButton
-          title={
-            isInFavorites ? "Eliminar de favoritos" : "Agregar a favoritos"
-          }
-          disableRipple
-          aria-label="add to favorites"
-          onClick={() => toggleFavorite(product)}
-        >
-          {isInFavorites ? (
-            <FavoriteOutlinedIcon
-              style={{ color: "red", fontSize: "1.2rem" }}
-            />
-          ) : (
-            <FavoriteBorderIcon
-              style={{ color: "#615D5D", fontSize: "1.2rem" }}
-            />
-          )}
-        </IconButton>
+        {/* icons */}
+        <Box sx={{ display: "flex" }}>
+          <IconButton
+            title={
+              isInFavorites ? "Eliminar de favoritos" : "Agregar a favoritos"
+            }
+            disableRipple
+            aria-label="add to favorites"
+            onClick={() => handleToggleFavorite(product)}
+          >
+            {isInFavorites ? (
+              <FavoriteOutlinedIcon
+                style={{ color: "red", fontSize: "1.2rem" }}
+              />
+            ) : (
+              <FavoriteBorderIcon
+                style={{ color: "#615D5D", fontSize: "1.2rem" }}
+              />
+            )}
+          </IconButton>
+
+          <IconButton
+            title={
+              isProductInCart ? "Eliminar del carrito" : "Agregar al carrito"
+            }
+            disableRipple
+            aria-label="add to cart"
+            onClick={() => toggleCartlist(product)}
+            sx={{ color: isProductInCart ? "#A50909" : "#5DC237" }}
+          >
+            {isProductInCart ? <BsCartDash /> : <BsCartPlus />}
+          </IconButton>
+        </Box>
       </Grid>
       <Grid item xs={12}>
         <Typography variant="body2" color={"#0AC733"} fontWeight={"normal"}>
@@ -179,6 +200,5 @@ const SliderProduct = ({
     </div>
   );
 };
-
 
 export default SliderProduct;

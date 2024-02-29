@@ -8,6 +8,21 @@ const CartProducts = () => {
   const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("sm"));
   const { cartlist } = storeCart((state) => state);
 
+  if (!cartlist.length) {
+    return (
+      <Box
+        sx={{
+          mt: 4,
+          padding: "20px",
+          color: "#000",
+          "& > h4": { fontSize: "clamp(20px,2vw,25px)" },
+        }}
+      >
+        <h4>Tu carrito de compras esta vacío</h4>
+      </Box>
+    );
+  }
+
   return (
     <div>
       {/* header */}

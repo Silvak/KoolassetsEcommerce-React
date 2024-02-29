@@ -1,31 +1,45 @@
 import { Box, Button } from "@mui/material";
 
-import image from "@/assets/Img/webp/phoneImage.webp";
-
-const CartProductsDeletedItem = () => {
-  const desc = "Moto G84 5G 256 GB negro espacial 8 GB RAM";
+const CartProductsDeletedItem = ({ product, onClick }) => {
+  const { image, name } = product;
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Box sx={{ display: "flex", gap: "20px" }}>
-        <img src={image} alt="product" className="cart_img" />
-        <Box>
-          <p className="cart-products-deleted-item_desc">
-            {desc.length > 60 ? desc.slice(0, 62) + "..." : desc}
-          </p>
-          <p className="cart-products-deleted-item_quantity">Cantidad: 1</p>
-        </Box>
-      </Box>
-      <Button
-        variant="contained"
+    product && (
+      <Box
         sx={{
-          marginLeft: "auto",
-          background: "#1B1AFF",
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "column",
         }}
       >
-        Deshacer
-      </Button>
-    </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "20px",
+          }}
+        >
+          <img src={image} alt="product" className="cart_img" />
+          <Box sx={{ textAlign: "left", width: "100%" }}>
+            <p className="cart-products-deleted-item_desc">
+              {name.length > 60 ? name.slice(0, 62) + "..." : name}
+            </p>
+            <p className="cart-products-deleted-item_quantity">Cantidad: 1</p>
+          </Box>
+        </Box>
+        <Button
+          variant="contained"
+          sx={{
+            marginLeft: "auto",
+            transform: "translateY(-25px)",
+            background: "#1B1AFF",
+          }}
+          onClick={() => onClick(product)}
+        >
+          Deshacer
+        </Button>
+      </Box>
+    )
   );
 };
 export default CartProductsDeletedItem;
