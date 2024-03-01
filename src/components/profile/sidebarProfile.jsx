@@ -3,11 +3,14 @@ import { IconButton, List, Box, Typography, useMediaQuery } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import { UserIcon, PaymentMetIcon, SessionCloseIcon, ActualPurchIcon, ReturnPurchIcon, CancelPurchIcon } from "./SVGIcon";
 import "./styles.css";
+import { useBoundStore } from '../../stores/index';
+import ConfirmationContent from "../modal/confirmationContent";
 
 const SidebarProfile = ({ user }) => {
-    const isMobile = useMediaQuery("(max-width:600px)");
+    const isMobile = useMediaQuery("(max-width:800px)");
     const [open, setOpen] = useState(!isMobile);
     const [selectedOption, setSelectedOption] = useState(null);
+    const { setModal } = useBoundStore();
 
     const handleToggleSidebar = () => {
         setOpen(!open);
@@ -15,6 +18,7 @@ const SidebarProfile = ({ user }) => {
 
     const handleItemClick = (option) => {
         setSelectedOption(option);
+        option === 'logout' && setModal(true, <ConfirmationContent onClose={() => setModal(false, null)} />);
     };
 
     const listItemStyle = {

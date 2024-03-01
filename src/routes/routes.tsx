@@ -18,6 +18,7 @@ const OrdersUser = React.lazy(() => import("@/screens/ordersUser"));
 const NotFoundPage = React.lazy(() => import("@/screens/notFoundPage"));
 const Product = React.lazy(() => import("@/screens/product"));
 const Payment = React.lazy(() => import("@/screens/payment"));
+const PaymentsMethods = React.lazy(() => import("@/screens/paymentsMethods"));
 const Cart = React.lazy(() => import("@/screens/CartPage"));
 
 export default function Navigator() {
@@ -80,6 +81,7 @@ export default function Navigator() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<ProfileUser />} />
+            <Route path="/payments-methods" element={<PaymentsMethods />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/orders" element={<OrdersUser />} />
             <Route path="/sign-in" element={<SignIn />} />

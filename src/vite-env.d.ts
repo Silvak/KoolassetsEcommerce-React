@@ -60,6 +60,7 @@ declare module "@/screens/categoryList";
 declare module "@/screens/favorites";
 declare module "@/screens/profileUser";
 declare module "@/screens/ordersUser";
+declare module "@/screens/paymentsMethods";
 declare module "@/screens/SignIn";
 declare module "@/screens/SignUp";
 declare module "@/screens/payment";
