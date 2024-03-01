@@ -7,41 +7,48 @@ import {
   Typography,
   IconButton,
   Grid,
+  Box,
 } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
-import CloseIcon from "@mui/icons-material/Close";
+import { BsCartPlus, BsCartDash } from "react-icons/bs";
 
-function HomeCard({ product, closeIcon, isFavorite, handleToggleFavorite }) {
+function HomeCard({
+  product,
+  closeIcon,
+  isFavorite,
+  isInCart,
+  handleToggleFavorite,
+  handleToggleCart,
+}) {
   const isInFavorites = isFavorite(product);
+  const isProductInCart = isInCart(product);
+
   return (
     <div>
       <Grid
         sx={{
           mb: "8px",
-          maxWidth: "320px"
+          maxWidth: "320px",
         }}
         style={{ padding: "0px" }}
       >
         <CardContent
           style={{ padding: "0px", paddingTop: "0px", paddingInline: "4px" }}
         >
-          <Grid item xs={12} sx={{borderRadius: "10px"}}>
-              <img
-                src={product.image}
-                alt={product.name}
-                style={{
-                  width: "320px",
-                  height: "304px",
-                  objectFit: "cover",
-                  borderRadius: "10px"
-                  // paddingInline: "0px",
-                  // paddingRight: "0px",
-                  // paddingBottom: "20px",
-                }}
-              />
-            </Grid>
+          <Grid item xs={12} sx={{ borderRadius: "10px" }}>
+            <img
+              src={product.image}
+              alt={product.name}
+              style={{
+                width: "320px",
+                height: "304px",
+                objectFit: "contain",
+                borderRadius: "10px",
+              }}
+            />
+          </Grid>
         </CardContent>
       </Grid>
 
@@ -68,31 +75,46 @@ function HomeCard({ product, closeIcon, isFavorite, handleToggleFavorite }) {
           </Typography>
         </div>
 
-        <IconButton
-          title={
-            isInFavorites ? "Eliminar de favoritos" : "Agregar a favoritos"
-          }
-          disableRipple
-          aria-label="add to favorites"
-          onClick={() => handleToggleFavorite(product)}
-        >
-          {isInFavorites ? (
-            <FavoriteOutlinedIcon
-              style={{ color: "red", fontSize: "1.2rem" }}
-            />
-          ) : (
-            <FavoriteBorderIcon
-              style={{ color: "#615D5D", fontSize: "1.2rem" }}
-            />
-          )}
-        </IconButton>
+        {/* icons */}
+        <Box sx={{ display: "flex" }}>
+          <IconButton
+            title={
+              isInFavorites ? "Eliminar de favoritos" : "Agregar a favoritos"
+            }
+            disableRipple
+            aria-label="add to favorites"
+            onClick={() => handleToggleFavorite(product)}
+          >
+            {isInFavorites ? (
+              <FavoriteOutlinedIcon
+                style={{ color: "red", fontSize: "1.2rem" }}
+              />
+            ) : (
+              <FavoriteBorderIcon
+                style={{ color: "#615D5D", fontSize: "1.2rem" }}
+              />
+            )}
+          </IconButton>
+
+          <IconButton
+            title={
+              isProductInCart ? "Eliminar del carrito" : "Agregar al carrito"
+            }
+            disableRipple
+            aria-label="add to cart"
+            onClick={() => handleToggleCart(product)}
+            sx={{ color: isProductInCart ? "#A50909" : "#5DC237" }}
+          >
+            {isProductInCart ? <BsCartDash /> : <BsCartPlus />}
+          </IconButton>
+        </Box>
       </Grid>
       <Grid item xs={12}>
         <Typography
           variant="body2"
           color={"#615D5D"}
           fontWeight={"normal"}
-          style={{  maxWidth: "320px" }}
+          style={{ maxWidth: "320px" }}
         >
           {product.name}
         </Typography>
@@ -124,7 +146,7 @@ function HomeCard({ product, closeIcon, isFavorite, handleToggleFavorite }) {
               borderRadius: "6px",
             }}
           >
-            Añadir al carrito
+            Ver detalles
           </Button>
         </CardActions>
       </Grid>
