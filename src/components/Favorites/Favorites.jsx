@@ -27,7 +27,7 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
 
     return (
         <div style={{ paddingInline: "40px" }}>
-            <div style={{ marginLeft: "6vw", padding: "0px", marginTop: 12 }}>
+            {totalResults ? <div style={{ marginLeft: "6vw", padding: "0px", marginTop: 12 }}>
                 <Typography
                     variant="h6"
                     style={{ fontSize: "12px", color: "gray", marginBlock: "20px" }}
@@ -98,11 +98,11 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
                 </Grid>
                 <div
                     style={{
-                        position: "absolute",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        marginBottom: 16,
+                        justifyContent: "center",
+                        paddingBottom: 12,
+                        marginRight: "6vw",
                     }}
+
                 >
                     <Pagination
                         totalPages={totalPages}
@@ -110,10 +110,11 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
                         onPageChange={handlePageChange}
                     />
                 </div>
-            </div>
-
-
-
+            </div> :
+                <div style={{color:"#000", display:"flex", justifyContent:"center", paddingBlock:"24px", alignItems:"center", textAlign:"center"}}>
+                    <Typography variant="h6">No existen productos agregados a favoritos</Typography>
+                </div>
+            }
         </div>
     );
 };
