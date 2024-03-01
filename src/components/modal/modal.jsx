@@ -1,32 +1,23 @@
-import React, { useContext } from "react";
-import { Box, Modal, Typography } from "@mui/material";
 import { useBoundStore } from "@/stores/index";
+import { Box, Modal } from "@mui/material";
+import React from "react";
 import { shallow } from "zustand/shallow";
-import ButtonSecondary from "@/components/buttons/buttonSecondary";
 
 const style = {
-  backgroundColor: "background.paper",
   position: "relative",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { xs: "90%", sm: "350px  ", md: "450px", lg: "500px" },
-  p: "20px",
-  borderRadius: "20px",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  flexDirection: "column",
+  width: { xs: "90%", md: "750px" },
+  maxHeight: "90vh",
+  overflowY: "auto",
+  p: "10px",
+  borderRadius: "6px",
+  background: "#FFF",
 };
 
 export default function ModalGlobal() {
-  const { stateModal, titleModal, ChangeStateModal } = useBoundStore(
-    (state) => state,
-    shallow
-  );
-  const handleClose = () => {
-    ChangeStateModal(false);
-  };
+  const { stateModal, contentModal } = useBoundStore((state) => state, shallow);
 
   return (
     <Modal
@@ -34,22 +25,12 @@ export default function ModalGlobal() {
       disableEnforceFocus
       sx={{
         ".css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop": {
-          backgroundColor: "transparent",
-          backdropFilter: "blur(1px)",
+          backgroundColor: "rgb(0 0 0 /30%)",
+          backdropFilter: "blur(3px)",
         },
       }}
     >
-      <Box sx={style}>
-        <Typography
-          variant="body1"
-          sx={{
-            color: "text.third",
-          }}
-        >
-          {titleModal}
-        </Typography>
-        <ButtonSecondary onClick={handleClose}>Close</ButtonSecondary>
-      </Box>
+      <Box sx={style}>{contentModal}</Box>
     </Modal>
   );
 }
