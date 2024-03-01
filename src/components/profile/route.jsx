@@ -2,7 +2,7 @@ import React from 'react'
 
 function RouteRelative() {
     return (
-        <div style={{ fontSize: 14, marginLeft: 140 }}>
+        <div style={{ fontSize: 14, marginLeft: 150 }}>
             <span style={{ fontWeight: "normal", color: "gray" }}>
                 Inicio /{" "}
             </span>
