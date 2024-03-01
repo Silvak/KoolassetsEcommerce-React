@@ -17,6 +17,7 @@ function OrderBodyUser({ user }) {
           style={{
             display: "flex",
             alignItems: "center",
+            marginLeft: 12
           }}
         >
           <p style={{ color: "#000", fontSize: isMobile ? 20 : 32, marginTop: 30 }}>Estado actual del envío</p>

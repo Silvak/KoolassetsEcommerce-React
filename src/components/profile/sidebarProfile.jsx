@@ -2,12 +2,9 @@ import React, { useState, useEffect } from "react";
 import { IconButton, List, Box, Typography, useMediaQuery } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { UserIcon, PaymentMetIcon, SessionCloseIcon, ActualPurchIcon, ReturnPurchIcon, CancelPurchIcon } from "./SVGIcon";
-// import { useNavigate, useLocation } from "react-router-dom";
 import "./styles.css";
 
 const SidebarProfile = ({ user }) => {
-    // const navigate = useNavigate();
-    // const location = useLocation();
     const isMobile = useMediaQuery("(max-width:600px)");
     const [open, setOpen] = useState(!isMobile);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -16,22 +13,14 @@ const SidebarProfile = ({ user }) => {
         setOpen(!open);
     };
 
-
-    // PARA CONSERVAR LOS COLORES DE LA OPCION DE SELECCIONADO PODRIAMOS UTILIZAR UN ESTADO GLOBAL
     const handleItemClick = (option) => {
         setSelectedOption(option);
-        // if (option === "profile" && location.pathname !== "/profile") {
-        //     navigate("/profile");
-        // }
-        // if (option === "actual" && location.pathname !== "/orders") {
-        //     navigate("/orders");
-        // }
     };
 
     const listItemStyle = {
         display: "flex",
         alignItems: "center",
-        marginBottom: 40,
+        marginBottom: 16,
         color: "gray",
         cursor: "pointer",
         transition: "color 0.3s, background-color 0.3s",
@@ -56,7 +45,7 @@ const SidebarProfile = ({ user }) => {
     );
 
     return (
-        <Box style={{ position: 'relative', backgroundColor: "#F5F5F5" }}>
+        <Box style={{ position: 'relative' }}>
             {isMobile && (
                 <IconButton
                     onClick={handleToggleSidebar}
@@ -76,7 +65,7 @@ const SidebarProfile = ({ user }) => {
                 transition: 'left 0.3s ease-in-out',
                 paddingLeft: 1,
                 paddingBlock: 2,
-                backgroundColor: "#F5F5F5"
+                backgroundColor:"#fff"
             }}>
 
                 <List sx={{ color: "#000", width: "max-content" }}>
