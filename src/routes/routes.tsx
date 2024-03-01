@@ -20,6 +20,7 @@ const Product = React.lazy(() => import("@/screens/product"));
 const Payment = React.lazy(() => import("@/screens/payment"));
 const PaymentsMethods = React.lazy(() => import("@/screens/paymentsMethods"));
 const Cart = React.lazy(() => import("@/screens/CartPage"));
+const AboutPage = React.lazy(() => import("@/screens/AboutPage"));
 
 export default function Navigator() {
   const { Authenticated } = storeUser();
@@ -81,6 +82,7 @@ export default function Navigator() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<ProfileUser />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/payments-methods" element={<PaymentsMethods />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/orders" element={<OrdersUser />} />

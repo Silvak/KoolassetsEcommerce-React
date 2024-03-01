@@ -42,6 +42,10 @@ declare module "@/components/sections/shoppingCartList";
 declare module "@/components/HomeProducts/HomeCard";
 declare module "@/components/HomeProducts/HomeList";
 declare module "@/components/HomeProducts/HomeProducts";
+declare module "@/components/AboutUs/AboutUs";
+declare module "@/components/AboutUs/AboutInfo";
+declare module "@/components/AboutUs/AboutMembers";
+declare module "@/components/AboutUs/MemberPicture";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
@@ -65,6 +69,7 @@ declare module "@/screens/SignIn";
 declare module "@/screens/SignUp";
 declare module "@/screens/payment";
 declare module "@/screens/CartPage";
+declare module "@/screens/AboutPage";
 
 declare module "@/stores/user/storeUser";
 
