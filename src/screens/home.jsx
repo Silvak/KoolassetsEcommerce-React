@@ -24,6 +24,7 @@ const home = () => {
           <span>¡hasta 50% de descuento!</span>
         </p>
       </Box>
+
       <CategorySlider />
       <HomeProducts />
       <Hero withSlider={false} />
