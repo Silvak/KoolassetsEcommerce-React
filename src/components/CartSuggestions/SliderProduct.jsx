@@ -128,7 +128,7 @@ const SliderProduct = ({ product }) => {
             }
             disableRipple
             aria-label="add to favorites"
-            onClick={() => handleToggleFavorite(product)}
+            onClick={() => toggleFavorite(product)}
           >
             {isInFavorites ? (
               <FavoriteOutlinedIcon
@@ -193,7 +193,7 @@ const SliderProduct = ({ product }) => {
               borderRadius: "6px",
             }}
           >
-            Añadir al carrito
+            Ver detalles
           </Button>
         </CardActions>
       </Grid>

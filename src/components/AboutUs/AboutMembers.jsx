@@ -6,13 +6,9 @@ function AboutMembers() {
   const mdQuery = useMediaQuery((theme) => theme.breakpoints.up("md"));
   const lgQuery = useMediaQuery((theme) => theme.breakpoints.up("lg"));
   const xlQuery = useMediaQuery((theme) => theme.breakpoints.up("xl"));
+
   return (
-    <Grid
-      container
-      spacing={4}
-      lg={9}
-      sx={{ padding: !lgQuery && "50px" }}
-    >
+    <Grid container spacing={4} lg={9} sx={{ padding: !lgQuery && "50px" }}>
       {/* Text */}
       <Grid item xs={12}>
         {/* Title */}
@@ -40,11 +36,7 @@ function AboutMembers() {
         >
           {AboutTeam.map((member, index) => (
             <Grid item xs={12} lg={12} key={index} id={member.id}>
-              <Grid
-                container
-                alignItems="center"
-                sx={{ marginBottom: "50px" }}
-              >
+              <Grid container alignItems="center" sx={{ marginBottom: "50px" }}>
                 {/* Imagen del miembro del equipo */}
                 <Grid
                   item
@@ -62,10 +54,19 @@ function AboutMembers() {
                   />
                 </Grid>
                 {/* Contenedor para los textos */}
-                <Grid item xs={12} md={9}>
+                <Grid
+                  item
+                  xs={12}
+                  md={9}
+                  sx={{ marginLeft: lgQuery ? "50px" : "0" }}
+                >
                   <Typography
                     variant="h2"
-                    sx={{ fontSize: "30px", fontWeight: 500, color: "#000000" }}
+                    sx={{
+                      fontSize: "30px",
+                      fontWeight: 500,
+                      color: "#000000",
+                    }}
                   >
                     {member.name}
                   </Typography>

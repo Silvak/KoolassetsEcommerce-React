@@ -4,10 +4,10 @@ import { Container } from "@mui/material";
 
 const CartPage = () => {
   return (
-    <Container maxWidth="lg">
-      <Breadcrumb />
+    <>
+      <Breadcrumb path="Carrito" />
       <Cart />
-    </Container>
+    </>
   );
 };
 export default CartPage;

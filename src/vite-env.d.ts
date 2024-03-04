@@ -51,6 +51,7 @@ declare module "@/components/PaymentsMethods/CardData";
 declare module "@/components/PaymentsMethods/UserData";
 declare module "@/components/PaymentsMethods/MethodsIcons";
 declare module "@/components/Input/CustomInput";
+declare module "@/components/Title/Title";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";

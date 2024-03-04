@@ -15,6 +15,9 @@ const CategorySliderItem = ({ name }) => {
         p: 2,
         borderRadius: "10px",
         transition: "ease 200ms",
+        height: "250px",
+        display: "grid",
+        placeContent: "center",
         ":hover": {
           color: "#FFF",
           backgroundColor: "#1B1AFF",
@@ -31,7 +34,7 @@ const CategorySliderItem = ({ name }) => {
       onClick={handleCategory(name)}
     >
       {IconComponent && (
-        <IconComponent className="category-slider_icon" size={30} />
+        <IconComponent className="category-slider_icon" size={35} />
       )}
       <h3 className="category-slider_category">{name}</h3>
     </Box>

@@ -1,12 +1,16 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import AboutInfo from "./AboutInfo";
 
 function AboutUs() {
   return (
-    <Grid sx={{backgroundColor: "#FFFFFF", marginTop: 6, border: "1px solid white", paddingTop: 4}}>
-        <AboutInfo />
-    </Grid>
-  )
+    <Box
+      sx={{
+        backgroundColor: "#FFFFFF",
+      }}
+    >
+      <AboutInfo />
+    </Box>
+  );
 }
 
 export default AboutUs;

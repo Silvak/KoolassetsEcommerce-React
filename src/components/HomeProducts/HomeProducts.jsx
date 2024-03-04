@@ -1,8 +1,8 @@
 import HomeList from "./HomeList";
+import Title from "@/components/Title/Title";
 import { Button, Typography } from "@mui/material";
 
 import { productsData } from "../../mock/productData";
-
 function HomeProducts() {
   return (
     <div
@@ -13,14 +13,7 @@ function HomeProducts() {
         height: "100%",
       }}
     >
-      <div style={{ width: "100%", display: "flex", justifyContent: "start" }}>
-        <Typography
-          variant="h2"
-          sx={{ padding: 4, marginTop: "90px", marginBottom: "40px" }}
-        >
-          Productos más vendidos
-        </Typography>
-      </div>
+      <Title text=" Productos más vendidos" />
 
       <HomeList products={productsData} />
       <div

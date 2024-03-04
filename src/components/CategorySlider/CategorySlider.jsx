@@ -9,6 +9,7 @@ import "./styles.css";
 
 import CategorySliderItem from "@/components/CategorySlider/CategorySliderItem";
 import { categoriesVisited } from "../../mock/categoriesVisited";
+import Title from "@/components/Title/Title";
 //icons
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
@@ -16,7 +17,7 @@ const CategorySlider = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   return (
-    <Box sx={{ my: 10 }}>
+    <Box sx={{ mb: 10 }}>
       <Box
         sx={{
           display: "flex",
@@ -24,10 +25,9 @@ const CategorySlider = () => {
           alignItems: "center",
           flexWrap: "wrap",
           gap: isMobile ? "10px" : "0",
-          mb: 4,
         }}
       >
-        <h2 className="category-slider_title">Categorías más visitadas</h2>
+        <Title text="Categorías más visitadas" />
         {/* btns */}
         <Box
           sx={{

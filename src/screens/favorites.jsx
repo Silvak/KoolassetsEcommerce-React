@@ -8,13 +8,13 @@ function favorites() {
   const totalResults = favorites.length;
 
   return (
-    <div>
+    <>
       <Favorites
         favoritesProducts={favorites}
         category={category}
         totalResults={totalResults}
       />
-    </div>
+    </>
   );
 }
 

@@ -10,8 +10,14 @@ function AboutInfo() {
       spacing={9}
       sx={{
         display: "flex",
-        justifyContent: "center",
-        padding: !mdQuery && "50px",
+        justifyContent: "space-evenly",
+        padding: "0",
+        margin: "0",
+        marginTop: "30px",
+
+        "& > .MuiGrid-item": {
+          padding: "0",
+        },
       }}
     >
       {/* Text */}
@@ -51,11 +57,24 @@ function AboutInfo() {
         </Grid>
       </Grid>
       {/* Image */}
-      <Grid item xs={12} md={4} sx={{ display: !mdQuery && "flex", justifyContent: !mdQuery && "center"}}>
+      <Grid
+        item
+        xs={12}
+        md={4}
+        sx={{
+          display: !mdQuery && "flex",
+          justifyContent: !mdQuery && "center",
+        }}
+      >
         <img
           src={AboutData.image}
           alt="AboutImage"
-          style={{ objectFit: "cover", width: !mdQuery ? "50%" : "100%", height: !mdQuery ? "100%" : "95%", borderRadius: !mdQuery && "50%" }}
+          style={{
+            objectFit: "cover",
+            width: !mdQuery ? "50%" : "100%",
+            height: !mdQuery ? "100%" : "95%",
+            borderRadius: !mdQuery && "50%",
+          }}
         />
       </Grid>
     </Grid>

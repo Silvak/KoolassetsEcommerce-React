@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, CardMedia, CircularProgress, Toolbar } from "@mui/material";
+import { Grid, CardMedia, CircularProgress, Toolbar, Container } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "@/components/navBar/NavBar";
 import AlertGlobal from "@/components/alert/alert";
@@ -72,8 +72,9 @@ export default function Navigator() {
           <Footer />
         </Layout>
       ) : (
-        <Layout>
+        <Container maxWidth="1440px" sx={{background: "#FFF"}}>
           <NavBar />
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:productId" element={<Product />} />
@@ -89,8 +90,10 @@ export default function Navigator() {
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          <Footer />
         </Layout>
+          <Footer />
+        </Container>
+
       )}
       {/*other tools */}
       <AlertGlobal />
