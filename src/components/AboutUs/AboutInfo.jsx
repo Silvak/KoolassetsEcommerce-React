@@ -9,8 +9,9 @@ function AboutInfo() {
       container
       spacing={9}
       sx={{
+        width: "100%",
         display: "flex",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         padding: "0",
         margin: "0",
         marginTop: "30px",
@@ -39,6 +40,7 @@ function AboutInfo() {
         {/* Description */}
         <Grid
           item
+          xs={12}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -47,12 +49,16 @@ function AboutInfo() {
           }}
         >
           {AboutData.description.map((part) => (
-            <Typography
-              variant="inherit"
-              sx={{ fontSize: "18px", fontWeight: 500, color: "#000000" }}
+            <p
+              style={{
+                fontSize: "14px",
+                color: "#000000",
+                textBalance: "pretty",
+                lineHeight: 1.5,
+              }}
             >
               {part}
-            </Typography>
+            </p>
           ))}
         </Grid>
       </Grid>

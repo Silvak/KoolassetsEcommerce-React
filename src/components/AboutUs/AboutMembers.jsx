@@ -8,7 +8,7 @@ function AboutMembers() {
   const xlQuery = useMediaQuery((theme) => theme.breakpoints.up("xl"));
 
   return (
-    <Grid container spacing={4} lg={9} sx={{ padding: !lgQuery && "50px" }}>
+    <Grid container spacing={4}>
       {/* Text */}
       <Grid item xs={12}>
         {/* Title */}
@@ -19,7 +19,7 @@ function AboutMembers() {
               fontWeight: 600,
               fontSize: "36px",
               marginBottom: "50px",
-              color: "#000000",
+              color: "#000",
             }}
           >
             Conoce a nuestro equipo
@@ -80,12 +80,15 @@ function AboutMembers() {
                   >
                     {member.role}
                   </Typography>
-                  <Typography
-                    variant="inherit"
-                    sx={{ fontSize: "18px", fontWeight: 500, color: "#000000" }}
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "#000",
+                      lineHeight: 1.6,
+                    }}
                   >
                     {member.description}
-                  </Typography>
+                  </p>
                 </Grid>
               </Grid>
             </Grid>
