@@ -65,7 +65,6 @@ export default function Navigator() {
       {/*Navbar secondary */}
       {Authenticated ? (
         <Layout>
-          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFoundPage />} />

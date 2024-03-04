@@ -8,6 +8,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
+  minWidth: "300px",
   width: { xs: "90%", md: "750px" },
   maxHeight: "90vh",
   overflowY: "auto",
@@ -17,7 +18,10 @@ const style = {
 };
 
 export default function ModalGlobal() {
-  const { stateModal, contentModal } = useBoundStore((state) => state, shallow);
+  const { stateModal, contentModal, setModal } = useBoundStore(
+    (state) => state,
+    shallow
+  );
 
   return (
     <Modal
