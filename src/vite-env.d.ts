@@ -46,6 +46,11 @@ declare module "@/components/AboutUs/AboutUs";
 declare module "@/components/AboutUs/AboutInfo";
 declare module "@/components/AboutUs/AboutMembers";
 declare module "@/components/AboutUs/MemberPicture";
+declare module "@/components/PaymentsMethods/PaymentsMethodsModal";
+declare module "@/components/PaymentsMethods/CardData";
+declare module "@/components/PaymentsMethods/UserData";
+declare module "@/components/PaymentsMethods/MethodsIcons";
+declare module "@/components/Input/CustomInput";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
