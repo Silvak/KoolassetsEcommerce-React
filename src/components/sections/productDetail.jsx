@@ -5,13 +5,31 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Rating from "@mui/material/Rating";
+import { storeCart } from "../../stores/cart/storeCart";
+import { storeFavorites } from '../../stores/favorites/storeFavorites';
 
 function ProductDetail(props) {
-  const [selectedImage, setSelectedImage] = useState(props.product.image);
+  const [selectedImage, setSelectedImage] = useState(props?.product?.image);
+  const { toggleCartlist, isInCart } = storeCart((state) => state);
+  const { toggleFavorite, isFavorite } = storeFavorites(state => ({
+    toggleFavorite: state.toggleFavorite,
+    isFavorite: state.isFavorite,
+  }));
 
   const handleImageSelect = (image) => {
     setSelectedImage(image);
   };
+
+  const handleAddToCart = () => {
+    toggleCartlist(props.product);
+  };
+
+  const handleAddToFavorites = () => {
+    toggleFavorite(props.product);
+  };
+
+  const isProductInCart = isInCart(props.product);
+  const isProductInFavorites = isFavorite(props.product);
 
   return (
     <Grid
@@ -124,16 +142,18 @@ function ProductDetail(props) {
 
           {/* btns */}
           <Button
-            variant="contained"
-            sx={{ width: "100%", height: "52px", background: "#1B1AFF" }}
+            variant={isProductInCart ? "contained" : "outlined"}
+            sx={{ width: "100%", height: "52px", background: isProductInCart ? "#1B1AFF" : "none" }}
+            onClick={handleAddToCart}
           >
-            Añadir al carrito
+            {isProductInCart ? "Eliminar del carrito" : "Añadir al carrito"}
           </Button>
           <Button
-            variant="outlined"
-            sx={{ width: "100%", height: "52px", border: "1px solid #1B1AFF" }}
+            variant={isProductInFavorites ? "contained" : "outlined"}
+            sx={{ width: "100%", height: "52px", background: isProductInFavorites ? "#1B1AFF" : "none", mt: 2 }}
+            onClick={handleAddToFavorites}
           >
-            Añadir a favoritos
+            {isProductInFavorites ? "Eliminar de favoritos" : "Añadir a favoritos"}
           </Button>
 
           {/* description */}

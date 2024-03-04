@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Grid, Typography, IconButton, useMediaQuery } from "@mui/material";
 import ProductCard from "./ProductCard";
 import Pagination from "./PaginationCategory";
@@ -24,12 +24,6 @@ const CategoryList = ({ category, totalResults, products }) => {
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = Math.min(startIndex + productsPerPage, totalResults);
   const productsToShow = products.slice(startIndex, endIndex);
-
-
-  // useEffect(() => {
-  //   window.scroll(0, 0);    
-  // }, [])
-
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
