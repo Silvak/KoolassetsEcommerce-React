@@ -5,12 +5,30 @@ import { UserIcon, PaymentMetIcon, SessionCloseIcon, ActualPurchIcon, ReturnPurc
 import "./styles.css";
 import { useBoundStore } from '../../stores/index';
 import ConfirmationContent from "../modal/confirmationContent";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SidebarProfile = ({ user }) => {
     const isMobile = useMediaQuery("(max-width:800px)");
     const [open, setOpen] = useState(!isMobile);
     const [selectedOption, setSelectedOption] = useState(null);
     const { setModal } = useBoundStore();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        const pathname = location.pathname;
+        if (pathname === "/profile") {
+            setSelectedOption("profile");
+        } else if (pathname === "/payments-methods") {
+            setSelectedOption("payment");
+        } else if (pathname === "/orders") {
+            setSelectedOption("actual");
+        } else if (pathname === "/returns") {
+            setSelectedOption("returns");
+        } else if (pathname === "/cancel") {
+            setSelectedOption("cancellations");
+        }
+    }, [location]);
 
     const handleToggleSidebar = () => {
         setOpen(!open);
@@ -19,6 +37,11 @@ const SidebarProfile = ({ user }) => {
     const handleItemClick = (option) => {
         setSelectedOption(option);
         option === 'logout' && setModal(true, <ConfirmationContent onClose={() => setModal(false, null)} />);
+        option === 'payment' && navigate("/payments-methods")
+        option === 'profile' && navigate("/profile")
+        option === 'actual' && navigate("/orders")
+        option === 'returns' && navigate("/returns")
+        option === 'cancellations' && navigate("/cancel")
     };
 
     const listItemStyle = {

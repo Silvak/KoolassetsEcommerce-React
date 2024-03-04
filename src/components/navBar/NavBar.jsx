@@ -1,11 +1,17 @@
 import { AppBar, useMediaQuery } from "@mui/material";
 //components
-
+import { useEffect } from "react";
 import NavMobile from "@/components/navBar/NavMobile";
 import NavDesktop from "@/components/navBar/NavDesktop";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("lg"));
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <AppBar
