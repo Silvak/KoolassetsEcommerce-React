@@ -69,7 +69,7 @@ const SidebarProfile = ({ user }) => {
                 transition: 'left 0.3s ease-in-out',
                 paddingLeft: 1,
                 paddingBlock: 2,
-                backgroundColor:"#fff"
+                backgroundColor: isMobile ? "#fff" : "tranparent"
             }}>
 
                 <List sx={{ color: "#000", width: "max-content" }}>
