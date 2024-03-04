@@ -29,7 +29,7 @@ export function createPalette(mode) {
           text: {
             primary: "#615D5D",
             secondary: "#F5F5F5",
-            third: "#6366F1",
+            third: "#1B1AFF",
           },
           icon: {
             primary: "#3B3B3B",
@@ -50,7 +50,7 @@ export function createPalette(mode) {
           icon: {
             primary: "#F5F5F5",
             secondary: "#3B3B3B",
-            third: "#6366F1",
+            third: "#1B1AFF",
           },
         }),
     neutral,

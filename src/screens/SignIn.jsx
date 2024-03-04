@@ -13,19 +13,20 @@ function SignIn() {
   const breakPoint = useMediaQuery((theme) => theme.breakpoints.down("xl"));
   return (
     <ThemeProvider theme={theme}>
+      <div>
       {!isMobile ? (
         <Grid
           wrap="wrap-reverse"
           sx={{
             backgroundColor: "#FFEACB",
             width: "100%",
-            height: "100vh",
+            height: "900px",
             padding: 10,
             margin: 0,
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
-            overflowY: "scroll"
+            // overflowY: "scroll"
           }}
         >
           {!breakPoint && (
@@ -46,6 +47,7 @@ function SignIn() {
           <SignInForm />
         </Grid>
       )}
+      </div>
     </ThemeProvider>
   );
 }

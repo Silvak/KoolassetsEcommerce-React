@@ -28,7 +28,7 @@ function SignInForm() {
           margin: "auto",
           backgroundColor: "#F9F9F9",
           width: !isMobile ? "579px" : "100%",
-          height: isMobile && "90vh"
+          height: isMobile ? "90vh" : "auto"
         }}
       >
         

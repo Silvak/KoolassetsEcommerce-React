@@ -1,16 +1,23 @@
 import HomeList from "./HomeList";
 import Title from "@/components/Title/Title";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Grid, createTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { productsData } from "../../mock/productData";
-function HomeProducts() {
-  const navigate = useNavigate();
+import { ThemeProvider } from "@emotion/react";
+import { useTheme } from '@mui/material/styles';
 
+function HomeProducts() {
+  const theme = useTheme();
+  const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/categories")
-  }
+    navigate("/categories");
+  };
+
+  const primaryColor = theme.palette.primary.main;
+  const secondaryColor = theme.palette.secondary.main;
 
   return (
+    <ThemeProvider theme={theme}>
     <div
       style={{
         backgroundColor: "#FFFFFF",
@@ -22,8 +29,9 @@ function HomeProducts() {
       <Title text=" Productos más vendidos" />
 
       <HomeList products={productsData} />
-      <div
-        style={{
+
+      <Grid
+        sx={{
           display: "flex",
           justifyContent: "center",
           marginTop: "40px",
@@ -32,16 +40,20 @@ function HomeProducts() {
         <Button
           onClick={handleClick}
           sx={{
-            backgroundColor: "#1B1AFF",
             borderRadius: "6px",
             marginBottom: "70px",
-            color: "#FFFFFF",
+            color: "white",
+            backgroundColor: "#1B1AFF",
+            ":hover" : {
+              backgroundColor: "#0404B4"
+            }
           }}
         >
           Explorar ahora
         </Button>
-      </div>
+      </Grid>
     </div>
+    </ThemeProvider>
   );
 }
 

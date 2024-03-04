@@ -42,7 +42,7 @@ function ProfileDetails({ user }) {
             </Grid>
 
             <Grid item xs={12}>
-                <Button variant="contained" color="primary" sx={{ float: "right", marginBlock: 4, marginRight: "4vw", backgroundColor: "#1B1AFF", borderRadius: "6px" }} onClick={() => handleBotton("Editar")}>
+                <Button variant="contained" color="primary" sx={{ float: "right", marginBlock: 4, marginRight: "4vw", borderRadius: "6px" }} onClick={() => handleBotton("Editar")}>
                     Editar
                 </Button>
             </Grid>
