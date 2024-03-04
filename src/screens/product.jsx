@@ -8,10 +8,12 @@ import { productsData, totalProducts, category } from "@/mock/productData";
 import ProductDetail from "../components/sections/productDetail";
 import ProductInfo from "../components/sections/productInfo";
 import ProductDescription from "../components/sections/producDescription";
+import CartSlider from "../components/CartSuggestions/CartSlider";
+import { Grid, useMediaQuery } from "@mui/material";
 
 function Product() {
   let { productId } = useParams();
-
+  const isMobile = useMediaQuery("md");
   return (
     <div style={{ background: "white" }}>
       <Box
@@ -49,6 +51,10 @@ function Product() {
       >
         <ProductDescription />
       </Box>
+      { /* Suggestions */}
+      <Grid xs={12} sx={{paddingX: isMobile ? 15 : 5}}>
+        <CartSlider />
+      </Grid>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { Box, ListItemButton } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { menuItems } from "../../utils/menuItems";
 import { v4 as uuidv4 } from "uuid";
 //components
@@ -18,6 +18,7 @@ const updatedMenuItems = [
 ];
 
 const NavDesktopMenu = () => {
+  const location = useLocation();
   return (
     <Box sx={{ display: "flex", gap: "30px" }}>
       {updatedMenuItems.map((item, index) => {
@@ -41,9 +42,12 @@ const NavDesktopMenu = () => {
             <NavLink
               to={item.to}
               style={{
-                color: "inherit",
+                color: location.pathname === item.to ? "#1B1AFF" : "#615D5D",
                 textDecoration: "none",
                 textAlign: "center",
+                fontWeight: 400,
+                fontSize: 14,
+        
               }}
             >
               {item.name}

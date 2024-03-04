@@ -28,6 +28,7 @@ const home = () => {
       <CategorySlider />
       <HomeProducts />
       <Hero withSlider={false} />
+      <div style={{marginBottom: "90px"}}></div>
     </Box>
   );
 };
