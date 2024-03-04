@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -37,18 +38,21 @@ function HomeCard({
         <CardContent
           style={{ padding: "0px", paddingTop: "0px", paddingInline: "4px" }}
         >
-          <Grid item xs={12} sx={{ borderRadius: "10px" }}>
-            <img
-              src={product.image}
-              alt={product.name}
-              style={{
-                width: "320px",
-                height: "304px",
-                objectFit: "contain",
-                borderRadius: "10px",
-              }}
-            />
-          </Grid>
+          <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+            <Grid item xs={12} sx={{ borderRadius: "10px" }}>
+              <img
+                src={product.image}
+                alt={product.name}
+                style={{
+                  width: "320px",
+                  height: "304px",
+                  objectFit: "contain",
+                  borderRadius: "10px",
+                }}
+              />
+            </Grid>
+          </Link>
+
         </CardContent>
       </Grid>
 
@@ -110,14 +114,16 @@ function HomeCard({
         </Box>
       </Grid>
       <Grid item xs={12}>
-        <Typography
-          variant="body2"
-          color={"#615D5D"}
-          fontWeight={"normal"}
-          style={{ maxWidth: "320px" }}
-        >
-          {product.name}
-        </Typography>
+        <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+          <Typography
+            variant="body2"
+            color={"#615D5D"}
+            fontWeight={"normal"}
+            style={{ maxWidth: "320px" }}
+          >
+            {product.name}
+          </Typography>
+        </Link>
         <Typography
           variant="body2"
           style={{
@@ -132,23 +138,26 @@ function HomeCard({
         >
           ${product.price.toFixed(2)}
         </Typography>
-        <CardActions
-          style={{ padding: "0px", marginInline: "0px", width: "320px" }}
-        >
-          <Button
-            variant="outlined"
-            color="primary"
-            fullWidth
-            style={{
-              border: "1px solid #1B1AFF",
-              fontWeight: 700,
-              color: "#1B1AFF",
-              borderRadius: "6px",
-            }}
+        <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+
+          <CardActions
+            style={{ padding: "0px", marginInline: "0px", width: "320px" }}
           >
-            Ver detalles
-          </Button>
-        </CardActions>
+            <Button
+              variant="outlined"
+              color="primary"
+              fullWidth
+              style={{
+                border: "1px solid #1B1AFF",
+                fontWeight: 700,
+                color: "#1B1AFF",
+                borderRadius: "6px",
+              }}
+            >
+              Ver detalles
+            </Button>
+          </CardActions>
+        </Link>
       </Grid>
     </div>
   );

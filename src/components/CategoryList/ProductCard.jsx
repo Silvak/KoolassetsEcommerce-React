@@ -13,6 +13,8 @@ import Rating from "@mui/material/Rating";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
+import { storeCart } from "../../stores/cart/storeCart";
 
 const ProductCard = ({
   product,
@@ -22,6 +24,12 @@ const ProductCard = ({
 }) => {
   const labelChip = product?.category.toUpperCase();
   const isInFavorites = isFavorite(product);
+  const { isInCart, toggleCartlist } = storeCart((state) => state);
+
+  const handleAddCart = (product) => {
+    toggleCartlist(product);
+  };
+
   return (
     <div>
       <Card
@@ -88,18 +96,20 @@ const ProductCard = ({
               </div>
             </Grid>
             <Grid item xs={12} sx={{ textAlign: "center" }}>
-              <img
-                src={product.image}
-                alt={product.name}
-                style={{
-                  width: "auto",
-                  height: "220px",
-                  objectFit: "cover",
-                  paddingInline: "0px",
-                  paddingRight: "0px",
-                  paddingBottom: "20px",
-                }}
-              />
+              <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{
+                    width: "auto",
+                    height: "220px",
+                    objectFit: "cover",
+                    paddingInline: "0px",
+                    paddingRight: "0px",
+                    paddingBottom: "20px",
+                  }}
+                />
+              </Link>
             </Grid>
           </Grid>
         </CardContent>
@@ -176,17 +186,20 @@ const ProductCard = ({
           style={{ padding: "0px", marginInline: "0px", width: "250px" }}
         >
           <Button
-            variant="outlined"
+            variant={isInCart(product) ? "contained" : "outlined"}
             color="primary"
             fullWidth
+            disableRipple
             style={{
-              border: "1px solid #1B1AFF",
               fontWeight: 700,
-              color: "#1B1AFF",
+              color: isInCart(product) ? "#FFFFFF" : "#1B1AFF",
+              backgroundColor: isInCart(product) ? "#1B1AFF" : "transparent",
               borderRadius: "6px",
+              border: isInCart(product) ? "none" : "1px solid #1B1AFF",
             }}
+            onClick={() => handleAddCart(product)}
           >
-            Añadir al carrito
+            {isInCart(product) ? "Eliminar del carrito" : "Añadir al carrito"}
           </Button>
         </CardActions>
       </Grid>

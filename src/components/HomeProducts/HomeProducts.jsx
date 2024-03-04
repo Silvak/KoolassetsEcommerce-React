@@ -1,9 +1,15 @@
 import HomeList from "./HomeList";
 import { Button, Typography } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 import { productsData } from "../../mock/productData";
 
 function HomeProducts() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/categories")
+  }
+
   return (
     <div
       style={{
@@ -31,9 +37,7 @@ function HomeProducts() {
         }}
       >
         <Button
-          onClick={() => {
-            alert("Explorar");
-          }}
+          onClick={handleClick}
           sx={{
             backgroundColor: "#1B1AFF",
             borderRadius: "6px",
