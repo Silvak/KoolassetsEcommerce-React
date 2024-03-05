@@ -12,6 +12,7 @@ const paths = [
   "/about",
   "/orders",
   "/payments-methods",
+  "/dashboard",
 ];
 
 const Layout = ({ children }) => {
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div
         style={{
           margin: 0,
