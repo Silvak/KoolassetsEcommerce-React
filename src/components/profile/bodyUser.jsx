@@ -5,7 +5,7 @@ import ProfileDetails from "./profileDetail";
 function BodyUser({ user }) {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
-    <div style={{ display: "flex", text: "center", alignItems: "flex-start" }}>
+    <div style={{ display: "flex", text: "center", alignItems: "flex-start"}}>
       <Box
         sx={{
           marginTop: isMobile ? 2 : 3,

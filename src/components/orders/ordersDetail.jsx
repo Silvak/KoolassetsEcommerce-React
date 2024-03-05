@@ -9,7 +9,7 @@ function OrderDetail({ user }) {
     const stepHeight = isMobile ? 20 : 40;
     
     return (
-        <Grid item xs={8} md={3} sx={{ position: 'relative', minWidth: "25%", maxWidth: "75%", paddingTop: 6, paddingBottom: { xs: 18, md: 4 }, ml: isMobile ? 0 : 8 }}>
+        <Grid item xs={8} md={3} sx={{ position: 'relative', minWidth: "25%", maxWidth: "75%", paddingTop: 6, paddingBottom: { xs: 18, md: 4 }, ml: isMobile ? 0 : 5 }}>
             {isMobile ? (
                 <div style={{ position: "relative", textAlign: "start", marginTop: 20, marginBottom: 60 }}>
 

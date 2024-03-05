@@ -9,14 +9,14 @@ function ProfileDetails({ user }) {
     }
 
     const renderDetail = (label, value, onClick = null) => (
-        <Grid item xs={8} md={3} sx={{ minWidth: "30%", textAlign: "left" }} >
+        <Grid item xs={8} md={3} sx={{ minWidth: "18vw", textAlign: "left" }} >
             <Typography variant="h6" sx={{ wordWrap: 'break-word', color: "#aaaaaa", fontWeight: 400, mr: 4 }} style={{ fontSize: "16px" }}>{label}</Typography>
             <Typography variant="h6" style={{ fontSize: "16px" }} sx={{ wordWrap: 'break-word', color: "#000", fontWeight: 500, mr: 4 }}>{value}</Typography>
         </Grid>
     );
 
     const renderDetailWithNameBorder = (label, value, onClick = null) => (
-        <Grid item xs={8} md={3} sx={{ position: 'relative', minWidth: "30%", textAlign: "left" }}>
+        <Grid item xs={8} md={3} sx={{ position: 'relative', minWidth: "18vw", textAlign: "left" }}>
             <Typography variant="h6" sx={{ wordWrap: 'break-word', color: "#aaaaaa", fontWeight: 400, mr: 4 }} style={{ fontSize: "16px" }}>{label}</Typography>
             <Typography variant="h6" style={{ fontSize: "16px" }} sx={{ wordWrap: 'break-word', color: "#000", fontWeight: 500, borderBottom: label === "Nombres" ? '1px solid #000' : 'none', paddingBottom: label === "Nombres" ? '4px' : '0', mr: 4 }}>{value}</Typography>
         </Grid>

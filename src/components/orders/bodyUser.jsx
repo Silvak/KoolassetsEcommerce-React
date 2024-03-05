@@ -9,7 +9,6 @@ function OrderBodyUser({ user }) {
     <div style={{ display: "flex", text: "center", alignItems: "flex-start"}}>
       <Box
         sx={{
-          marginLeft: { xs: 0, sm: 20, md: 20, lg: 20, xl: 20 },
           marginTop: isMobile ? 2 : 3,
         }}
       >

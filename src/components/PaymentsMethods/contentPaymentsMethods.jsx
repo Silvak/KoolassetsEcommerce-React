@@ -24,8 +24,6 @@ export default function ContentPaymentsMethods() {
   return (
     <Box
       sx={{
-        mr: { xs: 0, md: "15%" },
-        ml: { xs: 0, md: "15%" },
         width: "100%",
         mt: 6,
         marginBottom: 6,
