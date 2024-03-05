@@ -53,6 +53,9 @@ declare module "@/components/PaymentsMethods/MethodsIcons";
 declare module "@/components/Input/CustomInput";
 declare module "@/components/Title/Title";
 declare module "@/components/Dashboard/Sidebar";
+declare module "@/components/Dashboard/Summary";
+declare module "@/components/Dashboard/Views";
+declare module "@/components/Dashboard/Sales";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
