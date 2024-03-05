@@ -6,8 +6,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "./Sidebar";
 import DesktopSidebar from "./DesktopSidebar";
 import { storeFavorites } from '../../stores/favorites/storeFavorites';
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 const CategoryList = ({ category, totalResults, products }) => {
+  const [selectedFullPath, setSelectedFullPath] = useState("Categorías");
+
+  const handlePathUpdate = (path) => {
+    setSelectedFullPath("Categorías" + " / " + path);
+  };
 
   const { toggleFavorite, isFavorite } = storeFavorites(state => ({
     toggleFavorite: state.toggleFavorite,
@@ -34,6 +40,9 @@ const CategoryList = ({ category, totalResults, products }) => {
     setDrawerOpen(!drawerOpen);
   };
 
+
+  console.log(selectedFullPath);
+
   return (
     <>
       <Typography
@@ -54,18 +63,19 @@ const CategoryList = ({ category, totalResults, products }) => {
             <IconButton onClick={toggleDrawer}>
               <MenuIcon />
             </IconButton>
-            <Sidebar open={drawerOpen} onClose={toggleDrawer} />
+            <Sidebar open={drawerOpen} onClose={toggleDrawer} onUpdatePath={handlePathUpdate}/>
           </div>
         ) : (
-          isDesktop && <DesktopSidebar />
+          isDesktop && <DesktopSidebar onUpdatePath={handlePathUpdate} />
         )}
         <div style={{ marginLeft: "6vw", marginTop: 12, display: "flex", flexDirection: "column", width: "100%" }}>
           <Typography
             variant="h6"
             style={{ fontSize: "12px", color: "gray", marginBlock: "20px" }}
           >
-            Inicio / Categorías / Telefonía /{" "}
-            <span style={{ color: "#000" }}>Gama media</span>
+            {/* Inicio / Categorías / Telefonía /{" "} */}
+            <Breadcrumb path={selectedFullPath} />
+            {/* <span style={{ color: "#000" }}>Gama media</span> */}
           </Typography>
           <Grid container spacing={0} width={"100%"} height={"auto"}>
             {productsToShow.map((product) => (
