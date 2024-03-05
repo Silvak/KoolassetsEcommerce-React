@@ -16,11 +16,6 @@ const NavIcons = ({ sx }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        "& .css-18cpr4l-MuiButtonBase-root-MuiIconButton-root": {
-          outline: "1px solid #1B1AFF",
-          borderRadius: "4px",
-          fontSize: "18px",
-        },
         ...sx,
       }}
     >
@@ -28,7 +23,10 @@ const NavIcons = ({ sx }) => {
         <IconButton
           key={icon.id}
           sx={{
+            borderRadius: "4px",
+            fontSize: "18px",
             color: "#1B1AFF",
+            outline: "1px solid #1B1AFF",
           }}
         >
           <NavLink

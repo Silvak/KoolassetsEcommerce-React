@@ -25,18 +25,14 @@ const NavMobileMenu = () => {
         );
       })}
 
-      {Authenticated && (
-        <>
-          <hr style={{ opacity: "10%" }} />
-          <NavIcons
-            sx={{
-              justifyContent: "flex-start",
-              gap: "20px",
-              paddingLeft: "20px",
-            }}
-          />
-        </>
-      )}
+      <hr style={{ opacity: "10%" }} />
+      <NavIcons
+        sx={{
+          justifyContent: "flex-start",
+          gap: "20px",
+          paddingLeft: "20px",
+        }}
+      />
     </MenuList>
   );
 };

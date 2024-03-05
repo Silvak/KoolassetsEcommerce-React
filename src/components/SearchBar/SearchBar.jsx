@@ -6,7 +6,7 @@ const SearchBar = ({ sx }) => {
   return (
     <Box
       sx={{
-        width: "483px",
+        maxWidth: "300px",
         borderRadius: "30px",
         outline: "1px solid #73737380",
         height: "40px",
@@ -22,7 +22,7 @@ const SearchBar = ({ sx }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "inherit"
+          color: "inherit",
         }}
       >
         <BsSearch size="20" />
