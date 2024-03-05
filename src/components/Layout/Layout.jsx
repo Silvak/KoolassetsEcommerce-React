@@ -2,7 +2,15 @@ import { useMediaQuery } from "@mui/material";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const paths = ["/product/:id", "/cart", "/favorites", "/profile", "/about"];
+const paths = [
+  "/product/:id",
+  "/cart",
+  "/favorites",
+  "/profile",
+  "/about",
+  "/orders",
+  "/payments-methods",
+];
 
 const Layout = ({ children }) => {
   const { pathname } = useLocation();

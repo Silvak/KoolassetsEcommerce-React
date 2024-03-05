@@ -1,21 +1,20 @@
 import React from "react";
 import SidebarProfile from "../../components/profile/sidebarProfile";
-import RouteRelative from "../../components/profile/route";
-import OrderBodyUser from "./bodyUser"
+import OrderBodyUser from "./bodyUser";
 import { userData } from "../../mock/userData";
-
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 function OrdersUser() {
-    const user = userData[0];
-    return (
-        <div>
-            <RouteRelative />
-            <div style={{ display: "flex" }}>
-                <SidebarProfile user={user} />
-                <OrderBodyUser user={user} />
-            </div>
-        </div>
-    );
+  const user = userData[0];
+  return (
+    <div>
+      <Breadcrumb path="Mi cuenta" />
+      <div style={{ display: "flex" }}>
+        <SidebarProfile user={user} />
+        <OrderBodyUser user={user} />
+      </div>
+    </div>
+  );
 }
 
 export default OrdersUser;
