@@ -28,7 +28,7 @@ import {
   childrenFilter,
 } from "../../utils/stylesSidebarCategory";
 
-const SidebarContent = () => {
+const SidebarContent = ({ onUpdatePath }) => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [selectedMarcas, setSelectedMarcas] = useState([]);
@@ -53,17 +53,21 @@ const SidebarContent = () => {
   const handleCategoryClick = (categoryName) => {
     if (expandedCategory === categoryName) {
       setExpandedCategory(null);
+      setSelectedCategory(null);
+      setSelectedSubcategory(null);
     } else {
       setExpandedCategory(categoryName);
+      setSelectedCategory(categoryName);
+      setSelectedSubcategory(null);
+      onUpdatePath(categoryName);
     }
-    setSelectedCategory(categoryName);
-    setSelectedSubcategory(null);
-    console.log("Ruta relativa de categoría presionada:", categoryName);
   };
 
   const handleSubcategoryClick = (subcategoryName) => {
     setSelectedSubcategory(subcategoryName);
-    console.log("Ruta relativa de subcategoría presionada:", subcategoryName);
+    onUpdatePath(
+      `${selectedCategory} / ${subcategoryName}`
+    ); 
   };
 
   return (
@@ -88,9 +92,9 @@ const SidebarContent = () => {
           </ListItemButton>
           {expandedCategory === category.name && (
             <List component="div" disablePadding>
-              {category.subcategories.map((subcategory, key) => (
+              {category.subcategories.map((subcategory, subKey) => (
                 <ListItemButton
-                  key={key}
+                  key={subKey}
                   onClick={() => handleSubcategoryClick(subcategory)}
                 >
                   <ListItemText
@@ -124,11 +128,11 @@ const SidebarContent = () => {
               primary={filter.name}
             />
           </ListItemButton>
-          {
+          {expandedCategory === filter.name && (
             <List component="div" disablePadding>
-              {filter.subcategories.map((subcategory, key) => (
+              {filter.subcategories.map((subcategory, subKey) => (
                 <ListItemButton
-                  key={key}
+                  key={subKey}
                   onClick={() => handleSubcategoryClick(subcategory)}
                 >
                   <ListItemText
@@ -138,7 +142,7 @@ const SidebarContent = () => {
                 </ListItemButton>
               ))}
             </List>
-          }
+          )}
         </div>
       ))}
 
@@ -151,7 +155,7 @@ const SidebarContent = () => {
           flexDirection: "column",
         }}
       >
-        <Typography variant="body2" style={{...subtitleStyle, marginLeft: 0, marginBottom: 4}}>
+        <Typography variant="body2" style={{ ...subtitleStyle, marginLeft: 0, marginBottom: 4 }}>
           Calificación
         </Typography>
         {[4, 3, 2, 1].map((stars, key) => (
@@ -207,7 +211,7 @@ const SidebarContent = () => {
           maxWidth: isMobile ? "max-content" : "12vw",
         }}
       >
-        <Typography variant="body2" style={{...subtitleStyle, marginLeft: 0, marginBottom:"0.4rem"}}>Rango de precios</Typography>
+        <Typography variant="body2" style={{ ...subtitleStyle, marginLeft: 0, marginBottom: "0.4rem" }}>Rango de precios</Typography>
         {priceRange.map((range, key) => (
           <ListItemButton
             key={key}
@@ -305,22 +309,22 @@ const SidebarContent = () => {
                 primary={filter.name}
               />
             </ListItemButton>
-            {
+            {expandedCategory === filter.name && (
               <List component="div" disablePadding >
-                {filter.subcategories.map((subcategory, key) => (
+                {filter.subcategories.map((subcategory, subKey) => (
                   <ListItemButton
                     size="small"
-                    key={key}
+                    key={subKey}
                     onClick={() => handleSubcategoryClick(subcategory)}
                   >
                     <ListItemText
-                      primaryTypographyProps={{ style: {...childrenFilter, marginLeft: -14} }}
+                      primaryTypographyProps={{ style: { ...childrenFilter, marginLeft: -14 } }}
                       primary={subcategory}
                     />
                   </ListItemButton>
                 ))}
               </List>
-            }
+            )}
           </div>
         ))}
       </div>

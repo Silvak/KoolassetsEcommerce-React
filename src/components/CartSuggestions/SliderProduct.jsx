@@ -16,6 +16,7 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import { storeFavorites } from "../../stores/favorites/storeFavorites";
 import { BsCartPlus, BsCartDash } from "react-icons/bs";
 import { storeCart } from "../../stores/cart/storeCart";
+import { Link } from "react-router-dom";
 
 const SliderProduct = ({ product }) => {
   const labelChip = product?.category.toUpperCase();
@@ -179,23 +180,26 @@ const SliderProduct = ({ product }) => {
         >
           ${product?.price.toFixed(2)}
         </Typography>
-        <CardActions
-          style={{ padding: "0px", marginInline: "0px", width: "250px" }}
-        >
-          <Button
-            variant="outlined"
-            color="primary"
-            fullWidth
-            style={{
-              border: "1px solid #1B1AFF",
-              fontWeight: 700,
-              color: "#1B1AFF",
-              borderRadius: "6px",
-            }}
+
+        <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+          <CardActions
+            style={{ padding: "0px", marginInline: "0px", width: "250px" }}
           >
-            Ver detalles
-          </Button>
-        </CardActions>
+            <Button
+              variant="outlined"
+              color="primary"
+              fullWidth
+              style={{
+                border: "1px solid #1B1AFF",
+                fontWeight: 700,
+                color: "#1B1AFF",
+                borderRadius: "6px",
+              }}
+            >
+              Ver detalles
+            </Button>
+          </CardActions>
+        </Link>
       </Grid>
     </div>
   );

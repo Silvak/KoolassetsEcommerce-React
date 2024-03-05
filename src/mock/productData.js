@@ -10,7 +10,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 7,
@@ -18,10 +19,10 @@ export const productsData = [
     price: 1099.0,
     image: image,
     images: [image, image2],
-
     disponible: true,
     rating: 4.8,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 8,
@@ -31,7 +32,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.0,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Media",
   },
   {
     id: 9,
@@ -41,7 +43,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.5,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 10,
@@ -51,7 +54,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.1,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Media",
   },
   {
     id: 11,
@@ -61,7 +65,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.7,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 12,
@@ -71,7 +76,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 3.9,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Media",
   },
   {
     id: 13,
@@ -81,7 +87,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 14,
@@ -91,7 +98,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.3,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Media",
   },
   {
     id: 15,
@@ -101,7 +109,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.4,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 16,
@@ -111,7 +120,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.2,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 17,
@@ -121,7 +131,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.5,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Media",
   },
   {
     id: 1,
@@ -131,7 +142,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 2,
@@ -141,7 +153,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 3,
@@ -151,7 +164,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 4,
@@ -161,7 +175,8 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
   {
     id: 43,
@@ -171,9 +186,11 @@ export const productsData = [
     images: [image, image2],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "Telefonía",
+    subcategory: "Gama Alta",
   },
 ];
+
 
 export const totalProducts = productsData.length;
 export const category = "Telefonía gama media";
