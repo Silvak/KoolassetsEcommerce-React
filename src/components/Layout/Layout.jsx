@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <NavBar />
       <div
         style={{
           margin: 0,
