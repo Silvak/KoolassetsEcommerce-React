@@ -1,6 +1,8 @@
 import { useMediaQuery } from "@mui/material";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import NavBar from "@/components/navBar/NavBar";
+import Footer from "@/components/footer/footer";
 
 const paths = [
   "/product/:id",
@@ -24,15 +26,18 @@ const Layout = ({ children }) => {
   }, [pathname]);
 
   return (
-    <div
-      style={{
-        margin: 0,
-        padding: isPath && !isMobile ? "0 100px" : "0 10px",
-        background: "white",
-      }}
-    >
-      {children}
-    </div>
+    <>
+      <div
+        style={{
+          margin: 0,
+          padding: isPath && !isMobile ? "0 100px" : "0 10px",
+          background: "white",
+        }}
+      >
+        {children}
+      </div>
+      <Footer />
+    </>
   );
 };
 export default Layout;

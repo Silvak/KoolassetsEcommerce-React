@@ -1,14 +1,19 @@
 import * as React from "react";
-import { Grid, CardMedia, CircularProgress, Toolbar, Container } from "@mui/material";
+import {
+  Grid,
+  CardMedia,
+  CircularProgress,
+  Toolbar,
+  Container,
+} from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import NavBar from "@/components/navBar/NavBar";
+
 import AlertGlobal from "@/components/alert/alert";
 import ModalGlobal from "@/components/modal/modal";
 import SignIn from "@/screens/SignIn";
 import SignUp from "@/screens/SignUp";
 import { storeUser } from "@/stores/user/storeUser";
 import Layout from "@/components/Layout/Layout";
-import Footer from "@/components/footer/footer";
 
 const Home = React.lazy(() => import("@/screens/home"));
 const CategoryList = React.lazy(() => import("@/screens/categoryList"));
@@ -69,11 +74,8 @@ export default function Navigator() {
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          <Footer />
         </Layout>
       ) : (
-        <Container maxWidth="1440px" sx={{background: "#FFF"}}>
-          <NavBar />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -91,9 +93,6 @@ export default function Navigator() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Layout>
-          <Footer />
-        </Container>
-
       )}
       {/*other tools */}
       <AlertGlobal />
