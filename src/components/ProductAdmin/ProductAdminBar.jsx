@@ -29,6 +29,7 @@ function ProductAdminBar() {
     const [filterByStatus, setFilterByStatus] = useState('');
 
     const matches = useMediaQuery('(min-width:900px) and (max-width:1200px)'); 
+    const mobile = useMediaQuery('(min-width:200px) and (max-width:600px)'); 
 
 
     const handleOrderByChange = (event) => {
@@ -105,7 +106,8 @@ function ProductAdminBar() {
             </Grid>
             </ThemeProvider>
             <Grid item xs={12} md={4.5} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button variant="contained" disableRipple color='primary' style={{marginTop: matches ? 0 : 10}}>
+                <Button variant="contained" disableRipple color='primary' style={{ marginTop: matches ? 0 : 10, width: mobile ? '100%' : 'auto' }}
+>
                     Añadir
                 </Button>
             </Grid>
