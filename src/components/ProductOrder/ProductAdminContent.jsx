@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import products from '../../mock/orderListDashboard';
 import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Hidden } from '@mui/material';
 import PaginationCategory from '../CategoryList/PaginationCategory';
-import { CustomTypographyTitle, CustomTypographyText } from './CustomTypography';
+import { CustomTypographyTitle, CustomTypographyText, CustomTypographyStatus } from './CustomTypography';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
 import "./styles.css"
-
-
 
 function ProductAdminContent() {
   const itemsPerPage = 20;
@@ -28,10 +25,6 @@ function ProductAdminContent() {
   const handleClickDetails = () => {
     alert("Hice click en detalles")
   }
-
-
-
-
 
   return (
     <Box sx={{ mt: 1 }}>
@@ -61,9 +54,11 @@ function ProductAdminContent() {
                     <TableCell style={{ border: "none" }}><CustomTypographyText>{product.orderId}</CustomTypographyText></TableCell>
                     <TableCell style={{ border: "none" }} size='small'><CustomTypographyText>{product.date}</CustomTypographyText></TableCell>
                     <TableCell style={{ border: "none" }} size='small'><CustomTypographyText>{product.userId}</CustomTypographyText></TableCell>
-                    <TableCell style={{ border: "none" }} size='small'><CustomTypographyText>{product.status}</CustomTypographyText></TableCell>
+                    <TableCell style={{ border: "none" }} size='small'>
+                      <CustomTypographyStatus color={getColor(product.status)}>{product.status}</CustomTypographyStatus>
+                    </TableCell>
                   </Hidden>
-                  <TableCell style={{ border: "none" }} size='small'><CustomTypographyText>{product.value}</CustomTypographyText></TableCell>
+                  <TableCell style={{ border: "none" }} size='small'><CustomTypographyText >{product.value}</CustomTypographyText></TableCell>
                   <TableCell style={{ border: "none" }} size='small'>
                     <button
                       className="DetailsLink"
@@ -96,6 +91,19 @@ function ProductAdminContent() {
       </div>
     </Box>
   );
+}
+
+
+function getColor(status) {
+  if (status === "En espera") {
+    return "#3078BB"
+  }
+  if (status === "Entregado") {
+    return "#46B53C"
+  }
+  if (status === "Cancelado"){
+    return "#E44646"
+  }
 }
 
 export default ProductAdminContent;

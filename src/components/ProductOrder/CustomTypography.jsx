@@ -17,4 +17,12 @@ const CustomTypographyText = ({ children }) => {
   );
 };
 
-export { CustomTypographyTitle, CustomTypographyText };
+const CustomTypographyStatus = ({ children, color }) => {
+  return (
+    <Typography variant="h6" style={{ fontWeight: 'normal', fontSize: 16, color: color }}>
+      {children}
+    </Typography>
+  );
+};
+
+export { CustomTypographyTitle, CustomTypographyText, CustomTypographyStatus };
