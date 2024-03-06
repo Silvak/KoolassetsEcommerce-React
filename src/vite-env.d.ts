@@ -52,6 +52,10 @@ declare module "@/components/PaymentsMethods/UserData";
 declare module "@/components/PaymentsMethods/MethodsIcons";
 declare module "@/components/Input/CustomInput";
 declare module "@/components/Title/Title";
+declare module "@/components/returns/returnsView";
+declare module "@/components/returns/returnsPagination";
+declare module "@/components/returns/returns";
+declare module "@/components/returns/products";
 declare module "@/components/Dashboard/Sidebar";
 declare module "@/components/Dashboard/Summary";
 declare module "@/components/Dashboard/Views";
@@ -80,6 +84,7 @@ declare module "@/screens/SignUp";
 declare module "@/screens/payment";
 declare module "@/screens/CartPage";
 declare module "@/screens/AboutPage";
+declare module "@/screens/returnsPage";
 declare module "@/screens/DashboardPage";
 
 declare module "@/stores/user/storeUser";
