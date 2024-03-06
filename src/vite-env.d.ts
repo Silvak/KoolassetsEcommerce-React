@@ -56,6 +56,10 @@ declare module "@/components/returns/returnsView";
 declare module "@/components/returns/returnsPagination";
 declare module "@/components/returns/returns";
 declare module "@/components/returns/products";
+declare module "@/components/Dashboard/Sidebar";
+declare module "@/components/Dashboard/Summary";
+declare module "@/components/Dashboard/Views";
+declare module "@/components/Dashboard/Sales";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
@@ -81,6 +85,7 @@ declare module "@/screens/payment";
 declare module "@/screens/CartPage";
 declare module "@/screens/AboutPage";
 declare module "@/screens/returnsPage";
+declare module "@/screens/DashboardPage";
 
 declare module "@/stores/user/storeUser";
 
