@@ -78,6 +78,7 @@ declare module "@/screens/payment";
 declare module "@/screens/CartPage";
 declare module "@/screens/AboutPage";
 declare module "@/screens/DashboardPage";
+declare module "@/screens/ProductAdmin";
 
 declare module "@/stores/user/storeUser";
 

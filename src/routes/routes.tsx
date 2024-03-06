@@ -26,8 +26,8 @@ const Payment = React.lazy(() => import("@/screens/payment"));
 const PaymentsMethods = React.lazy(() => import("@/screens/paymentsMethods"));
 const Cart = React.lazy(() => import("@/screens/CartPage"));
 const AboutPage = React.lazy(() => import("@/screens/AboutPage"));
-const DashboardPage = React.lazy(() => import("@/screens/DashboardPage"
-));
+const DashboardPage = React.lazy(() => import("@/screens/DashboardPage"));
+const ProductAdmin = React.lazy(() => import("@/screens/ProductAdmin"));
 
 
 export default function Navigator() {
@@ -94,6 +94,7 @@ export default function Navigator() {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/product-admin" element={<ProductAdmin />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Layout>
