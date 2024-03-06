@@ -1,3 +1,5 @@
+import { summaryStyles } from "@/components/Dashboard/styles";
+
 import { Line } from "react-chartjs-2";
 
 import {
@@ -10,6 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { Box } from "@mui/material";
 
 Chartjs.register(
   CategoryScale,
@@ -44,7 +47,7 @@ let myData = {
     {
       label: "Ventas",
       data: salesData,
-      tension: 0.5,
+      tension: 0.4,
       fill: true,
       borderColor: "#E4464680",
       backgroundColor: "#E4464680",
@@ -52,10 +55,6 @@ let myData = {
       pointBorderColor: "#E4464680",
       pointBackgroundColor: "#E4464680",
     },
-    // {
-    //   label: "Otra línea",
-    //   data: [20, 25, 60, 65, 45, 10, 0, 25, 35, 7, 20, 25],
-    // },
   ],
 };
 
@@ -65,12 +64,26 @@ let misOptions = {
       min: 0,
     },
     x: {
+      display: false,
       ticks: { color: "#000" },
     },
   },
 };
 
 const Sales = () => {
-  return <Line data={myData} options={misOptions} />;
+  const classes = summaryStyles();
+
+  return (
+    <>
+      <Line data={myData} options={misOptions} />
+      <hr className={classes.itemHr} />
+      <Box className={classes.itemFooter}>
+        <p>Ventas hoy</p>
+        <p>
+          <strong>120</strong>
+        </p>
+      </Box>
+    </>
+  );
 };
 export default Sales;

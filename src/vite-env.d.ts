@@ -60,10 +60,16 @@ declare module "@/components/Dashboard/Sidebar";
 declare module "@/components/Dashboard/Summary";
 declare module "@/components/Dashboard/Views";
 declare module "@/components/Dashboard/Sales";
+declare module "@/components/Dashboard/ActiveUsers";
+declare module "@/components/Dashboard/MostSelled";
+declare module "@/components/Dashboard/Orders";
+declare module "@/components/Dashboard/ProductsOnSale";
+declare module "@/components/Dashboard/Balance";
 declare module "@/components/cancellations/canceledProducts";
 declare module "@/components/cancellations/cancellationPaginate";
 declare module "@/components/cancellations/cancellationView";
 declare module "@/components/cancellations/products";
+declare module "@/components/OrdersTable/OrdersTable";
 // declare module "@/components/";
 
 declare module "@/context/AppContextProvider";

@@ -25,7 +25,7 @@ const listItemStyle = {
 };
 
 const Sidebar = () => {
-  const isMobile = useMediaQuery("(max-width:800px)");
+  const isMobile = useMediaQuery("(max-width:1000px)");
 
   const [open, setOpen] = useState(!isMobile);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -108,6 +108,7 @@ const Sidebar = () => {
           position: isMobile ? "fixed" : "relative",
           top: !isMobile ? 30 : 0,
           left: isMobile ? (open ? 0 : "-100%") : 0,
+          // left: isMobile ? (open ? 0 : "-100%") : 0,
           height: "100vh",
           width: "min(60vw,250px)",
           zIndex: 1000,
