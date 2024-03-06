@@ -1,3 +1,5 @@
+import { summaryStyles } from "@/components/Dashboard/styles";
+
 import { Line } from "react-chartjs-2";
 
 import {
@@ -10,6 +12,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { Box } from "@mui/material";
+import { months } from "@/mock/summaryData";
 
 Chartjs.register(
   CategoryScale,
@@ -21,56 +25,49 @@ Chartjs.register(
   Legend
 );
 
-const salesData = [0, 12, 15, 5, 20, 8, 60, 40, 45, 60, 12, 100];
-const months = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
-];
-
-let myData = {
-  labels: months,
-  datasets: [
-    // Cada una de las líneas del gráfico
-    {
-      label: "Ventas",
-      data: salesData,
-      tension: 0.5,
-      fill: true,
-      borderColor: "#E4464680",
-      backgroundColor: "#E4464680",
-      pointRadius: 5,
-      pointBorderColor: "#E4464680",
-      pointBackgroundColor: "#E4464680",
-    },
-    // {
-    //   label: "Otra línea",
-    //   data: [20, 25, 60, 65, 45, 10, 0, 25, 35, 7, 20, 25],
-    // },
-  ],
-};
-
 let misOptions = {
   scales: {
     y: {
       min: 0,
     },
     x: {
+      display: false,
       ticks: { color: "#000" },
     },
   },
 };
 
-const Sales = () => {
-  return <Line data={myData} options={misOptions} />;
+const Sales = ({ data }) => {
+  const classes = summaryStyles();
+
+  let myData = {
+    labels: months,
+    datasets: [
+      // Cada una de las líneas del gráfico
+      {
+        label: "Ventas",
+        data: data,
+        tension: 0.4,
+        fill: true,
+        borderColor: "#E4464680",
+        backgroundColor: "#E4464680",
+        pointRadius: 5,
+        pointBorderColor: "#E4464680",
+        pointBackgroundColor: "#E4464680",
+      },
+    ],
+  };
+  return (
+    <>
+      <Line data={myData} options={misOptions} />
+      <hr className={classes.itemHr} />
+      <Box className={classes.itemFooter}>
+        <p>Ventas hoy</p>
+        <p>
+          <strong>120</strong>
+        </p>
+      </Box>
+    </>
+  );
 };
 export default Sales;

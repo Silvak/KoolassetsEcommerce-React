@@ -1,18 +1,19 @@
 import { summaryStyles } from "@/components/Dashboard/styles";
+import { Box } from "@mui/material";
+
 import { Line } from "react-chartjs-2";
 
-import { months } from "@/mock/summaryData";
-import { Box } from "@mui/material";
 import {
-  CategoryScale,
   Chart as Chartjs,
-  Legend,
-  LineElement,
+  CategoryScale,
   LinearScale,
   PointElement,
+  LineElement,
   Title,
   Tooltip,
+  Legend,
 } from "chart.js";
+import { months } from "@/mock/summaryData";
 
 Chartjs.register(
   CategoryScale,
@@ -23,6 +24,8 @@ Chartjs.register(
   Tooltip,
   Legend
 );
+
+const colorOrders = "#5DE44680";
 
 let misOptions = {
   scales: {
@@ -35,7 +38,8 @@ let misOptions = {
     },
   },
 };
-const Views = ({ data }) => {
+
+const Orders = ({ data }) => {
   const classes = summaryStyles();
 
   let myData = {
@@ -43,15 +47,15 @@ const Views = ({ data }) => {
     datasets: [
       // Cada una de las líneas del gráfico
       {
-        label: "Vistas",
+        label: "Ventas",
         data: data,
         tension: 0.4,
         fill: true,
-        borderColor: "#5DE44680",
-        backgroundColor: "#5DE44680",
+        borderColor: colorOrders,
+        backgroundColor: colorOrders,
         pointRadius: 5,
-        pointBorderColor: "#5DE44680",
-        pointBackgroundColor: "#5DE44680",
+        pointBorderColor: colorOrders,
+        pointBackgroundColor: colorOrders,
       },
     ],
   };
@@ -60,12 +64,12 @@ const Views = ({ data }) => {
       <Line data={myData} options={misOptions} />
       <hr className={classes.itemHr} />
       <Box className={classes.itemFooter}>
-        <p>Visitas hoy</p>
+        <p>Órdenes diarias</p>
         <p>
-          <strong>120</strong>
+          <strong>400</strong>
         </p>
       </Box>
     </>
   );
 };
-export default Views;
+export default Orders;

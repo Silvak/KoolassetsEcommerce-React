@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 export const summaryStyles = makeStyles({
   container: {
     width: "100%",
+    padding: "0 0 50px 0",
   },
   header: {
     marginTop: "20px",
@@ -10,6 +11,7 @@ export const summaryStyles = makeStyles({
     background: "#EEEEEE",
     width: "100%",
     borderRadius: "6px",
+    marginBottom: "30px",
   },
   title: {
     fontWeight: 600,
