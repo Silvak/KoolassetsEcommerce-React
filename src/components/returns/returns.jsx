@@ -24,10 +24,10 @@ function ReturnProducts({ totalResults, products }) {
   };
 
   return (
-    <div style={{ display: "flex", text: "center", alignItems: "flex-start" }}>
+    <div >
       <Box
         sx={{
-          marginLeft: { xs: 1, sm: 7, md: 7, lg: 7, xl: 10 },
+          marginLeft: { xs: 1, sm: 7, md: 7, lg: 7, xl: 7 },
           minWidth: "30vw",
           padding: "5%",
         }}
@@ -36,7 +36,7 @@ function ReturnProducts({ totalResults, products }) {
           container
           spacing={8}
           style={{
-            width: "100%",
+            // width: "100%",
             textAlign: "left",
             marginLeft: isMobile && "10px",
             height: "531px",
@@ -47,8 +47,7 @@ function ReturnProducts({ totalResults, products }) {
         <div
             style={{
               justifyContent: "center",
-              paddingBottom: 12, 
-              marginRight: "6vw",
+              paddingBottom: 2, 
             }}
           >
             <Pagination

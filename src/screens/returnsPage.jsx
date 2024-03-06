@@ -9,7 +9,8 @@ import ReturnsView from "../components/returns/returnsView";
 function ReturnsPage() {
   const user = userData[0];
   return (
-    <div>
+
+    <div style={{ padding: "0 90px"}}>
       <Breadcrumb path="Devoluciones" />
       <div style={{ display: "flex" }}>
         <SidebarProfile user={user} />

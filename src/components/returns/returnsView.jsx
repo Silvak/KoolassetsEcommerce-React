@@ -6,19 +6,11 @@ function ReturnsView() {
   return (
     <Box
     sx={{
-      width: "100%",
-      mt: 6,
-      marginBottom: 6,
+      mt: 5,
       textAlign: "left",
-      paddingX: 2,
     }}
   >
     <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
     >
       <Typography
         variant="subtitle"
