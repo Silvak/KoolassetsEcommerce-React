@@ -28,8 +28,9 @@ function ProductAdminBar() {
     const [filterByValue, setFilterByValue] = useState('');
     const [filterByStatus, setFilterByStatus] = useState('');
 
-    const matches = useMediaQuery('(min-width:900px) and (max-width:1200px)'); 
     const mobile = useMediaQuery('(min-width:200px) and (max-width:600px)'); 
+    const matches = useMediaQuery('(min-width:900px) and (max-width:1200px)'); 
+    const largest = useMediaQuery('(min-width:1200px) and (max-width:2400px)'); 
 
 
     const handleOrderByChange = (event) => {
@@ -48,7 +49,7 @@ function ProductAdminBar() {
     };
 
     return (
-        <Grid container spacing={2} alignItems="center" style={{paddingBottom: 8}}>
+        <Grid container spacing={2} alignItems="center" style={{paddingBottom: 8, maxWidth: largest ? "80vw" : "100%"}}>
           <ThemeProvider theme={theme}>
             <Grid item xs={12} md={1.5}>
                 <TextField
