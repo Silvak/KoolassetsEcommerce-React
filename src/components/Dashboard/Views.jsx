@@ -1,17 +1,18 @@
-import { Line } from "react-chartjs-2";
 import { summaryStyles } from "@/components/Dashboard/styles";
+import { Line } from "react-chartjs-2";
 
+import { months } from "@/mock/summaryData";
+import { Box } from "@mui/material";
 import {
-  Chart as Chartjs,
   CategoryScale,
+  Chart as Chartjs,
+  Legend,
+  LineElement,
   LinearScale,
   PointElement,
-  LineElement,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
-import { Box } from "@mui/material";
 
 Chartjs.register(
   CategoryScale,
@@ -22,40 +23,6 @@ Chartjs.register(
   Tooltip,
   Legend
 );
-
-const viewsData = [0, 56, 20, 36, 80, 40, 30, 12, 25, 30, 12, 100];
-const months = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
-];
-
-let myData = {
-  labels: months,
-  datasets: [
-    // Cada una de las líneas del gráfico
-    {
-      label: "Vistas",
-      data: viewsData,
-      tension: 0.4,
-      fill: true,
-      borderColor: "#5DE44680",
-      backgroundColor: "#5DE44680",
-      pointRadius: 5,
-      pointBorderColor: "#5DE44680",
-      pointBackgroundColor: "#5DE44680",
-    },
-  ],
-};
 
 let misOptions = {
   scales: {
@@ -68,9 +35,26 @@ let misOptions = {
     },
   },
 };
-const Views = () => {
+const Views = ({ data }) => {
   const classes = summaryStyles();
 
+  let myData = {
+    labels: months,
+    datasets: [
+      // Cada una de las líneas del gráfico
+      {
+        label: "Vistas",
+        data: data,
+        tension: 0.4,
+        fill: true,
+        borderColor: "#5DE44680",
+        backgroundColor: "#5DE44680",
+        pointRadius: 5,
+        pointBorderColor: "#5DE44680",
+        pointBackgroundColor: "#5DE44680",
+      },
+    ],
+  };
   return (
     <>
       <Line data={myData} options={misOptions} />

@@ -13,6 +13,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { months } from "@/mock/summaryData";
 
 Chartjs.register(
   CategoryScale,
@@ -24,41 +25,7 @@ Chartjs.register(
   Legend
 );
 
-const salesData = [0, 12, 15, 5, 20, 8, 60, 40, 45, 60, 12, 100];
-const months = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre",
-];
-
 const colorOrders = "#5DE44680";
-
-let myData = {
-  labels: months,
-  datasets: [
-    // Cada una de las líneas del gráfico
-    {
-      label: "Ventas",
-      data: salesData,
-      tension: 0.4,
-      fill: true,
-      borderColor: colorOrders,
-      backgroundColor: colorOrders,
-      pointRadius: 5,
-      pointBorderColor: colorOrders,
-      pointBackgroundColor: colorOrders,
-    },
-  ],
-};
 
 let misOptions = {
   scales: {
@@ -72,8 +39,26 @@ let misOptions = {
   },
 };
 
-const Orders = () => {
+const Orders = ({ data }) => {
   const classes = summaryStyles();
+
+  let myData = {
+    labels: months,
+    datasets: [
+      // Cada una de las líneas del gráfico
+      {
+        label: "Ventas",
+        data: data,
+        tension: 0.4,
+        fill: true,
+        borderColor: colorOrders,
+        backgroundColor: colorOrders,
+        pointRadius: 5,
+        pointBorderColor: colorOrders,
+        pointBackgroundColor: colorOrders,
+      },
+    ],
+  };
   return (
     <>
       <Line data={myData} options={misOptions} />

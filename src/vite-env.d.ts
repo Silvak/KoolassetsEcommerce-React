@@ -99,6 +99,7 @@ declare module "@/screens/returnsPage";
 declare module "@/screens/CancellationsPage";
 declare module "@/screens/DashboardPage";
 declare module "@/screens/ProductAdmin";
+declare module "@/screens/ProductAdminOrders";
 
 declare module "@/stores/user/storeUser";
 

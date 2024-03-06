@@ -1,17 +1,25 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 import { summaryStyles } from "@/components/Dashboard/styles";
-import { balanceData } from "@/mock/summaryData";
+import {
+  activeUsersData,
+  balanceData,
+  mostSelledData,
+  ordersData,
+  productsOnSalesData,
+  salesData,
+  viewsData,
+} from "@/mock/summaryData";
 
 //components
-import Views from "@/components/Dashboard/Views";
-import Sales from "@/components/Dashboard/Sales";
 import ActiveUsers from "@/components/Dashboard/ActiveUsers";
-import MostSelled from "@/components/Dashboard/MostSelled";
-import ProductsOnSale from "@/components/Dashboard/ProductsOnSale";
-import Orders from "@/components/Dashboard/Orders";
 import Balance from "@/components/Dashboard/Balance";
-import OrdersTable from "@/components/OrdersTable/OrdersTable";
+import MostSelled from "@/components/Dashboard/MostSelled";
+import Orders from "@/components/Dashboard/Orders";
+import ProductsOnSale from "@/components/Dashboard/ProductsOnSale";
+import Sales from "@/components/Dashboard/Sales";
+import Views from "@/components/Dashboard/Views";
+import Table from "@/components/ProductOrder/ProductAdminContent";
 
 const Summary = () => {
   const classes = summaryStyles();
@@ -31,27 +39,27 @@ const Summary = () => {
         </Grid>
         {/* visitas */}
         <Grid item xs={12} md={3.8} className={classes.item}>
-          <Views />
+          <Views data={viewsData} />
         </Grid>
         {/* ventas */}
         <Grid item xs={12} md={3.8} className={classes.item}>
-          <Sales />
+          <Sales data={salesData} />
         </Grid>
         {/* usuarios activos */}
         <Grid item xs={12} md={7.9} className={classes.item}>
-          <ActiveUsers />
+          <ActiveUsers data={activeUsersData} />
         </Grid>
         {/*  productos más vendidos*/}
         <Grid item xs={12} md={3.8} className={classes.item}>
-          <MostSelled />
+          <MostSelled data={mostSelledData} />
         </Grid>
         {/* otro */}
         <Grid item xs={12} md={5.8} className={classes.item}>
-          <ProductsOnSale />
+          <ProductsOnSale data={productsOnSalesData} />
         </Grid>
         {/* otro */}
         <Grid item xs={12} md={5.8} className={classes.item}>
-          <Orders />
+          <Orders data={ordersData} />
         </Grid>
       </Grid>
       <Box className={classes.header}>
@@ -59,7 +67,8 @@ const Summary = () => {
           Órdenes recientes
         </Typography>
       </Box>
-      <OrdersTable />
+      {/* <OrdersTable /> */}
+      <Table />
     </Box>
   );
 };
