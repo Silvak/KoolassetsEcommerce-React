@@ -1,8 +1,9 @@
 import { Typography, Box } from "@mui/material";
-import ReturnProducts from "./returns";
-import { returnsData, totalProducts } from "../../mock/returnsData";
+import { cancellationsData ,totalProducts } from "../../mock/cancellationsData";
+import Products from "./products";
+import CanceledProducts from "./canceledProducts";
 
-function ReturnsView() {
+function CancellationView() {
   return (
     <Box
     sx={{
@@ -23,11 +24,11 @@ function ReturnsView() {
           ml: { xs: "0", md: 10 },
         }}
       >
-        Devoluciones realizadas
+        Cancelaciones realizadas
       </Typography>
         { /* Productos */}
-        <ReturnProducts 
-          products={returnsData}
+        <CanceledProducts 
+          products={cancellationsData}
           totalResults={totalProducts}
         />
     </Box>
@@ -35,4 +36,4 @@ function ReturnsView() {
   )
 }
 
-export default ReturnsView;
+export default CancellationView;

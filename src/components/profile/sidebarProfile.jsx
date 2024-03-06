@@ -38,7 +38,7 @@ const SidebarProfile = ({ user }) => {
       setSelectedOption("actual");
     } else if (pathname === "/returns") {
       setSelectedOption("returns");
-    } else if (pathname === "/cancel") {
+    } else if (pathname === "/cancellations") {
       setSelectedOption("cancellations");
     }
   }, [location]);
@@ -58,7 +58,7 @@ const SidebarProfile = ({ user }) => {
     option === "profile" && navigate("/profile");
     option === "actual" && navigate("/orders");
     option === "returns" && navigate("/returns");
-    option === "cancellations" && navigate("/cancel");
+    option === "cancellations" && navigate("/cancellations");
   };
 
   const listItemStyle = {

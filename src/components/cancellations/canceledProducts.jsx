@@ -1,17 +1,16 @@
-import { Box, Grid, useMediaQuery} from "@mui/material/";
+import { Box, Grid, useMediaQuery } from "@mui/material/";
 import Products from "./products";
-import Pagination from "./returnsPagination";
+import Pagination from "./cancellationPaginate";
 import { useState } from "react";
 
+import React from "react";
 
-
-function ReturnProducts({ totalResults, products }) {
-
+function CanceledProducts({ totalResults, products }) {
   const isMobile = useMediaQuery("(max-width:600px)");
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
-  const totalPages = Math.ceil(totalResults / productsPerPage); 
-  
+  const totalPages = Math.ceil(totalResults / productsPerPage);
+
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = Math.min(startIndex + productsPerPage, totalResults);
   const productsToShow = products.slice(startIndex, endIndex);
@@ -20,7 +19,6 @@ function ReturnProducts({ totalResults, products }) {
     setCurrentPage(page);
     // window.scroll(0, 0);
   };
-
   return (
     <div >
       <Box
@@ -59,5 +57,4 @@ function ReturnProducts({ totalResults, products }) {
   );
 }
 
-export default ReturnProducts;
-
+export default CanceledProducts;

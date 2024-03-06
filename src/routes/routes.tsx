@@ -27,6 +27,7 @@ const PaymentsMethods = React.lazy(() => import("@/screens/paymentsMethods"));
 const Cart = React.lazy(() => import("@/screens/CartPage"));
 const AboutPage = React.lazy(() => import("@/screens/AboutPage"));
 const ReturnsPage = React.lazy(() => import("@/screens/returnsPage"));
+const CancellationsPage = React.lazy(() => import("@/screens/CancellationsPage"));
 
 const DashboardPage = React.lazy(() => import("@/screens/DashboardPage"
 ));
@@ -92,6 +93,7 @@ export default function Navigator() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/payments-methods" element={<PaymentsMethods />} />
             <Route path="/returns" element={<ReturnsPage />} />
+            <Route path="/cancellations" element={<CancellationsPage />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/orders" element={<OrdersUser />} />
             <Route path="/sign-in" element={<SignIn />} />
