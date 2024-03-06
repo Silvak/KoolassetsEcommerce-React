@@ -1,7 +1,7 @@
 import image from "../assets/Img/png/pc2.png";
 import image2 from "../assets/Img/jpg/pc.jpg";
 
-export const cancelationsData = [
+export const cancellationsData = [
   {
     id: 6,
     name: "PC gamer 32GB ram, RTX 3080, i7 12th gen, 1TB SSD, Case Cooler Master, Disipador de...",
@@ -174,4 +174,4 @@ export const cancelationsData = [
   },
 ];
 
-export const totalProducts = returnsData.length;
+export const totalProducts = cancellationsData.length;

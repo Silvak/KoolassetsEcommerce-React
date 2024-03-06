@@ -1,21 +1,20 @@
 import SidebarProfile from "../components/profile/sidebarProfile";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import { userData } from "../mock/userData";
-import ReturnsView from "../components/returns/returnsView";
+import CancellationView from "../components/cancellations/cancellationView";
 
-
-function ReturnsPage() {
+function CancellationsPage() {
   const user = userData[0];
   return (
 
     <div style={{ padding: "0 90px"}}>
-      <Breadcrumb path="Devoluciones" />
+      <Breadcrumb path="Cancelaciones" />
       <div style={{ display: "flex" }}>
         <SidebarProfile user={user} />
-        <ReturnsView />
+        <CancellationView />
       </div>
     </div>
-  );
+  )
 }
 
-export default ReturnsPage;
+export default CancellationsPage;

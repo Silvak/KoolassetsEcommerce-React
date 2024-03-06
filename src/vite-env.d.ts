@@ -60,6 +60,11 @@ declare module "@/components/Dashboard/Sidebar";
 declare module "@/components/Dashboard/Summary";
 declare module "@/components/Dashboard/Views";
 declare module "@/components/Dashboard/Sales";
+declare module "@/components/cancellations/canceledProducts";
+declare module "@/components/cancellations/cancellationPaginate";
+declare module "@/components/cancellations/cancellationView";
+declare module "@/components/cancellations/products";
+// declare module "@/components/";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
@@ -85,6 +90,7 @@ declare module "@/screens/payment";
 declare module "@/screens/CartPage";
 declare module "@/screens/AboutPage";
 declare module "@/screens/returnsPage";
+declare module "@/screens/CancellationsPage";
 declare module "@/screens/DashboardPage";
 
 declare module "@/stores/user/storeUser";
@@ -92,6 +98,7 @@ declare module "@/stores/user/storeUser";
 declare module "@/theme/theme";
 
 declare module "@/mock/homeProductsData";
+declare module "@/mock/cancellationsData";
 
 declare module "@/hooks/useForm";
 
