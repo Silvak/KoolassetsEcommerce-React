@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card as MuiCard, CardActionArea, CardActions, CardContent, Button, Typography, Paper, CardMedia, useMediaQuery } from '@mui/material';
+import { Card as MuiCard, CardActionArea, CardActions, CardContent, Button, Typography, Paper, CardMedia, useMediaQuery, Link } from '@mui/material';
 
 function ProductAdminCard({ product }) {
   const matches = useMediaQuery('(max-width:600px)'); 
@@ -43,7 +43,9 @@ function ProductAdminCard({ product }) {
       </CardActionArea>
       <CardActions>
         <Button fullWidth size="small" variant="contained" color="primary">
-          Editar
+          <Link href={`/product-admin/${product.id}`} sx={{color: "white", paddingInline: "100%"}}>
+            Editar
+          </Link>
         </Button>
       </CardActions>
     </Paper>
