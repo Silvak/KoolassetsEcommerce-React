@@ -70,7 +70,13 @@ declare module "@/components/cancellations/cancellationPaginate";
 declare module "@/components/cancellations/cancellationView";
 declare module "@/components/cancellations/products";
 declare module "@/components/OrdersTable/OrdersTable";
-// declare module "@/components/";
+declare module "@/components/ProductAdmin/AddProductAdmin";
+declare module "@/components/ProductAdmin/EditProductAdmin";
+declare module "@/components/ProductAdmin/forms/AddProductForm";
+declare module "@/components/ProductAdmin/forms/EditProductForm";
+declare module "@/components/ProductAdmin/forms/EditPreview";
+declare module "@/components/ProductAdmin/forms/AddPreview";
+declare module "@/components/ProductAdmin/forms/mockPreview";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
@@ -79,6 +85,7 @@ declare module "@/stores/Actions/Theme/storeTheme";
 declare module "@/stores/useGetNativeBalance/useGetNativeBalance";
 declare module "@/stores/useGetWalletTokenBalances/useGetWalletTokenBalances";
 declare module "@/stores/cart/storeCart";
+declare module "@/stores/addProducts/productsImage";
 
 declare module "@/routes/routes";
 
@@ -100,6 +107,8 @@ declare module "@/screens/CancellationsPage";
 declare module "@/screens/DashboardPage";
 declare module "@/screens/ProductAdmin";
 declare module "@/screens/ProductAdminOrders";
+declare module "@/screens/admin/AddProductPage";
+declare module "@/screens/admin/EditProductPage";
 
 declare module "@/stores/user/storeUser";
 
@@ -107,6 +116,7 @@ declare module "@/theme/theme";
 
 declare module "@/mock/homeProductsData";
 declare module "@/mock/cancellationsData";
+declare module "@/mock/mockImages";
 
 declare module "@/hooks/useForm";
 
