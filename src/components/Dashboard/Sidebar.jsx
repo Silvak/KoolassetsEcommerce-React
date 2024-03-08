@@ -51,6 +51,11 @@ const Sidebar = () => {
     option === "actual" && navigate("/orders");
     option === "returns" && navigate("/returns");
     option === "cancellations" && navigate("/cancel");
+    
+    option === "resumen" && navigate("/dashboard");
+    option === "productos" && navigate("/product-admin");
+    option === "ordenes" && navigate("/product-orders");
+
   };
 
   const listItemHoverStyle = {

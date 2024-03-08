@@ -12,6 +12,7 @@ const paths = [
   "/about",
   "/orders",
   "/product-admin",
+  "/product-orders",
   "/payments-methods",
   "/dashboard", 
 ];
