@@ -29,12 +29,13 @@ const Breadcrumb = ({ path, dashboard }) => {
       {normalizedPaths.map((path, index) => (
         <span key={index}>
           {" "}
-          <Link
-            to={`/${path}`}
+          {/* <Link
+            to={`#`}
             style={{ color: "gray", textDecoration: "none" }}
           >
-            {originalNames[index]}
-          </Link>{" "}
+        </Link>{" "} */}
+        {originalNames[index]}
+        {" "}
           /
         </span>
       ))}
