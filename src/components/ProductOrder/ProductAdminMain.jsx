@@ -13,7 +13,7 @@ function ProductAdminMain() {
   return (
     <div style={{ display: "flex", 
     paddingRight: isMobile ? 0 : "5vw", 
-    flexDirection: "column", flex: 1, marginTop: isMobile ? "15%" : 0, background:"none"}}>
+    flexDirection: "column", flex: 1, marginTop: isMobile ? "15%" : "5%", background:"none"}}>
       <ProductAdminTitle />
       <Breadcrumb path={"Productos / Órdenes"} dashboard={"true"} />
       <ProductAdminSubtitle />

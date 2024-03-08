@@ -11,7 +11,7 @@ function ProductAdminMain() {
   const isMobile = useMediaQuery('(max-width:600px)'); 
   
   return (
-    <div style={{ display: "flex", flexDirection: "column", flex: 1, marginTop: isMobile ? "15%" : 0}}>
+    <div style={{ display: "flex", flexDirection: "column", flex: 1, marginTop: isMobile ? "15%" : "5%"}}>
       <ProductAdminTitle />
       <Breadcrumb path={"Productos"} dashboard={"true"} />
       <ProductAdminSubtitle />

@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 export const summaryStyles = makeStyles({
   container: {
+    marginTop: "5%",
     width: "100%",
     padding: "0 0 50px 0",
   },
