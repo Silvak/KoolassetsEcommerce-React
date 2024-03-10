@@ -14,7 +14,8 @@ const paths = [
   "/product-admin",
   "/product-orders",
   "/payments-methods",
-  "/dashboard", 
+  "/dashboard",
+  "/details-order",
 ];
 
 const Layout = ({ children }) => {
