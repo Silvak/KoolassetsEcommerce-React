@@ -12,7 +12,7 @@ const CustomInput = ({ width, label, ...props }) => {
             fontSize: "14px",
             fontWeight: "normal",
             display: "block",
-            margin: isDesktop ? "0" : "10px 0",
+            margin: isDesktop ? "8px" : "20px 0",
             lineHeight: isDesktop && "1.1",
           }}
         >
