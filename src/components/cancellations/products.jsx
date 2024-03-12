@@ -1,33 +1,33 @@
 import React from 'react'
-import { Box, Grid, Typography } from "@mui/material";
-import { cancellationsData } from '../../mock/cancellationsData';
-function Products() {
-  const dataSliced = cancellationsData.slice(0, 6);
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
+
+function Products(productsToShow) {
+ const isMobile = useMediaQuery("md");
   return (
     <Grid
       container
       spacing={4}
-      direction={"column"}
+      direction={"row"}
       columns={2}
       sx={{
         gap: "20px",
         justifyContent: "center",
         alignItems: "start",
-        height: "600px",
-        maxWidth: "60vw",
+        height: "auto",
+        maxWidth: !isMobile && "60vw",
       }}
     >
-      {dataSliced.map((product, key) => (
+      {productsToShow.products.map((product, key) => (
         <Box
           key={product.id}
           sx={{
-            width: "60%",
+            // width: "60%",
             borderBottom: "1px solid #ECECEC",
             borderTop: "1px solid #ECECEC",
             maxWidth: "500px",
             display: "flex",
             paddingY: 2,
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <Box sx={{ width: "200px", display: "block", height: "112px" }}>
