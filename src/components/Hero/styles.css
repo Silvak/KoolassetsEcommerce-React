@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #1B1AFF; /* Color primario */
+    --button-width: 20px; /* Ancho del botón */
+}
+
+.swiper{
+    height: auto;
+}
+
+.slide{
+    height: 100%;
+    width: 100%;
+    padding: 20px 0 50px 0;
+}
+
+
+.swiper  .swiper-pagination-bullet{
+    height: 10px;
+    width: var(--button-width);
+    border-radius: 16px;
+    background-color: var(--primary-color);
+    opacity: 70%;
+}
+
+
+.swiper .swiper-pagination-bullet-active{
+    opacity: 100%;
+    width: 30px
+}
+
+.hero-text_year{
+    color: #1B1AFF ;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.hero-text_title{
+    font-size: clamp(28px,3vw,40px);
+    margin: 0;
+    line-height: 1;
+    font-weight: 600;
+    text-balance: balance;
+}
+
+.hero-text_paragraph{
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    text-balance: pretty;
+    max-width: 500px;
+
+}
+
+.hero-text_btn{
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 10px ;
+    width: 150px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    transition: transform ease 300ms
+   
+}
+
+.hero-text_btn:hover{
+    transform: scale(0.95);
+    transition: transform ease 300ms
+}
+
+.hero-text_offer{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.hero-img_picture{
+    height: auto;
+    max-height: 450px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-img_picture > img{
+    margin-left: auto;
+    height: 100%;
+    object-fit: cover;
+}

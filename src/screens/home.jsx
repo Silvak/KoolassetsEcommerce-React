@@ -1,78 +1,35 @@
-import { useBoundStore } from "@/stores/index";
-import { shallow } from "zustand/shallow";
-import { useTheme, Box, IconButton, Button } from "@mui/material";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { Box } from "@mui/material";
 
-function MyApp() {
-  const {
-    themeModeState,
-    ChangeMode,
-    ChangeStateAlert,
-    stateAlert,
-    ChangeStateModal,
-  } = useBoundStore((state) => state, shallow);
+import Hero from "@/components/Hero/Hero";
+import CategorySlider from "@/components/CategorySlider/CategorySlider";
+import HomeProducts from "../components/HomeProducts/HomeProducts";
 
-  const theme = useTheme();
-
-  const handleOpenAlert = () => {
-    ChangeStateAlert(true);
-  };
-  const handleOpenModal = () => {
-    ChangeStateModal(true);
-  };
-
+const home = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        // width: "100%",
-        // alignItems: "center",
-        // justifyContent: "center",
-        bgcolor: "background.default",
-        color: "text.primary",
-        borderRadius: 1,
-        // p: 3,
-        gap: "20px",
-      }}
-    >
-      <IconButton
-        sx={{ ml: 1, color: "text.third" }}
-        onClick={() => ChangeMode(themeModeState)}
+    <Box component="section">
+      <Hero />
+      <Box
+        sx={{
+          fontSize: "16px",
+          background: "#1B1AFF",
+          color: "#FFF",
+          textAlign: "center",
+          padding: "20px 0",
+          margin: "40px 0",
+          "& span": { textDecoration: "underline" },
+        }}
       >
-        {theme.palette.mode} mode
-        {theme.palette.mode === "dark" ? (
-          <Brightness7Icon sx={{ color: "icon.third" }} />
-        ) : (
-          <Brightness4Icon sx={{ color: "icon.third" }} />
-        )}
-      </IconButton>
-      <Button
-        onClick={() => handleOpenAlert()}
-        sx={{ backgroundColor: "background.paper", color: "text.third" }}
-      >
-        Alert
-      </Button>
-      <Button
-        onClick={() => handleOpenModal()}
-        sx={{ backgroundColor: "background.paper", color: "text.third" }}
-      >
-        Modal
-      </Button>
+        <p>
+          Echa un vistazo a nuestras ofertas de Invierno:{" "}
+          <span>¡hasta 50% de descuento!</span>
+        </p>
+      </Box>
+
+      <CategorySlider />
+      <HomeProducts />
+      <Hero withSlider={false} />
+      <div style={{marginBottom: "90px"}}></div>
     </Box>
   );
-}
-
-export default function Home() {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <MyApp />
-    </Box>
-  );
-}
+};
+export default home;
