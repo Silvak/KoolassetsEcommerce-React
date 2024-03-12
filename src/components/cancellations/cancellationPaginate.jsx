@@ -3,7 +3,7 @@ import Pagination from '@mui/material/Pagination';
 
 function CancellationPaginate({ totalPages, currentPage, onPageChange }) {
   return (
-    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", width: "100%" }}>
+    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", padding: 1, marginTop: "20px"}}>
     <Pagination
       count={totalPages}
       page={currentPage}

@@ -1,6 +1,5 @@
 import { Typography, Box } from "@mui/material";
 import { cancellationsData ,totalProducts } from "../../mock/cancellationsData";
-import Products from "./products";
 import CanceledProducts from "./canceledProducts";
 
 function CancellationView() {
@@ -9,6 +8,7 @@ function CancellationView() {
     sx={{
       mt: 5,
       textAlign: "left",
+      // mb: 5
     }}
   >
     <Box

@@ -1,27 +1,29 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import { returnsData } from "../../mock/returnsData";
-function Products() {
+function Products(productsToShow) {
+  const isMobile = useMediaQuery("md");
   const dataSliced = returnsData.slice(0, 6);
+
   return (
     <Grid
       container
       spacing={4}
-      direction={"column"}
+      direction={"row"}
       columns={2}
       sx={{
         gap: "20px",
         justifyContent: "center",
         alignItems: "start",
-        height: "600px",
-        maxWidth: "60vw",
+        height: "auto",
+        maxWidth: !isMobile && "60vw",
       }}
     >
-      {dataSliced.map((product, key) => (
+      {productsToShow.products.map((product, key) => (
         <Box
           key={product.id}
           sx={{
-            width: "60%",
+            // width: "60%",
             borderBottom: "1px solid #ECECEC",
             borderTop: "1px solid #ECECEC",
             maxWidth: "500px",
