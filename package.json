@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --outDir public",
+    "build": "vite build --output public"
     "preview": "vite preview",
     "moralis": "moralis-admin-cli watch-cloud-folder --moralisApiKey QX2nXN7ytl1vCK6 --moralisApiSecret i7OwoSFh4xTubfO --moralisSubdomain avgcactb6lbt.usemoralis.com --autoSave 1 --moralisCloudfolder ./moralis/cloud"
   },
