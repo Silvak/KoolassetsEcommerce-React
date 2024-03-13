@@ -48,7 +48,7 @@ const CategoryList = ({ category, totalResults, products }) => {
           fontSize: "14px",
           fontWeight: 700,
           marginBottom: 6,
-          marginLeft: 16,
+          marginLeft: 10,
         }}
       >
         Mostrando {productsToShow.length} de {totalResults} resultados:{" "}
@@ -64,11 +64,11 @@ const CategoryList = ({ category, totalResults, products }) => {
           </div>
         ) : (
           isDesktop && 
-          <div style={{paddingRight:"2vw"}}>
+          <div>
           <DesktopSidebar onUpdatePath={handlePathUpdate} />
           </div>
         )}
-        <div style={{ marginLeft: "6vw", display: "flex", flexDirection: "column", width: "100%" }}>
+        <div style={{ marginLeft: "12px", display: "flex", flexDirection: "column", width: "100%" }}>
           <Typography
             variant="h6"
             style={{ fontSize: "12px", color: "gray", marginBottom: "20px", marginTop:"6px" }}
@@ -77,7 +77,7 @@ const CategoryList = ({ category, totalResults, products }) => {
             <Breadcrumb path={selectedFullPath} />
             {/* <span style={{ color: "#000" }}>Gama media</span> */}
           </Typography>
-          <Grid container spacing={0} width={"100%"} height={"auto"}>
+          <Grid container spacing={0} width={"100%"} height={"auto"} gap={0}>
             {productsToShow.map((product) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{ mb: "32px" }}>
                 <ProductCard product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite} />
