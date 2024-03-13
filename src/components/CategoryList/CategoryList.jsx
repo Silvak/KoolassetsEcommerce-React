@@ -40,9 +40,6 @@ const CategoryList = ({ category, totalResults, products }) => {
     setDrawerOpen(!drawerOpen);
   };
 
-
-  console.log(selectedFullPath);
-
   return (
     <>
       <Typography
@@ -50,7 +47,7 @@ const CategoryList = ({ category, totalResults, products }) => {
         style={{
           fontSize: "14px",
           fontWeight: 700,
-          marginBottom: 8,
+          marginBottom: 6,
           marginLeft: 16,
         }}
       >
@@ -71,10 +68,10 @@ const CategoryList = ({ category, totalResults, products }) => {
           <DesktopSidebar onUpdatePath={handlePathUpdate} />
           </div>
         )}
-        <div style={{ marginLeft: "6vw", marginTop: 12, display: "flex", flexDirection: "column", width: "100%" }}>
+        <div style={{ marginLeft: "6vw", display: "flex", flexDirection: "column", width: "100%" }}>
           <Typography
             variant="h6"
-            style={{ fontSize: "12px", color: "gray", marginBlock: "20px" }}
+            style={{ fontSize: "12px", color: "gray", marginBottom: "20px", marginTop:"6px" }}
           >
             {/* Inicio / Categorías / Telefonía /{" "} */}
             <Breadcrumb path={selectedFullPath} />
