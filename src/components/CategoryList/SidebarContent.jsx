@@ -185,7 +185,7 @@ const SidebarContent = ({ onUpdatePath }) => {
                     textAlign: "center",
                     fontSize: isMobile ? "12px" : "0.7rem",
                     gap: "4px",
-                    width: isMobile ? "100%" : "100%",
+                    // width: isMobile ? "100%" : "100%",
                   }}
                 >
                   <Rating
