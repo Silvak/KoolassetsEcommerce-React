@@ -11,7 +11,7 @@ function Footer() {
       component="footer"
       sx={{
         width: "100%",
-        maxWidth: 1400,
+        // maxWidth: 1400,
         backgroundColor: "#090A0B",
         padding: "36px 150px",
         gap: "36px",
