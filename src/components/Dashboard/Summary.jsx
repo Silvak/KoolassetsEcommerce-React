@@ -32,33 +32,38 @@ const Summary = () => {
         </Typography>
       </Box>
       {/* layout grid */}
-      <Grid container sx={{ margin: "30px 0 0 0", gap: "20px" }}>
+      <Grid
+        container
+        sx={{
+          margin: "30px 0 0 0",
+        }}
+      >
         {/* balance */}
-        <Grid item xs={12} md={3.8} className={classes.item}>
+        <Grid item xs={12} md={4} className={classes.item}>
           <Balance data={balanceData} />
         </Grid>
         {/* visitas */}
-        <Grid item xs={12} md={3.8} className={classes.item}>
+        <Grid item xs={12} md={4} className={classes.item}>
           <Views data={viewsData} />
         </Grid>
         {/* ventas */}
-        <Grid item xs={12} md={3.8} className={classes.item}>
+        <Grid item xs={12} md={4} className={classes.item}>
           <Sales data={salesData} />
         </Grid>
         {/* usuarios activos */}
-        <Grid item xs={12} md={7.9} className={classes.item}>
+        <Grid item xs={12} md={8} className={classes.item}>
           <ActiveUsers data={activeUsersData} />
         </Grid>
         {/*  productos más vendidos*/}
-        <Grid item xs={12} md={3.8} className={classes.item}>
+        <Grid item xs={12} md={4} className={classes.item}>
           <MostSelled data={mostSelledData} />
         </Grid>
         {/* otro */}
-        <Grid item xs={12} md={5.8} className={classes.item}>
+        <Grid item xs={12} md={6} className={classes.item}>
           <ProductsOnSale data={productsOnSalesData} />
         </Grid>
         {/* otro */}
-        <Grid item xs={12} md={5.8} className={classes.item}>
+        <Grid item xs={12} md={6} className={classes.item}>
           <Orders data={ordersData} />
         </Grid>
       </Grid>

@@ -38,7 +38,7 @@ const ProductCard = ({
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
-          bgcolor: "#F5F5F5",
+          bgcolor: "transparent",
           borderRadius: "4px",
           boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           mb: "8px",
@@ -120,7 +120,7 @@ const ProductCard = ({
         spacing={0}
         alignItems="center"
         justifyContent="space-between"
-        style={{ height: "auto", padding: "0px", width: "250px" }}
+        style={{ height: "auto", paddingInline: "1px", width: "250px" }}
       >
         <div style={{ display: "flex", justifyContent: "flex-start", gap: 4 }}>
           <Rating

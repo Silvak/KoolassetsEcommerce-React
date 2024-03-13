@@ -40,9 +40,6 @@ const CategoryList = ({ category, totalResults, products }) => {
     setDrawerOpen(!drawerOpen);
   };
 
-
-  console.log(selectedFullPath);
-
   return (
     <>
       <Typography
@@ -50,8 +47,8 @@ const CategoryList = ({ category, totalResults, products }) => {
         style={{
           fontSize: "14px",
           fontWeight: 700,
-          marginBottom: 8,
-          marginLeft: 16,
+          marginBottom: 6,
+          marginLeft: "0px",
         }}
       >
         Mostrando {productsToShow.length} de {totalResults} resultados:{" "}
@@ -67,22 +64,22 @@ const CategoryList = ({ category, totalResults, products }) => {
           </div>
         ) : (
           isDesktop && 
-          <div style={{paddingRight:"2vw"}}>
+          <div>
           <DesktopSidebar onUpdatePath={handlePathUpdate} />
           </div>
         )}
-        <div style={{ marginLeft: "6vw", marginTop: 12, display: "flex", flexDirection: "column", width: "100%" }}>
+        <div style={{ marginLeft: "12px", display: "flex", flexDirection: "column", width: "100%" }}>
           <Typography
             variant="h6"
-            style={{ fontSize: "12px", color: "gray", marginBlock: "20px" }}
+            style={{ fontSize: "12px", color: "gray", marginBottom: "20px", marginTop:"6px" }}
           >
             {/* Inicio / Categorías / Telefonía /{" "} */}
             <Breadcrumb path={selectedFullPath} />
             {/* <span style={{ color: "#000" }}>Gama media</span> */}
           </Typography>
-          <Grid container spacing={0} width={"100%"} height={"auto"}>
+          <Grid container spacing={0} width={"100%"} height={"auto"} gap={0}>
             {productsToShow.map((product) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{ mb: "32px" }}>
+              <Grid item xs={12} sm={6} md={4} lg={3} key={product.id} sx={{ mb: "22px" }}>
                 <ProductCard product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite} />
               </Grid>
             ))}
