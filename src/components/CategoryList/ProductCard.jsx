@@ -120,7 +120,7 @@ const ProductCard = ({
         spacing={0}
         alignItems="center"
         justifyContent="space-between"
-        style={{ height: "auto", padding: "0px", width: "250px" }}
+        style={{ height: "auto", paddingInline: "1px", width: "250px" }}
       >
         <div style={{ display: "flex", justifyContent: "flex-start", gap: 4 }}>
           <Rating
