@@ -48,7 +48,7 @@ const CategoryList = ({ category, totalResults, products }) => {
           fontSize: "14px",
           fontWeight: 700,
           marginBottom: 6,
-          marginLeft: "0px",
+          marginLeft: 14,
         }}
       >
         Mostrando {productsToShow.length} de {totalResults} resultados:{" "}
