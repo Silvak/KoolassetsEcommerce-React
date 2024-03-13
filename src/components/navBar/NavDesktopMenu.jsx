@@ -1,10 +1,10 @@
 import { Box, ListItemButton } from "@mui/material";
 import { NavLink, useLocation } from "react-router-dom";
-import { menuItems } from "../../utils/menuItems";
 import { v4 as uuidv4 } from "uuid";
 //components
 import NavIcons from "@/components/navBar/NavIcons";
 import SearchBar from "@/components/SearchBar/SearchBar";
+import { MENU_ITEMS_DESKTOP } from "@/utils/menuItems";
 
 const searchBarItem = {
   id: uuidv4(),
@@ -12,9 +12,9 @@ const searchBarItem = {
 };
 
 const updatedMenuItems = [
-  ...menuItems.slice(0, 4),
+  ...MENU_ITEMS_DESKTOP.slice(0, 4),
   searchBarItem,
-  ...menuItems.slice(4),
+  ...MENU_ITEMS_DESKTOP.slice(4),
 ];
 
 const NavDesktopMenu = () => {
@@ -47,7 +47,6 @@ const NavDesktopMenu = () => {
                 textAlign: "center",
                 fontWeight: 400,
                 fontSize: 14,
-        
               }}
             >
               {item.name}

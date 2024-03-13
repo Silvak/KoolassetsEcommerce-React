@@ -22,7 +22,7 @@ const ProductCard = ({
   isFavorite,
   handleToggleFavorite,
 }) => {
-  const labelChip = product?.category.toUpperCase();
+  const labelChip = product?.category;
   const isInFavorites = isFavorite(product);
   const { isInCart, toggleCartlist } = storeCart((state) => state);
 
@@ -42,21 +42,20 @@ const ProductCard = ({
           borderRadius: "4px",
           boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           mb: "8px",
-          width: "250px",
           height: "auto",
+          margin:"auto"
         }}
-        style={{ padding: "0px" }}
       >
         <CardContent
-          style={{ padding: "0px", paddingTop: "12px", paddingInline: "4px" }}
+          style={{ paddingTop: 8 }}
         >
           <Grid
             container
             spacing={1}
             alignItems="center"
-            style={{ paddingBlock: "0px" }}
+            style={{ margin:"auto" }}
           >
-            <Grid item xs={12} sx={{ ml: 0 }} style={{ margin: "0vh" }}>
+            <Grid item xs={12} sx={{ ml: 0 }}>
               <div
                 style={{
                   display: "flex",
@@ -72,7 +71,8 @@ const ProductCard = ({
                     backgroundColor: "rgba(27, 26, 255, 0.3)",
                     borderRadius: "120px",
                     fontWeight: 600,
-                    ml: 1,
+                    ml: -2,
+                    mb: 2,
                     paddingX: 0.6,
                     paddingY: 0.2,
                   }}
@@ -95,18 +95,19 @@ const ProductCard = ({
                 )}
               </div>
             </Grid>
-            <Grid item xs={12} sx={{ textAlign: "center" }}>
-              <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+            <Grid item xs={12} style={{magin:"auto", paddingRight: 8}}>
+              <Link to={`/product/${product.id}`} style={{ textDecoration: "none", margin:"auto" }}>
                 <img
                   src={product.image}
                   alt={product.name}
                   style={{
-                    width: "auto",
-                    height: "220px",
-                    objectFit: "cover",
-                    paddingInline: "0px",
-                    paddingRight: "0px",
-                    paddingBottom: "20px",
+                    width: "max-content",
+                    height: "auto",
+                    // objectFit: "cover",
+                    // paddingInline: "0px",
+                    // paddingRight: "0px",
+                    // paddingBottom: "20px",
+                    margin:"auto"
                   }}
                 />
               </Link>
@@ -120,9 +121,9 @@ const ProductCard = ({
         spacing={0}
         alignItems="center"
         justifyContent="space-between"
-        style={{ height: "auto", paddingInline: "1px", width: "250px" }}
+        style={{ height: "auto", width: "auto" }}
       >
-        <div style={{ display: "flex", justifyContent: "flex-start", gap: 4 }}>
+        <div style={{ display: "flex", justifyContent:"space-between", gap: 4 }}>
           <Rating
             name="read-only"
             value={product.rating}
@@ -145,6 +146,7 @@ const ProductCard = ({
           disableRipple
           aria-label="add to favorites"
           onClick={() => handleToggleFavorite(product)}
+          style={{paddingRight: 0}}
         >
           {isInFavorites ? (
             <FavoriteOutlinedIcon
@@ -183,7 +185,7 @@ const ProductCard = ({
           ${product.price.toFixed(2)}
         </Typography>
         <CardActions
-          style={{ padding: "0px", marginInline: "0px", width: "250px" }}
+          style={{ padding: "0px", marginInline: "0px", width: "auto" }}
         >
           <Button
             variant={isInCart(product) ? "contained" : "outlined"}
