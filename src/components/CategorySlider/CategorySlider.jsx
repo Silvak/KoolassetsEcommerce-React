@@ -32,6 +32,7 @@ const CategorySlider = () => {
         <Box
           sx={{
             display: "flex",
+            mt:7
           }}
         >
           <button

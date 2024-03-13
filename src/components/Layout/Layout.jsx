@@ -37,7 +37,8 @@ const Layout = ({ children }) => {
           // padding: isPath && !isMobile ? "0 100px" : "0 10px",
           // background: "#FAFAFA",
           maxWidth:1400,
-          margin:"auto"
+          margin:"auto",
+          paddingInline:"20px"
         }}
       >
         {children}

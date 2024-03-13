@@ -5,7 +5,8 @@ const Title = ({ text }) => {
         color: "#000",
         fontSize: "clamp(25px,2vw,30px)",
         fontWeight: "400",
-        margin: "30px 0 50px 0",
+        marginBottom: "40px",
+        marginTop: "94px",
       }}
     >
       {text}
