@@ -22,8 +22,8 @@ export const summaryStyles = makeStyles({
   item: {
     width: "100%",
     padding: "15px",
-    outline: "2px solid #DFDFDF",
-    boxShadow: "0 2px 10px #00000026",
+    outline: "thin solid #DFDFDF",
+    background: "#FFFF",
     borderRadius: "6px",
     color: "#000",
   },
