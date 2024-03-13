@@ -71,7 +71,7 @@ const SidebarContent = ({ onUpdatePath }) => {
   };
 
   return (
-    <List style={{ paddingInline:8, minWidth:"10vw", maxWidth:"15vw"}}>
+    <List>
       {/* Categorías */}
       <Typography variant="body2" style={titleStyle}>
         Categorías
@@ -121,7 +121,7 @@ const SidebarContent = ({ onUpdatePath }) => {
         Filtrar por
       </Typography>
       {filters.map((filter, key) => (
-        <div key={key} style={{ width: "100%" }}>
+        <div key={key} style={{ width: "max-content" }}>
           <ListItemButton onClick={() => handleCategoryClick(filter.name)}>
             <ListItemText
               primaryTypographyProps={{ style: subtitleStyle }}
@@ -185,7 +185,7 @@ const SidebarContent = ({ onUpdatePath }) => {
                     textAlign: "center",
                     fontSize: isMobile ? "12px" : "0.7rem",
                     gap: "4px",
-                    width: "100%",
+                    width: isMobile ? "100%" : "100%",
                   }}
                 >
                   <Rating
@@ -207,8 +207,7 @@ const SidebarContent = ({ onUpdatePath }) => {
       {/* Rango de precios */}
       <div
         style={{
-          width: "auto",
-          // maxWidth: isMobile ? "max-content" : "12vw",
+          width: "100%",
         }}
       >
         <Typography variant="body2" style={{ ...subtitleStyle, marginLeft: 0, marginBottom: "0.4rem" }}>Rango de precios</Typography>

@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
           // background: "#FAFAFA",
           maxWidth:1400,
           margin:"auto",
-          paddingInline:"20px"
-        }}
+          paddingInline: !isMobile ? "20px" : "30px"
+      }}
       >
         {children}
       </div>
