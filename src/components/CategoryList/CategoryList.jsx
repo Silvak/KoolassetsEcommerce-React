@@ -66,7 +66,10 @@ const CategoryList = ({ category, totalResults, products }) => {
             <Sidebar open={drawerOpen} onClose={toggleDrawer} onUpdatePath={handlePathUpdate}/>
           </div>
         ) : (
-          isDesktop && <DesktopSidebar onUpdatePath={handlePathUpdate} />
+          isDesktop && 
+          <div style={{paddingRight:"2vw"}}>
+          <DesktopSidebar onUpdatePath={handlePathUpdate} />
+          </div>
         )}
         <div style={{ marginLeft: "6vw", marginTop: 12, display: "flex", flexDirection: "column", width: "100%" }}>
           <Typography

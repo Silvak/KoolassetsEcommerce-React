@@ -34,9 +34,10 @@ const Layout = ({ children }) => {
       <NavBar />
       <div
         style={{
-          margin: 0,
-          padding: isPath && !isMobile ? "0 100px" : "0 10px",
+          // padding: isPath && !isMobile ? "0 100px" : "0 10px",
           background: "white",
+          maxWidth:1400,
+          margin:"auto"
         }}
       >
         {children}
