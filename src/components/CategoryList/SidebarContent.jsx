@@ -207,8 +207,7 @@ const SidebarContent = ({ onUpdatePath }) => {
       {/* Rango de precios */}
       <div
         style={{
-          width: "max-content",
-          maxWidth: isMobile ? "max-content" : "12vw",
+          width: "100%",
         }}
       >
         <Typography variant="body2" style={{ ...subtitleStyle, marginLeft: 0, marginBottom: "0.4rem" }}>Rango de precios</Typography>

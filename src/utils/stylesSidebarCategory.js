@@ -52,7 +52,7 @@ export const childrenFilter = {
     fontSize: "10px",
     marginLeft: "-14px",
     width: "max-content",
-    maxWidth: '120px',
+    // maxWidth: '120px',
     overflow: 'hidden',  
     textOverflow: 'ellipsis',
     marginBottom: "-0.3rem",

@@ -26,7 +26,7 @@ function HomeList({ products }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container spacing={0} width={"100%"} height={"auto"}>
+      <Grid container spacing={0} width={"100%"} height={"auto"} gap={0} justifyContent={"center"}>
         {products.map((product) => (
           <Grid
             item
@@ -38,11 +38,12 @@ function HomeList({ products }) {
             key={product.id}
             sx={{
               mb: "32px",
-              gap: "35px",
+              p:1,
               display: "flex",
               justifyContent: "center",
               [theme.breakpoints.down("lg")]: {},
             }}
+            maxWidth={324}
           >
             <HomeCard
               product={product}

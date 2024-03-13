@@ -32,6 +32,9 @@ const CategorySlider = () => {
         <Box
           sx={{
             display: "flex",
+            mt: !isMobile ? 7 : 0,
+            ml: isMobile ? "36%" : 0,
+            mb: isMobile ? 2 : 0,
           }}
         >
           <button
