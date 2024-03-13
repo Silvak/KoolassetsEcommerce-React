@@ -38,7 +38,7 @@ const ProductCard = ({
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "center",
-          bgcolor: "#F5F5F5",
+          bgcolor: "transparent",
           borderRadius: "4px",
           boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           mb: "8px",
