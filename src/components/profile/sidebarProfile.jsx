@@ -22,7 +22,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { BsClipboardData, BsBagDash, BsBasket2 } from "react-icons/bs";
 
 const SidebarProfile = ({ user }) => {
-  const isMobile = useMediaQuery("(max-width:800px)");
+  const isMobile = useMediaQuery("(max-width:1199px)");
   const [open, setOpen] = useState(!isMobile);
   const [selectedOption, setSelectedOption] = useState(null);
   const { setModal } = useBoundStore();
@@ -112,7 +112,7 @@ const SidebarProfile = ({ user }) => {
   );
 
   return (
-    <Box style={{ position: "relative" }}>
+    <Box style={{ position: "relative", display: isMobile ? "none" : "" }}>
       {/* {isMobile && (
         <IconButton
           onClick={handleToggleSidebar}
@@ -133,7 +133,7 @@ const SidebarProfile = ({ user }) => {
         sx={{
           position: isMobile ? "fixed" : "relative",
           top: !isMobile ? 30 : 0,
-          left: isMobile ? (open ? 0 : "-100%") : 0,
+          left: isMobile ? "-100%" : 0,
           minHeight: "100%",
           width: 250,
           zIndex: 1000,
@@ -141,7 +141,7 @@ const SidebarProfile = ({ user }) => {
           paddingLeft: 1,
           paddingTop: 2,
           paddingBottom: 8,
-          backgroundColor: isMobile ? "#fff" : "tranparent",
+          // backgroundColor: isMobile ? "#fff" : "tranparent",
         }}
       >
         <List sx={{ color: "#000", width: "max-content" }}>
@@ -199,7 +199,7 @@ const SidebarProfile = ({ user }) => {
 
         </List>
       </Box>
-
+{/* 
       {isMobile && open && (
         <div
           style={{
@@ -213,7 +213,7 @@ const SidebarProfile = ({ user }) => {
           }}
           onClick={() => setOpen(false)}
         />
-      )}
+      )} */}
     </Box>
   );
 };
