@@ -31,7 +31,9 @@ function HomeCard({
       <Grid
         sx={{
           mb: "8px",
-          // maxWidth: "320px",
+          maxWidth: "auto",
+          height: "auto",
+          margin:"auto"
         }}
         style={{ padding: "0px" }}
       >
@@ -45,8 +47,11 @@ function HomeCard({
                 alt={product.name}
                 style={{
                   width: "100%",
-                  height: "100%",
-                  borderRadius: "10px",
+                  minHeight: "auto",
+                  // borderRadius: "10px",
+                  // width: "auto",
+                  // height: "max-content",
+                  // objectFit:"contain",
                 }}
               />
             </Grid>

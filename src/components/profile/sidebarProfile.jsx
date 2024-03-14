@@ -113,7 +113,7 @@ const SidebarProfile = ({ user }) => {
 
   return (
     <Box style={{ position: "relative" }}>
-      {isMobile && (
+      {/* {isMobile && (
         <IconButton
           onClick={handleToggleSidebar}
           style={{
@@ -127,7 +127,7 @@ const SidebarProfile = ({ user }) => {
         >
           <MenuIcon />
         </IconButton>
-      )}
+      )} */}
 
       <Box
         sx={{

@@ -101,13 +101,14 @@ const ProductCard = ({
                   src={product.image}
                   alt={product.name}
                   style={{
-                    width: "max-content",
+                    width: "auto",
                     height: "auto",
-                    // objectFit: "cover",
+                    objectFit:"contain",
+                    padding: 8
                     // paddingInline: "0px",
                     // paddingRight: "0px",
                     // paddingBottom: "20px",
-                    margin:"auto"
+                    // margin:"auto"
                   }}
                 />
               </Link>
@@ -167,7 +168,7 @@ const ProductCard = ({
           variant="body2"
           color={"#615D5D"}
           fontWeight={"normal"}
-          style={{ marginBlock: 10, whiteSpace: "nowrap" }}
+          style={{ marginBlock: 10 }}
         >
           {product.name}
         </Typography>

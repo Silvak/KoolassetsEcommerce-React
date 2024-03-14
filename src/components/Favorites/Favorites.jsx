@@ -30,7 +30,7 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
   };
 
   return (
-    <div>
+    <div style={{minHeight:"100vh"}}>
       {totalResults ? (
         <div style={{ marginTop: 12 }}>
           <BreadCrumb path="Favoritos" />
@@ -111,9 +111,10 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
             paddingBlock: "24px",
             alignItems: "center",
             textAlign: "center",
+            marginTop:"20%"
           }}
         >
-          <Typography variant="h6">
+          <Typography variant="h6" style={{fontSize:"28px"}}>
             No existen productos agregados a favoritos
           </Typography>
         </div>
