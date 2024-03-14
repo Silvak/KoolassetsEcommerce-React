@@ -34,6 +34,7 @@ export const NavMobileMenuStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     color: "#00000080",
+    fontSize: "18px",
   },
   linkActive: {
     textDecoration: "none",
@@ -41,5 +42,6 @@ export const NavMobileMenuStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     color: "blue",
+    fontSize: "18px",
   },
 });

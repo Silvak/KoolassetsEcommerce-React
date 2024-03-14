@@ -37,7 +37,7 @@ const NavMobileMenu = () => {
                 }
               >
                 {link.icon && <link.icon />}
-                {link.label}
+                <span>{link.label}</span>
               </NavLink>
             ))}
           </AccordionDetails>
@@ -56,9 +56,15 @@ const NavMobileMenu = () => {
             </AccordionSummary>
             <AccordionDetails className={css.accordionDetails}>
               {item.links.map((link) => (
-                <NavLink to={link.to} className={css.linkWrapper}>
+                <NavLink
+                  key={link.id}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    isActive ? css.linkActive : css.linkInactive
+                  }
+                >
                   {link.icon && <link.icon />}
-                  {link.label}
+                  <span>{link.label}</span>
                 </NavLink>
               ))}
             </AccordionDetails>

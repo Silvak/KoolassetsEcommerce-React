@@ -1,15 +1,22 @@
 import { Button, Drawer, Box, useMediaQuery } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Logo from "@/components/Logo/Logo";
 import NavMobileMenu from "@/components/navBar/NavMobileMenu";
 import SearchBar from "@/components/SearchBar/SearchBar";
 
 import { BsTextRight } from "react-icons/bs";
+import { useLocation } from "react-router-dom";
 
 const NavMobile = () => {
   const [open, setOpen] = useState(false);
   const matches = useMediaQuery("(max-width: 350px)");
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <Box
