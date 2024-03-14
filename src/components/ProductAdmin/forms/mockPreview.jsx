@@ -11,7 +11,7 @@ function MockPreview(props) {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", maxWidth: "619px" }}
+      style={{ display: "flex", flexDirection: "column", maxWidth: "619px", width: "97%" }}
     >
       <Stack>
         <div

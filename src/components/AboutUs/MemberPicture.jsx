@@ -30,7 +30,7 @@ function MemberPicture({ picture, socials }) {
         style={{
           display: "flex",
           justifyContent: "space-evenly",
-          width: mdQuery && "70%",
+          width: mdQuery && "80%",
         }}
       >
         {socials.map((soc) => (

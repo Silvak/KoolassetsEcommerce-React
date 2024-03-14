@@ -12,6 +12,7 @@ function HomeProducts() {
   const handleClick = () => {
     navigate("/categories");
   };
+  const homeProducts = productsData.slice(0, 10);
 
   const primaryColor = theme.palette.primary.main;
   const secondaryColor = theme.palette.secondary.main;

@@ -84,7 +84,7 @@ function EditProductForm() {
               required
               label="Categoría"
               name="Category"
-              size="small"
+              // size="small"
               value={formData.Category}
               onChange={handleInputChange}
             />
@@ -101,7 +101,7 @@ function EditProductForm() {
             <TextField
               fullWidth
               required
-              size="small"
+              // size="small"
               label="Marca"
               name="Brand"
               value={formData.Brand}
@@ -120,7 +120,7 @@ function EditProductForm() {
             <TextField
               fullWidth
               required
-              size="small"
+              // size="small"
               label="Nombre"
               name="Name"
               multiline
@@ -173,7 +173,7 @@ function EditProductForm() {
             <TextField
               fullWidth
               required
-              size="small"
+              // size="small"
               label="Stock"
               name="Stock"
               value={formData.Stock}
@@ -192,7 +192,7 @@ function EditProductForm() {
             <TextField
               fullWidth
               required
-              size="small"
+              // size="small"
               label="0.00"
               name="Price"
               value={formData.Price}
@@ -211,7 +211,7 @@ function EditProductForm() {
             <TextField
               fullWidth
               required
-              size="small"
+              // size="small"
               label="Descripción"
               name="Description"
               multiline

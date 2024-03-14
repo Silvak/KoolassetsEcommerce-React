@@ -8,7 +8,7 @@ function AboutMembers() {
   const xlQuery = useMediaQuery((theme) => theme.breakpoints.up("xl"));
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={4} sx={{maxWidth: "1213px"}}>
       {/* Text */}
       <Grid item xs={12}>
         {/* Title */}
@@ -31,12 +31,12 @@ function AboutMembers() {
           item
           spacing={4}
           sx={{
-            marginBottom: "57px",
+            marginBottom: "50px",
           }}
         >
           {AboutTeam.map((member, index) => (
-            <Grid item xs={12} lg={12} key={index} id={member.id}>
-              <Grid container alignItems="center" sx={{ marginBottom: "50px" }}>
+            <Grid item xs={12} lg={12} key={index} id={member.id} >
+              <Grid container alignItems="center" sx={{ marginBottom: "50px", display: "flex", alignItems: "start" }}>
                 {/* Imagen del miembro del equipo */}
                 <Grid
                   item
@@ -58,7 +58,7 @@ function AboutMembers() {
                   item
                   xs={12}
                   md={9}
-                  sx={{ marginLeft: lgQuery ? "50px" : "0" }}
+                  sx={{ marginLeft: lgQuery ? "10px" : "0" }}
                 >
                   <Typography
                     variant="h2"
@@ -66,6 +66,7 @@ function AboutMembers() {
                       fontSize: "30px",
                       fontWeight: 500,
                       color: "#000000",
+                      marginBottom: "5px"
                     }}
                   >
                     {member.name}
@@ -75,7 +76,7 @@ function AboutMembers() {
                     sx={{
                       fontSize: "18px",
                       fontWeight: 500,
-                      marginBottom: "5px",
+                      marginBottom: "15px",
                     }}
                   >
                     {member.role}
