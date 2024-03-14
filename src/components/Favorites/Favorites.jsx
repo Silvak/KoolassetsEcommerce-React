@@ -3,8 +3,9 @@ import { Grid, Typography, useMediaQuery, Button } from "@mui/material";
 import ProductCard from "../../components/CategoryList/ProductCard";
 import Pagination from "../../components/CategoryList/PaginationCategory";
 import { storeFavorites } from "../../stores/favorites/storeFavorites";
-
+import { AboutData } from "../../mock/AboutData";
 import BreadCrumb from "@/components/Breadcrumb/Breadcrumb";
+import { Link } from "react-router-dom";
 
 const Favorites = ({ totalResults, favoritesProducts }) => {
   const { toggleFavorite, isFavorite, clearFavorites } = storeFavorites(
@@ -116,14 +117,55 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
             color: "#000",
             display: "flex",
             justifyContent: "center",
-            paddingBlock: "24px",
             alignItems: "center",
             textAlign: "center",
+            height: "90vh",
+            width: "90vw",
+            flexDirection: "column",
           }}
         >
-          <Typography variant="h6">
-            No existen productos agregados a favoritos
-          </Typography>
+          <div>
+            <Link to="/categories">
+              <div style={{ width: "400px", marginBottom: "25px" }}>
+                <img
+                  src={AboutData.image}
+                  alt="AboutImage"
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "95%",
+                    borderRadius: "50%",
+                  }}
+                />
+              </div>
+            </Link>
+          </div>
+
+          <Typography variant="h6">Agrega tus productos favoritos</Typography>
+
+          <Link
+            to="/categories"
+            style={{
+              textDecoration: "none",
+              // color: "black",
+              borderRadius: "30px",
+            }}
+          >
+            <Button
+              variant="outlined"
+              sx={{
+                marginTop: "32px",
+                backgroundColor: "#1B1AFF",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "black",
+                },
+              }}
+            >
+              Explorar Tienda
+            </Button>
+          </Link>
         </div>
       )}
     </div>

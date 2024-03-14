@@ -52,7 +52,7 @@ function Product() {
         <ProductDescription />
       </Box>
       { /* Suggestions */}
-      <Grid xs={12} sx={{paddingX: isMobile ? 15 : 5}}>
+      <Grid xs={12} sx={{paddingX: isMobile ? 15 : 5, display: "flex", justifyContent: "center"}}>
         <CartSlider />
       </Grid>
     </div>
