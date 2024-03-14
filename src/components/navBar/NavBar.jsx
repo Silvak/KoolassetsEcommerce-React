@@ -13,12 +13,13 @@ const NavBar = () => {
           background: "none",
           boxShadow: "none",
           padding: "20px 0",
+          paddingInline: "25px",
           color: "gray",
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "flex-start",
-          maxWidth: "1400px",
-          marginInline: "auto",
+          // maxWidth: "1400px",
+          // marginInline: "auto",
         }}
         position="static"
       >
