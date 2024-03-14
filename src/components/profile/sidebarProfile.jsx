@@ -19,6 +19,7 @@ import "./styles.css";
 import { useBoundStore } from "../../stores/index";
 import ConfirmationContent from "../modal/confirmationContent";
 import { useNavigate, useLocation } from "react-router-dom";
+import { BsClipboardData, BsBagDash, BsBasket2 } from "react-icons/bs";
 
 const SidebarProfile = ({ user }) => {
   const isMobile = useMediaQuery("(max-width:800px)");
@@ -40,9 +41,15 @@ const SidebarProfile = ({ user }) => {
       setSelectedOption("returns");
     } else if (pathname === "/cancellations") {
       setSelectedOption("cancellations");
+    } else if (pathname === "/dashboard") {
+      setSelectedOption("resumen");
+    } else if (pathname === "/product-admin") {
+      setSelectedOption("productos");
+    } else if (pathname === "/product-orders") {
+      setSelectedOption("ordenes");
     }
   }, [location]);
-
+  
   const handleToggleSidebar = () => {
     setOpen(!open);
   };
@@ -59,6 +66,9 @@ const SidebarProfile = ({ user }) => {
     option === "actual" && navigate("/orders");
     option === "returns" && navigate("/returns");
     option === "cancellations" && navigate("/cancellations");
+    option === "resumen" && navigate("/dashboard");
+    option === "productos" && navigate("/product-admin");
+    option === "ordenes" && navigate("/product-orders");
   };
 
   const listItemStyle = {
@@ -87,7 +97,7 @@ const SidebarProfile = ({ user }) => {
       onClick={() => handleItemClick(option)}
       className="divSelected"
     >
-      <IconComponent color={selectedOption === option ? "blue" : "gray"} />
+      <IconComponent color={selectedOption === option ? "blue" : "gray"} style={{width:"20px", height:"auto"}}/>
       <Typography
         variant="h6"
         style={{
@@ -103,7 +113,7 @@ const SidebarProfile = ({ user }) => {
 
   return (
     <Box style={{ position: "relative" }}>
-      {isMobile && (
+      {/* {isMobile && (
         <IconButton
           onClick={handleToggleSidebar}
           style={{
@@ -117,19 +127,20 @@ const SidebarProfile = ({ user }) => {
         >
           <MenuIcon />
         </IconButton>
-      )}
+      )} */}
 
       <Box
         sx={{
           position: isMobile ? "fixed" : "relative",
           top: !isMobile ? 30 : 0,
           left: isMobile ? (open ? 0 : "-100%") : 0,
-          height: "100vh",
+          minHeight: "100%",
           width: 250,
           zIndex: 1000,
           transition: "left 0.3s ease-in-out",
           paddingLeft: 1,
-          paddingBlock: 2,
+          paddingTop: 2,
+          paddingBottom: 8,
           backgroundColor: isMobile ? "#fff" : "tranparent",
         }}
       >
@@ -146,7 +157,7 @@ const SidebarProfile = ({ user }) => {
           >
             Administrar mi cuenta
           </Typography>
-          <Box sx={{ ml: 4, mb: 8, mt: 2 }}>
+          <Box sx={{ ml: 4, mb:4, mt: 2 }}>
             {renderListItem(UserIcon, "Mi perfil", "profile")}
             {renderListItem(PaymentMetIcon, "Método de pago", "payment")}
             {renderListItem(SessionCloseIcon, "Cerrar sesión", "logout")}
@@ -158,11 +169,34 @@ const SidebarProfile = ({ user }) => {
           >
             Mis órdenes
           </Typography>
-          <Box sx={{ ml: 4, mt: 2 }}>
+          <Box sx={{ ml: 4, mb:4, mt: 2 }}>
             {renderListItem(ActualPurchIcon, "Estado actual", "actual")}
             {renderListItem(ReturnPurchIcon, "Devoluciones", "returns")}
             {renderListItem(CancelPurchIcon, "Cancelaciones", "cancellations")}
           </Box>
+
+          {/* Opciones para el Dashboard */}
+          <Typography
+            variant="h6"
+            style={{ fontSize: "18px", marginBottom: 20 }}
+          >
+            Menú principal
+          </Typography>
+          <Box sx={{ ml: 4, mb:4, mt: 2 }}>
+            {renderListItem(BsClipboardData, "Resumen", "resumen")}
+          </Box>
+
+          <Typography
+            variant="h6"
+            style={{ fontSize: "18px", marginBottom: 20 }}
+          >
+            Administración
+          </Typography>
+          <Box sx={{ ml: 4, mt: 2 }}>
+            {renderListItem(BsBagDash, "Productos", "productos")}
+            {renderListItem(BsBasket2, "Ordenes", "ordenes")}
+          </Box>
+
         </List>
       </Box>
 

@@ -3,7 +3,7 @@ import SidebarContent from './SidebarContent';
 
 const DesktopSidebar = ({ onUpdatePath }) => {
   return (
-    <div style={{ width:'8vw', height: "auto", padding: '16px' }}>
+    <div style={{ height: "auto", padding: '16px', marginRight: 30 }}>
       <SidebarContent onUpdatePath={onUpdatePath}/>
     </div>
   );

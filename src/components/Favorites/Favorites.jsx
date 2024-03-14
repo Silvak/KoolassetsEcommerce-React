@@ -31,7 +31,7 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
   };
 
   return (
-    <div>
+    <div style={{minHeight:"100vh"}}>
       {totalResults ? (
         <div style={{ marginTop: 12 }}>
           <BreadCrumb path="Favoritos" />
@@ -77,17 +77,9 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
             </Button>
           </div>
 
-          <Grid container spacing={0} width={"100%"} height={"auto"}>
+          <Grid container spacing={0} width={"100%"} height={"auto"} gap={2}>
             {productsToShow.map((product) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={3}
-                key={product.id}
-                sx={{ mb: "32px" }}
-              >
+              <Grid item xs={12} sm={5} md={4} lg={3} xl={2.8} key={product.id} sx={{ mb: "22px" }}>
                 <ProductCard
                   product={product}
                   closeIcon={true}
@@ -119,6 +111,7 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
+
             height: "90vh",
             width: "90vw",
             flexDirection: "column",

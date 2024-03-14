@@ -12,8 +12,10 @@ const paths = [
   "/about",
   "/orders",
   "/product-admin",
+  "/product-orders",
   "/payments-methods",
-  "/dashboard", 
+  "/dashboard",
+  "/details-order",
 ];
 
 const Layout = ({ children }) => {
@@ -32,10 +34,12 @@ const Layout = ({ children }) => {
       <NavBar />
       <div
         style={{
-          margin: 0,
-          padding: isPath && !isMobile ? "0 100px" : "0 10px",
-          background: "white",
-        }}
+          // padding: isPath && !isMobile ? "0 100px" : "0 10px",
+          // background: "#FAFAFA",
+          maxWidth:1400,
+          margin:"auto",
+          paddingInline: !isMobile ? "20px" : "30px"
+      }}
       >
         {children}
       </div>

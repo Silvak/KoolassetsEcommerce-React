@@ -31,7 +31,9 @@ function HomeCard({
       <Grid
         sx={{
           mb: "8px",
-          maxWidth: "320px",
+          maxWidth: "auto",
+          height: "auto",
+          margin:"auto"
         }}
         style={{ padding: "0px" }}
       >
@@ -44,10 +46,12 @@ function HomeCard({
                 src={product.image}
                 alt={product.name}
                 style={{
-                  width: "320px",
-                  height: "304px",
-                  objectFit: "contain",
-                  borderRadius: "10px",
+                  width: "100%",
+                  minHeight: "auto",
+                  // borderRadius: "10px",
+                  // width: "auto",
+                  // height: "max-content",
+                  // objectFit:"contain",
                 }}
               />
             </Grid>
@@ -61,7 +65,7 @@ function HomeCard({
         spacing={0}
         alignItems="center"
         justifyContent="space-between"
-        style={{ height: "auto", padding: "0px", width: "320px" }}
+        style={{ height: "auto", padding: "0px", width: "auto" }}
       >
         <div style={{ display: "flex", justifyContent: "flex-start", gap: 4 }}>
           <Rating
@@ -119,7 +123,7 @@ function HomeCard({
             variant="body2"
             color={"#615D5D"}
             fontWeight={"normal"}
-            style={{ maxWidth: "320px" }}
+            style={{ maxWidth: "auto" }}
           >
             {product.name}
           </Typography>
@@ -141,7 +145,7 @@ function HomeCard({
         <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
 
           <CardActions
-            style={{ padding: "0px", marginInline: "0px", width: "320px" }}
+            style={{ padding: "0px", marginInline: "0px", width: "auto" }}
           >
             <Button
               variant="outlined"

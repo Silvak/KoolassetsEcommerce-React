@@ -77,6 +77,10 @@ declare module "@/components/ProductAdmin/forms/EditProductForm";
 declare module "@/components/ProductAdmin/forms/EditPreview";
 declare module "@/components/ProductAdmin/forms/AddPreview";
 declare module "@/components/ProductAdmin/forms/mockPreview";
+declare module "@/components/DetailsOrder/DetailsOrderHeader";
+declare module "@/components/DetailsOrder/DetailsOrderContent";
+declare module "@/components/DetailsOrder/DetailsOrderTable";
+declare module "@/components/DetailsOrder/DetailsOrderForm";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";
@@ -109,6 +113,7 @@ declare module "@/screens/ProductAdmin";
 declare module "@/screens/ProductAdminOrders";
 declare module "@/screens/admin/AddProductPage";
 declare module "@/screens/admin/EditProductPage";
+declare module "@/screens/admin/DetailsOrder";
 
 declare module "@/stores/user/storeUser";
 

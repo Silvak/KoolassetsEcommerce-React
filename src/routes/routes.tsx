@@ -33,6 +33,7 @@ const CancellationsPage = React.lazy(() => import("@/screens/CancellationsPage")
 const DashboardPage = React.lazy(() => import("@/screens/DashboardPage"));
 const EditProductAdmin = React.lazy(() => import("@/screens/admin/EditProductPage"));
 const AddProductAdmin = React.lazy(() => import("@/screens/admin/AddProductPage"));
+const DetailsOrder = React.lazy(() => import("@/screens/admin/DetailsOrder"));
 
 
 export default function Navigator() {
@@ -105,6 +106,7 @@ export default function Navigator() {
             <Route path="/product-admin/:id" element={<EditProductAdmin />} />
             <Route path="/product-admin/add" element={<AddProductAdmin />} />
             <Route path="/product-orders" element={<ProductAdminOrders />} />
+            <Route path="/details-order/:id" element={<DetailsOrder />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Layout>

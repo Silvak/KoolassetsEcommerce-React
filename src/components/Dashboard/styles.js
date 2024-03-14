@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 export const summaryStyles = makeStyles({
   container: {
+    marginTop: "5%",
     width: "100%",
     padding: "0 0 50px 0",
   },
@@ -21,8 +22,8 @@ export const summaryStyles = makeStyles({
   item: {
     width: "100%",
     padding: "15px",
-    outline: "2px solid #DFDFDF",
-    boxShadow: "0 2px 10px #00000026",
+    outline: "thin solid #DFDFDF",
+    background: "#FFFF",
     borderRadius: "6px",
     color: "#000",
   },

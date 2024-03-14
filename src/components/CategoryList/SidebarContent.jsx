@@ -185,7 +185,7 @@ const SidebarContent = ({ onUpdatePath }) => {
                     textAlign: "center",
                     fontSize: isMobile ? "12px" : "0.7rem",
                     gap: "4px",
-                    width: isMobile ? "100%" : "100%",
+                    // width: isMobile ? "100%" : "100%",
                   }}
                 >
                   <Rating
@@ -207,8 +207,7 @@ const SidebarContent = ({ onUpdatePath }) => {
       {/* Rango de precios */}
       <div
         style={{
-          width: "max-content",
-          maxWidth: isMobile ? "max-content" : "12vw",
+          width: "100%",
         }}
       >
         <Typography variant="body2" style={{ ...subtitleStyle, marginLeft: 0, marginBottom: "0.4rem" }}>Rango de precios</Typography>

@@ -11,10 +11,12 @@ function Footer() {
       component="footer"
       sx={{
         width: "100%",
+        // maxWidth: 1400,
         backgroundColor: "#090A0B",
         padding: "36px 150px",
         gap: "36px",
         maxHeight: !mdQuery ? "362px" : "",
+        margin:"auto"
       }}
     >
 
@@ -38,30 +40,33 @@ function Footer() {
             xl={3}
             key={item.id}
             id={item.id}
-            sx={{ gap: "16px", maxWidth: "267px" }}
+            sx={{ gap: "16px", backgroundColor:"#090A0B" }}
           >
             <Grid>
               <Typography variant="h6">
                 <Link
                   href={item.link}
-                  sx={{ textDecoration: "none", color: "#EFEFEF" }}
+                  sx={{ textDecoration: "none", color: "#EFEFEF", marginInline:"2rem" }}
                 >
                   {item.title}
                 </Link>
               </Typography>
             </Grid>
 
-            <Grid xs={12} id={item.id}>
+            <Grid xs={12} style={{minWidth:"auto", marginInline:"2rem"}} id={item.id}>
               {item.info.map((info, index) => (
                 <Typography
                   key={index}
                   variant="body2"
-                  sx={{ marginBlock: "12px", color: "#B9B9B9", maxWidth: "257px" }}
+                  sx={{ marginBlock: "12px", color: "#B9B9B9" }}
+                  style={{wordWrap: "break-word"}}
                 >
                   {info.link ? (
                     <Link
                       href={info.link}
                       sx={{ textDecoration: "none", color: "#B9B9B9", '&:hover': { color: '#1B1AFF' } }}
+                      style={{wordWrap: "break-word"}}
+
                     >
                       {info.subinfo}
                     </Link>
@@ -71,19 +76,19 @@ function Footer() {
                 </Typography>
               ))}
               {
-                item.button && <>{item.button}</>
+                item.button && <div style={{minWidth:"24vw"}}>{item.button}</div>
               }
             </Grid>
           </Grid>
         ))}
-            <Divider variant="middle" sx={{ width: "100%", height: "1px", backgroundColor: "#615D5D", marginTop: "36px"}}/>
+            <Divider variant="middle" sx={{ width: "85vw", height: "1px", backgroundColor: "#615D5D", marginTop: "26px"}}/>
         
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            width: "80%",
+            width: "60%",
             marginTop: "36px"
           }}
         >
