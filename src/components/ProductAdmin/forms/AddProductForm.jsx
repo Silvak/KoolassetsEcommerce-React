@@ -50,7 +50,7 @@ function AddProductForm() {
 
   return (
     <ThemeProvider  theme={theme}>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h6" sx={{ fontSize: 20, fontWeight: 700, color: "#000" }}>Categoría</Typography>
@@ -62,7 +62,7 @@ function AddProductForm() {
             required
             label="Categoría"
             name="Category"
-            size='small'
+            // size='small'
             value={formData.Category}
             onChange={handleInputChange}
           />
@@ -74,7 +74,7 @@ function AddProductForm() {
           <TextField
             fullWidth
             required
-            size='small'
+            // size='small'
             label="Marca"
             name="Brand"
             value={formData.Brand}
@@ -88,7 +88,7 @@ function AddProductForm() {
           <TextField
             fullWidth
             required
-            size='small'
+            // size='small'
             label="Nombre"
             name="Name"
             multiline
@@ -125,7 +125,7 @@ function AddProductForm() {
           <TextField
             fullWidth
             required
-            size='small'
+            // size='small'
             label="Stock"
             name="Stock"
             value={formData.Stock}
@@ -139,7 +139,7 @@ function AddProductForm() {
           <TextField
             fullWidth
             required
-            size='small'
+            // size='small'
             label="0.00"
             name="Price"
             value={formData.Price}
@@ -153,7 +153,7 @@ function AddProductForm() {
           <TextField
             fullWidth
             required
-            size='small'
+            // size='small'
             label="Descripción"
             name="Description"
             multiline

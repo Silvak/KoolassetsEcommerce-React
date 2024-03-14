@@ -17,7 +17,7 @@ function CartSlider() {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const productsToSuggest = productsData.slice(0, 10);
   return (
-    <Box sx={{ my: 10 }}>
+    <Box sx={{ my: 10, maxWidth: "1300px"}}>
       <Box
         sx={{
           display: "flex",

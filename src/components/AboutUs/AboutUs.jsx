@@ -6,6 +6,8 @@ function AboutUs() {
     <Box
       sx={{
         backgroundColor: "#FFFFFF",
+        display: "flex",
+        justifyContent: "center"
       }}
     >
       <AboutInfo />

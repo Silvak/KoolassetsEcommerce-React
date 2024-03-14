@@ -7,9 +7,9 @@ function AboutInfo() {
   return (
     <Grid
       container
-      spacing={9}
       sx={{
         width: "100%",
+        maxWidth: "1313px",
         display: "flex",
         justifyContent: "space-between",
         padding: "0",
@@ -22,7 +22,7 @@ function AboutInfo() {
       }}
     >
       {/* Text */}
-      <Grid item xs={12} md={5}>
+      <Grid item xs={12} md={6}>
         {/* Title */}
         <Grid>
           <Typography
@@ -32,6 +32,7 @@ function AboutInfo() {
               fontSize: "36px",
               marginBottom: "35px",
               color: "#000000",
+              paddingLeft: "65px"
             }}
           >
             {AboutData.title}
@@ -46,6 +47,7 @@ function AboutInfo() {
             flexDirection: "column",
             gap: 3.2,
             marginBottom: "57px",
+            paddingLeft: "65px"
           }}
         >
           {AboutData.description.map((part) => (
@@ -66,7 +68,7 @@ function AboutInfo() {
       <Grid
         item
         xs={12}
-        md={4}
+        md={5}
         sx={{
           display: !mdQuery && "flex",
           justifyContent: !mdQuery && "center",

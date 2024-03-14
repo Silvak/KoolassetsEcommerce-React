@@ -4,10 +4,12 @@ import { Container } from "@mui/material";
 
 const CartPage = () => {
   return (
-    <>
+    <div>
       <Breadcrumb path="Carrito" />
-      <Cart />
-    </>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Cart />
+      </div>
+    </div>
   );
 };
 export default CartPage;
