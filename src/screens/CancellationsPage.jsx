@@ -7,7 +7,7 @@ function CancellationsPage() {
   const user = userData[0];
   return (
 
-    <div style={{ padding: "0 90px"}}>
+    <div>
       <Breadcrumb path="Cancelaciones" />
       <div style={{ display: "flex" }}>
         <SidebarProfile user={user} />

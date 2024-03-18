@@ -6,9 +6,9 @@ function CancellationView() {
   return (
     <Box
     sx={{
+      width: "100%",
       mt: 5,
       textAlign: "left",
-      // mb: 5
     }}
   >
     <Box
@@ -21,7 +21,7 @@ function CancellationView() {
           textAlign: "left",
           fontWeight: 400,
           marginBottom: 5,
-          ml: { xs: "0", md: 10 },
+          // ml: { xs: "0", md: 10 },
         }}
       >
         Cancelaciones realizadas
