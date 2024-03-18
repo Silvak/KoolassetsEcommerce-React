@@ -26,7 +26,7 @@ function MockPreview(props) {
           <img
             src={selectedImage}
             alt="pcMain"
-            style={{ objectFit: "cover", width: "100%", height: "693px" }}
+            style={{ objectFit: "cover", width: "100%", height: "693px", padding:"10px" }}
           />
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
