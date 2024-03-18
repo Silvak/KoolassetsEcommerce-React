@@ -43,7 +43,7 @@ const ProductCard = ({
           boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
           mb: "8px",
           height: "auto",
-          margin:"auto"
+          margin: "auto"
         }}
       >
         <CardContent
@@ -53,7 +53,7 @@ const ProductCard = ({
             container
             spacing={1}
             alignItems="center"
-            style={{ margin:"auto" }}
+            style={{ margin: "auto" }}
           >
             <Grid item xs={12} sx={{ ml: 0 }}>
               <div
@@ -95,16 +95,17 @@ const ProductCard = ({
                 )}
               </div>
             </Grid>
-            <Grid item xs={12} style={{magin:"auto", paddingRight: 8}}>
-              <Link to={`/product/${product.id}`} style={{ textDecoration: "none", margin:"auto" }}>
+            <Grid item xs={12} style={{ magin: "auto", paddingRight: 8 }}>
+              <Link to={`/product/${product.id}`} style={{ textDecoration: "none", margin: "auto" }}>
                 <img
                   src={product.image}
                   alt={product.name}
                   style={{
                     width: "auto",
                     height: "auto",
-                    objectFit:"contain",
-                    padding: 8
+                    objectFit: "contain",
+                    minHeight: 300,
+                    // padding: 8,
                     // paddingInline: "0px",
                     // paddingRight: "0px",
                     // paddingBottom: "20px",
@@ -124,7 +125,7 @@ const ProductCard = ({
         justifyContent="space-between"
         style={{ height: "auto", width: "auto" }}
       >
-        <div style={{ display: "flex", justifyContent:"space-between", gap: 4 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", gap: 4 }}>
           <Rating
             name="read-only"
             value={product.rating}
@@ -147,7 +148,7 @@ const ProductCard = ({
           disableRipple
           aria-label="add to favorites"
           onClick={() => handleToggleFavorite(product)}
-          style={{paddingRight: 0}}
+          style={{ paddingRight: 0 }}
         >
           {isInFavorites ? (
             <FavoriteOutlinedIcon
@@ -168,10 +169,16 @@ const ProductCard = ({
           variant="body2"
           color={"#615D5D"}
           fontWeight={"normal"}
-          style={{ marginBlock: 10 }}
+          style={{
+            marginBlock: 10,
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+          }}
         >
           {product.name}
         </Typography>
+
         <Typography
           variant="body2"
           style={{
