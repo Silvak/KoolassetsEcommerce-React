@@ -31,8 +31,7 @@ function ReturnProducts({ totalResults, products }) {
     <div >
       <Box
         sx={{
-          marginLeft: { xs: 1, sm: 7, md: 15, lg: 15, xl: 15 },
-          // minWidth: "30vw",
+          paddingX: { xs: 5.4},
           padding: "5%",
           paddingTop: 15
         }}
@@ -41,10 +40,8 @@ function ReturnProducts({ totalResults, products }) {
           container
           spacing={8}
           style={{
-            // width: "100%",
             textAlign: "left",
             marginLeft: isMobile && "10px",
-            // height: "531px",
           }}
         >
           <Products products={!isQuery ? productsToShow : productsToShowMobile}/>

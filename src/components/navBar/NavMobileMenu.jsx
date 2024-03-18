@@ -6,6 +6,7 @@ import {
   AccordionSummary,
   Box,
 } from "@mui/material";
+import NavIcons from "./NavIcons";
 import { NavLink, useLocation } from "react-router-dom";
 import { MENU_ITEMS, MENU_ITEMS_ADMIN } from "@/utils/menuItems";
 
@@ -70,34 +71,13 @@ const NavMobileMenu = () => {
             </AccordionDetails>
           </Accordion>
         ))}
+      <NavIcons
+        sx={{
+          gap: "10px",
+          mt: 2,
+        }}
+      />
     </Box>
   );
 };
 export default NavMobileMenu;
-
-// <MenuList sx={{ color: "text.primary", padding: "20px 10px" }}>
-//   {menuItems.map((item, index) => {
-//     if (index === 3) {
-//       return <hr style={{ opacity: "10%" }} />;
-//     }
-//     return (
-//       <ListItemButton key={item.id}>
-//         <NavLink
-//           to={item.to}
-//           style={{ color: "inherit", textDecoration: "none" }}
-//         >
-//           {item.name}
-//         </NavLink>
-//       </ListItemButton>
-//     );
-//   })}
-
-//   <hr style={{ opacity: "10%" }} />
-//   <NavIcons
-//     sx={{
-//       justifyContent: "flex-start",
-//       gap: "20px",
-//       paddingLeft: "20px",
-//     }}
-//   />
-// </MenuList>
