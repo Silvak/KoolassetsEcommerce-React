@@ -1,4 +1,4 @@
-import { IconButton, Box } from "@mui/material";
+import { IconButton, Box, useMediaQuery } from "@mui/material";
 
 //icons
 import { BsCart, BsPerson, BsHeart } from "react-icons/bs";
@@ -11,6 +11,10 @@ const ICONS = [
 ];
 
 const NavIcons = ({ sx }) => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
+  const fixIcons = isMobile ? ICONS.slice(1) : ICONS;
+
   return (
     <Box
       sx={{
@@ -19,10 +23,11 @@ const NavIcons = ({ sx }) => {
         ...sx,
       }}
     >
-      {ICONS.map((icon) => (
+      {fixIcons.map((icon) => (
         <IconButton
           key={icon.id}
           sx={{
+            flex: isMobile ? "1" : "0",
             borderRadius: "4px",
             fontSize: "18px",
             color: "#1B1AFF",
