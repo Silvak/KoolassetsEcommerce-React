@@ -8,13 +8,19 @@ function SignIn() {
   const breakPoint = useMediaQuery((theme) => theme.breakpoints.down("xl"));
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div
+        style={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         {!isMobile ? (
           <Grid
             wrap="wrap-reverse"
             sx={{
               width: "100%",
-              padding: "100px 0",
               margin: 0,
               display: "flex",
               justifyContent: "space-around",
