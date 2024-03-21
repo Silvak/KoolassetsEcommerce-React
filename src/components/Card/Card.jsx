@@ -36,7 +36,7 @@ function CardGeneral({
   };
 
   return (
-    <div style={{ maxWidth: "247px"}}>
+    <div style={{ maxWidth: "247px", maxHeight: "598px"}}>
       <Card
         sx={{
           display: "flex",
@@ -68,10 +68,10 @@ function CardGeneral({
                   justifyContent: !topsell ? "end" :"space-between",
                 }}
               >
-               {topsell && <Chip
+               {topsell ? (<Chip
                   label={labelChip}
                   sx={{
-                    height: "min-content",
+                    height: "23px",
                     color: "#1B1AFF",
                     backgroundColor: "rgba(27, 26, 255, 0.3)",
                     borderRadius: "120px",
@@ -81,7 +81,9 @@ function CardGeneral({
                     paddingX: 0.6,
                     paddingY: 0.2,
                   }}
-                />}
+                />) : 
+                  (<Chip sx={{backgroundColor: "transparent", height: "39px"}}></Chip>)
+                }
                 {closeIcon && (
                   <IconButton
                     aria-label="close"
