@@ -1,7 +1,7 @@
 import { Grid, ThemeProvider, createTheme } from "@mui/material";
-import HomeCard from "./HomeCard";
 import { storeFavorites } from "../../stores/favorites/storeFavorites";
 import { storeCart } from "../../stores/cart/storeCart";
+import CardGeneral from "../Card/Card";
 
 const theme = createTheme({
   breakpoints: {
@@ -45,12 +45,13 @@ function HomeList({ products }) {
             }}
             maxWidth={324}
           >
-            <HomeCard
+            <CardGeneral
               product={product}
               isFavorite={isFavorite}
               handleToggleFavorite={toggleFavorite}
               isInCart={isInCart}
               handleToggleCart={toggleCartlist}
+              topsell={product.topsell}
             />
           </Grid>
         ))}
