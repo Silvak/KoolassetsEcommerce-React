@@ -81,6 +81,7 @@ declare module "@/components/DetailsOrder/DetailsOrderHeader";
 declare module "@/components/DetailsOrder/DetailsOrderContent";
 declare module "@/components/DetailsOrder/DetailsOrderTable";
 declare module "@/components/DetailsOrder/DetailsOrderForm";
+declare module "@/components/Card/CardGeneral";
 
 declare module "@/context/AppContextProvider";
 declare module "@/stores/index";

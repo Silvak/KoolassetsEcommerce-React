@@ -6,6 +6,9 @@ import { storeFavorites } from "../../stores/favorites/storeFavorites";
 import { AboutData } from "../../mock/AboutData";
 import BreadCrumb from "@/components/Breadcrumb/Breadcrumb";
 import { Link } from "react-router-dom";
+import CardGeneral from "../Card/Card";
+import { storeCart } from "../../stores/cart/storeCart";
+
 
 const Favorites = ({ totalResults, favoritesProducts }) => {
   const { toggleFavorite, isFavorite, clearFavorites } = storeFavorites(
@@ -15,6 +18,8 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
       clearFavorites: state.clearFavorites,
     })
   );
+    //cart
+    const { isInCart, toggleCartlist } = storeCart((state) => state);
 
   const [currentPage, setCurrentPage] = useState(1);
   const isMobile = useMediaQuery("(max-width: 500px)");
@@ -29,7 +34,7 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
     setCurrentPage(page);
     window.scroll(0, 0);
   };
-
+  console.log(productsToShow);
   return (
     <div style={{minHeight:"100vh"}}>
       {totalResults ? (
@@ -80,11 +85,14 @@ const Favorites = ({ totalResults, favoritesProducts }) => {
           <Grid container spacing={0} width={"100%"} height={"auto"} gap={2}>
             {productsToShow.map((product) => (
               <Grid item xs={12} sm={5} md={4} lg={3} xl={2.8} key={product.id} sx={{ mb: "22px" }}>
-                <ProductCard
+                <CardGeneral
                   product={product}
                   closeIcon={true}
                   isFavorite={isFavorite}
                   handleToggleFavorite={toggleFavorite}
+                  isInCart={isInCart}
+                  handleToggleCart={toggleCartlist}
+                  topsell={product.topsell}
                 />
               </Grid>
             ))}

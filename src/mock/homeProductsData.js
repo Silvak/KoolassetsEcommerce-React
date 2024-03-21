@@ -9,7 +9,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 4,
@@ -39,7 +42,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 5,
@@ -49,7 +53,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 6,
@@ -59,7 +64,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 7,
@@ -69,7 +75,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 8,
@@ -79,7 +86,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 9,
@@ -89,7 +97,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
   {
     id: 10,
@@ -99,7 +108,8 @@ export const homeProducts = [
     images: [pcImage],
     disponible: true,
     rating: 4.6,
-    category: "top ventas",
+    category: "feed",
+    topsell: false
   },
  
 ];

@@ -12,6 +12,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 7,
@@ -23,6 +24,7 @@ export const productsData = [
     rating: 4.8,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 8,
@@ -34,6 +36,7 @@ export const productsData = [
     rating: 4.0,
     category: "top ventas",
     subcategory: "Gama Media",
+    topsell: true
   },
   {
     id: 9,
@@ -45,6 +48,7 @@ export const productsData = [
     rating: 4.5,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 10,
@@ -56,6 +60,7 @@ export const productsData = [
     rating: 4.1,
     category: "top ventas",
     subcategory: "Gama Media",
+    topsell: true
   },
   {
     id: 11,
@@ -67,6 +72,7 @@ export const productsData = [
     rating: 4.7,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 12,
@@ -78,6 +84,7 @@ export const productsData = [
     rating: 3.9,
     category: "top ventas",
     subcategory: "Gama Media",
+    topsell: true
   },
   {
     id: 13,
@@ -89,6 +96,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 14,
@@ -100,6 +108,7 @@ export const productsData = [
     rating: 4.3,
     category: "top ventas",
     subcategory: "Gama Media",
+    topsell: true
   },
   {
     id: 15,
@@ -111,6 +120,7 @@ export const productsData = [
     rating: 4.4,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 16,
@@ -122,6 +132,7 @@ export const productsData = [
     rating: 4.2,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 17,
@@ -133,6 +144,7 @@ export const productsData = [
     rating: 4.5,
     category: "top ventas",
     subcategory: "Gama Media",
+    topsell: true
   },
   {
     id: 1,
@@ -144,6 +156,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 2,
@@ -155,6 +168,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 3,
@@ -166,6 +180,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 4,
@@ -177,6 +192,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
   {
     id: 43,
@@ -188,6 +204,7 @@ export const productsData = [
     rating: 4.6,
     category: "top ventas",
     subcategory: "Gama Alta",
+    topsell: true
   },
 ];
 

@@ -6,7 +6,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Sidebar from "./Sidebar";
 import DesktopSidebar from "./DesktopSidebar";
 import { storeFavorites } from '../../stores/favorites/storeFavorites';
+import { storeCart } from "../../stores/cart/storeCart";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import CardGeneral from "../Card/Card";
 
 const CategoryList = ({ category, totalResults, products }) => {
   const [selectedFullPath, setSelectedFullPath] = useState("Categorías");
@@ -19,6 +21,8 @@ const CategoryList = ({ category, totalResults, products }) => {
     toggleFavorite: state.toggleFavorite,
     isFavorite: state.isFavorite,
   }));
+  const { isInCart, toggleCartlist } = storeCart((state) => state);
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -80,7 +84,7 @@ const CategoryList = ({ category, totalResults, products }) => {
           <Grid container spacing={0} width={"100%"} height={"auto"} gap={2}>
             {productsToShow.map((product) => (
               <Grid item xs={12} sm={5} md={4} lg={3} xl={2.8} key={product.id} sx={{ mb: "22px" }}>
-                <ProductCard product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite} />
+                <CardGeneral product={product} isFavorite={isFavorite} handleToggleFavorite={toggleFavorite} isInCart={isInCart} handleToggleCart={toggleCartlist} topsell={product.topsell}/>
               </Grid>
             ))}
           </Grid>

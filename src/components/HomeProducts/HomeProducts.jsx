@@ -14,8 +14,7 @@ function HomeProducts() {
   };
   const data = homeProducts.slice(0, 10);
 
-  const primaryColor = theme.palette.primary.main;
-  const secondaryColor = theme.palette.secondary.main;
+
 
   return (
     <ThemeProvider theme={theme}>
